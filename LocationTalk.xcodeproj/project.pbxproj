@@ -1,0 +1,648 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2587373A9BC996D82E0FB565 /* Pods_LocationTalk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09560E0EB15FE83AC6051FBD /* Pods_LocationTalk.framework */; };
+		2C4AED341E126A4200FCE88F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4AED331E126A4200FCE88F /* Constants.swift */; };
+		2C4AED371E126A7400FCE88F /* AccountProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4AED361E126A7400FCE88F /* AccountProtocol.swift */; };
+		2C4AED391E126AAC00FCE88F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4AED381E126AAC00FCE88F /* LoginViewController.swift */; };
+		2C4AED3B1E126AD800FCE88F /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4AED3A1E126AD800FCE88F /* CreateAccountViewController.swift */; };
+		2C4AED3F1E126EA000FCE88F /* FriendListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4AED3E1E126EA000FCE88F /* FriendListViewController.swift */; };
+		2C4AED411E126EC700FCE88F /* AddFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4AED401E126EC700FCE88F /* AddFriendViewController.swift */; };
+		2C4B35DF1E14FFBE007C4C30 /* FriendInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4B35DE1E14FFBE007C4C30 /* FriendInfo.swift */; };
+		2C4B35E11E1514A7007C4C30 /* MyState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4B35E01E1514A7007C4C30 /* MyState.swift */; };
+		2C4B35E41E154422007C4C30 /* FriendList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4B35E31E154422007C4C30 /* FriendList.swift */; };
+		2C4B35E61E156C04007C4C30 /* AddFriend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4B35E51E156C04007C4C30 /* AddFriend.swift */; };
+		2CDF48611E1260FE002DD580 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDF48601E1260FE002DD580 /* AppDelegate.swift */; };
+		2CDF48661E1260FE002DD580 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CDF48641E1260FE002DD580 /* Main.storyboard */; };
+		2CDF48691E1260FE002DD580 /* LocationTalk.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2CDF48671E1260FE002DD580 /* LocationTalk.xcdatamodeld */; };
+		2CDF486B1E1260FE002DD580 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CDF486A1E1260FE002DD580 /* Assets.xcassets */; };
+		2CDF486E1E1260FE002DD580 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CDF486C1E1260FE002DD580 /* LaunchScreen.storyboard */; };
+		2CDF48791E1260FE002DD580 /* LocationTalkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDF48781E1260FE002DD580 /* LocationTalkTests.swift */; };
+		2CDF48841E12617A002DD580 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2CDF48831E12617A002DD580 /* GoogleService-Info.plist */; };
+		B7B524B9CBFE0F7D403B98C8 /* Pods_LocationTalkTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11540A9C0B3C9CCB3758A532 /* Pods_LocationTalkTests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2CDF48751E1260FE002DD580 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2CDF48551E1260FE002DD580 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2CDF485C1E1260FE002DD580;
+			remoteInfo = LocationTalk;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		09560E0EB15FE83AC6051FBD /* Pods_LocationTalk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LocationTalk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		11540A9C0B3C9CCB3758A532 /* Pods_LocationTalkTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LocationTalkTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C4AED331E126A4200FCE88F /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		2C4AED361E126A7400FCE88F /* AccountProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountProtocol.swift; sourceTree = "<group>"; };
+		2C4AED381E126AAC00FCE88F /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		2C4AED3A1E126AD800FCE88F /* CreateAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
+		2C4AED3E1E126EA000FCE88F /* FriendListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendListViewController.swift; sourceTree = "<group>"; };
+		2C4AED401E126EC700FCE88F /* AddFriendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddFriendViewController.swift; sourceTree = "<group>"; };
+		2C4B35DE1E14FFBE007C4C30 /* FriendInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendInfo.swift; sourceTree = "<group>"; };
+		2C4B35E01E1514A7007C4C30 /* MyState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyState.swift; sourceTree = "<group>"; };
+		2C4B35E31E154422007C4C30 /* FriendList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendList.swift; sourceTree = "<group>"; };
+		2C4B35E51E156C04007C4C30 /* AddFriend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddFriend.swift; sourceTree = "<group>"; };
+		2CDF485D1E1260FE002DD580 /* LocationTalk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LocationTalk.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2CDF48601E1260FE002DD580 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		2CDF48651E1260FE002DD580 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2CDF48681E1260FE002DD580 /* LocationTalk.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LocationTalk.xcdatamodel; sourceTree = "<group>"; };
+		2CDF486A1E1260FE002DD580 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2CDF486D1E1260FE002DD580 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		2CDF486F1E1260FE002DD580 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2CDF48741E1260FE002DD580 /* LocationTalkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LocationTalkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2CDF48781E1260FE002DD580 /* LocationTalkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTalkTests.swift; sourceTree = "<group>"; };
+		2CDF487A1E1260FE002DD580 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2CDF48831E12617A002DD580 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		6E3F199E7C9595CF6BAF78A4 /* Pods-LocationTalkTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LocationTalkTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LocationTalkTests/Pods-LocationTalkTests.debug.xcconfig"; sourceTree = "<group>"; };
+		8693A8104F68067565DB7835 /* Pods-LocationTalkTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LocationTalkTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LocationTalkTests/Pods-LocationTalkTests.release.xcconfig"; sourceTree = "<group>"; };
+		B4E7EC6D96A811EDD0B14B98 /* Pods-LocationTalk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LocationTalk.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LocationTalk/Pods-LocationTalk.debug.xcconfig"; sourceTree = "<group>"; };
+		D5E3BA1C534696890D51AA18 /* Pods-LocationTalk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LocationTalk.release.xcconfig"; path = "Pods/Target Support Files/Pods-LocationTalk/Pods-LocationTalk.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2CDF485A1E1260FE002DD580 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2587373A9BC996D82E0FB565 /* Pods_LocationTalk.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2CDF48711E1260FE002DD580 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B7B524B9CBFE0F7D403B98C8 /* Pods_LocationTalkTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0ADBD2D6AA9C06D919F61074 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				09560E0EB15FE83AC6051FBD /* Pods_LocationTalk.framework */,
+				11540A9C0B3C9CCB3758A532 /* Pods_LocationTalkTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2C4AED351E126A6500FCE88F /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				2C4AED361E126A7400FCE88F /* AccountProtocol.swift */,
+			);
+			name = Protocol;
+			sourceTree = "<group>";
+		};
+		2C4AED421E1273D000FCE88F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2C4AED381E126AAC00FCE88F /* LoginViewController.swift */,
+				2C4AED3A1E126AD800FCE88F /* CreateAccountViewController.swift */,
+				2C4AED3E1E126EA000FCE88F /* FriendListViewController.swift */,
+				2C4AED401E126EC700FCE88F /* AddFriendViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		2C4B35DD1E14FF9C007C4C30 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2C4B35DE1E14FFBE007C4C30 /* FriendInfo.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		2C4B35E21E154407007C4C30 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				2C4B35E31E154422007C4C30 /* FriendList.swift */,
+				2C4B35E51E156C04007C4C30 /* AddFriend.swift */,
+			);
+			name = Utility;
+			sourceTree = "<group>";
+		};
+		2CDF48541E1260FE002DD580 = {
+			isa = PBXGroup;
+			children = (
+				2CDF485F1E1260FE002DD580 /* LocationTalk */,
+				2CDF48771E1260FE002DD580 /* LocationTalkTests */,
+				2CDF485E1E1260FE002DD580 /* Products */,
+				FD54DE1D69AC193F91628469 /* Pods */,
+				0ADBD2D6AA9C06D919F61074 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		2CDF485E1E1260FE002DD580 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2CDF485D1E1260FE002DD580 /* LocationTalk.app */,
+				2CDF48741E1260FE002DD580 /* LocationTalkTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2CDF485F1E1260FE002DD580 /* LocationTalk */ = {
+			isa = PBXGroup;
+			children = (
+				2C4B35E21E154407007C4C30 /* Utility */,
+				2C4B35DD1E14FF9C007C4C30 /* Model */,
+				2C4AED421E1273D000FCE88F /* Controller */,
+				2C4AED351E126A6500FCE88F /* Protocol */,
+				2CDF48601E1260FE002DD580 /* AppDelegate.swift */,
+				2C4AED331E126A4200FCE88F /* Constants.swift */,
+				2C4B35E01E1514A7007C4C30 /* MyState.swift */,
+				2CDF48641E1260FE002DD580 /* Main.storyboard */,
+				2CDF486A1E1260FE002DD580 /* Assets.xcassets */,
+				2CDF486C1E1260FE002DD580 /* LaunchScreen.storyboard */,
+				2CDF486F1E1260FE002DD580 /* Info.plist */,
+				2CDF48671E1260FE002DD580 /* LocationTalk.xcdatamodeld */,
+				2CDF48831E12617A002DD580 /* GoogleService-Info.plist */,
+			);
+			path = LocationTalk;
+			sourceTree = "<group>";
+		};
+		2CDF48771E1260FE002DD580 /* LocationTalkTests */ = {
+			isa = PBXGroup;
+			children = (
+				2CDF48781E1260FE002DD580 /* LocationTalkTests.swift */,
+				2CDF487A1E1260FE002DD580 /* Info.plist */,
+			);
+			path = LocationTalkTests;
+			sourceTree = "<group>";
+		};
+		FD54DE1D69AC193F91628469 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B4E7EC6D96A811EDD0B14B98 /* Pods-LocationTalk.debug.xcconfig */,
+				D5E3BA1C534696890D51AA18 /* Pods-LocationTalk.release.xcconfig */,
+				6E3F199E7C9595CF6BAF78A4 /* Pods-LocationTalkTests.debug.xcconfig */,
+				8693A8104F68067565DB7835 /* Pods-LocationTalkTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2CDF485C1E1260FE002DD580 /* LocationTalk */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2CDF487D1E1260FE002DD580 /* Build configuration list for PBXNativeTarget "LocationTalk" */;
+			buildPhases = (
+				67DC9E1C352970381BAEB9F1 /* [CP] Check Pods Manifest.lock */,
+				2CDF48591E1260FE002DD580 /* Sources */,
+				2CDF485A1E1260FE002DD580 /* Frameworks */,
+				2CDF485B1E1260FE002DD580 /* Resources */,
+				C1594A3A3E1E06BB7240A24C /* [CP] Embed Pods Frameworks */,
+				D94A6AFD589D85C9D682435B /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LocationTalk;
+			productName = LocationTalk;
+			productReference = 2CDF485D1E1260FE002DD580 /* LocationTalk.app */;
+			productType = "com.apple.product-type.application";
+		};
+		2CDF48731E1260FE002DD580 /* LocationTalkTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2CDF48801E1260FE002DD580 /* Build configuration list for PBXNativeTarget "LocationTalkTests" */;
+			buildPhases = (
+				20963D3715D02AB197C7CEE6 /* [CP] Check Pods Manifest.lock */,
+				2CDF48701E1260FE002DD580 /* Sources */,
+				2CDF48711E1260FE002DD580 /* Frameworks */,
+				2CDF48721E1260FE002DD580 /* Resources */,
+				74E282417BD8CE7F51F8D013 /* [CP] Embed Pods Frameworks */,
+				AE24CCC930E7E0C7C0AF36F6 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2CDF48761E1260FE002DD580 /* PBXTargetDependency */,
+			);
+			name = LocationTalkTests;
+			productName = LocationTalkTests;
+			productReference = 2CDF48741E1260FE002DD580 /* LocationTalkTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2CDF48551E1260FE002DD580 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = "鄭宇翔";
+				TargetAttributes = {
+					2CDF485C1E1260FE002DD580 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = UG6S92QCHF;
+						ProvisioningStyle = Automatic;
+					};
+					2CDF48731E1260FE002DD580 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 2CDF485C1E1260FE002DD580;
+					};
+				};
+			};
+			buildConfigurationList = 2CDF48581E1260FE002DD580 /* Build configuration list for PBXProject "LocationTalk" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2CDF48541E1260FE002DD580;
+			productRefGroup = 2CDF485E1E1260FE002DD580 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2CDF485C1E1260FE002DD580 /* LocationTalk */,
+				2CDF48731E1260FE002DD580 /* LocationTalkTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2CDF485B1E1260FE002DD580 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2CDF486E1E1260FE002DD580 /* LaunchScreen.storyboard in Resources */,
+				2CDF48841E12617A002DD580 /* GoogleService-Info.plist in Resources */,
+				2CDF486B1E1260FE002DD580 /* Assets.xcassets in Resources */,
+				2CDF48661E1260FE002DD580 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2CDF48721E1260FE002DD580 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		20963D3715D02AB197C7CEE6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		67DC9E1C352970381BAEB9F1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		74E282417BD8CE7F51F8D013 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LocationTalkTests/Pods-LocationTalkTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AE24CCC930E7E0C7C0AF36F6 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LocationTalkTests/Pods-LocationTalkTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C1594A3A3E1E06BB7240A24C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LocationTalk/Pods-LocationTalk-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D94A6AFD589D85C9D682435B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LocationTalk/Pods-LocationTalk-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2CDF48591E1260FE002DD580 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C4AED3B1E126AD800FCE88F /* CreateAccountViewController.swift in Sources */,
+				2C4AED391E126AAC00FCE88F /* LoginViewController.swift in Sources */,
+				2C4AED411E126EC700FCE88F /* AddFriendViewController.swift in Sources */,
+				2C4B35E61E156C04007C4C30 /* AddFriend.swift in Sources */,
+				2C4B35E11E1514A7007C4C30 /* MyState.swift in Sources */,
+				2CDF48611E1260FE002DD580 /* AppDelegate.swift in Sources */,
+				2C4AED3F1E126EA000FCE88F /* FriendListViewController.swift in Sources */,
+				2CDF48691E1260FE002DD580 /* LocationTalk.xcdatamodeld in Sources */,
+				2C4AED371E126A7400FCE88F /* AccountProtocol.swift in Sources */,
+				2C4B35E41E154422007C4C30 /* FriendList.swift in Sources */,
+				2C4AED341E126A4200FCE88F /* Constants.swift in Sources */,
+				2C4B35DF1E14FFBE007C4C30 /* FriendInfo.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2CDF48701E1260FE002DD580 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2CDF48791E1260FE002DD580 /* LocationTalkTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2CDF48761E1260FE002DD580 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2CDF485C1E1260FE002DD580 /* LocationTalk */;
+			targetProxy = 2CDF48751E1260FE002DD580 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		2CDF48641E1260FE002DD580 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2CDF48651E1260FE002DD580 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		2CDF486C1E1260FE002DD580 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2CDF486D1E1260FE002DD580 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2CDF487B1E1260FE002DD580 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		2CDF487C1E1260FE002DD580 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2CDF487E1E1260FE002DD580 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B4E7EC6D96A811EDD0B14B98 /* Pods-LocationTalk.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = UG6S92QCHF;
+				INFOPLIST_FILE = LocationTalk/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = EddieCheng.LocationTalk;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		2CDF487F1E1260FE002DD580 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D5E3BA1C534696890D51AA18 /* Pods-LocationTalk.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = UG6S92QCHF;
+				INFOPLIST_FILE = LocationTalk/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = EddieCheng.LocationTalk;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		2CDF48811E1260FE002DD580 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6E3F199E7C9595CF6BAF78A4 /* Pods-LocationTalkTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = LocationTalkTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = EddieCheng.LocationTalkTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LocationTalk.app/LocationTalk";
+			};
+			name = Debug;
+		};
+		2CDF48821E1260FE002DD580 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8693A8104F68067565DB7835 /* Pods-LocationTalkTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = LocationTalkTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = EddieCheng.LocationTalkTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LocationTalk.app/LocationTalk";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2CDF48581E1260FE002DD580 /* Build configuration list for PBXProject "LocationTalk" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2CDF487B1E1260FE002DD580 /* Debug */,
+				2CDF487C1E1260FE002DD580 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2CDF487D1E1260FE002DD580 /* Build configuration list for PBXNativeTarget "LocationTalk" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2CDF487E1E1260FE002DD580 /* Debug */,
+				2CDF487F1E1260FE002DD580 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2CDF48801E1260FE002DD580 /* Build configuration list for PBXNativeTarget "LocationTalkTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2CDF48811E1260FE002DD580 /* Debug */,
+				2CDF48821E1260FE002DD580 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		2CDF48671E1260FE002DD580 /* LocationTalk.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				2CDF48681E1260FE002DD580 /* LocationTalk.xcdatamodel */,
+			);
+			currentVersion = 2CDF48681E1260FE002DD580 /* LocationTalk.xcdatamodel */;
+			path = LocationTalk.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 2CDF48551E1260FE002DD580 /* Project object */;
+}
