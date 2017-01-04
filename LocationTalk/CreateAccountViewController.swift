@@ -9,19 +9,20 @@
 import UIKit
 import Firebase
 
-class CreateAccountViewController: UIViewController, AccountProtocol {
+class CreateAccountViewController: UIViewController, AccountProtocol, AuthenticationProtocol {
     
     @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     
-    var ref: FIRDatabaseReference!
+    var auth: Authentication!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        ref = FIRDatabase.database().reference()
+        auth = Authentication.init()
+        auth.delagate = self
     }
     
     override func didReceiveMemoryWarning() {
@@ -29,44 +30,26 @@ class CreateAccountViewController: UIViewController, AccountProtocol {
         // Dispose of any resources that can be recreated.
     }
     
+    deinit {
+        print("CreateAccountViewController deinit")
+    }
+    
     @IBAction func pressCreateAccount(_ sender: UIButton) {
         if let email = emailField.text, let password = passwordField.text, let username = usernameField.text {
             if (email != "" && password != "" && username != "") {
-                
-                FIRAuth.auth()?.createUser(withEmail: email, password: password, completion: { (user, error) in
-                    if let error = error {
-                        print(error.localizedDescription)
-                        self.errorAlert(title: Constants.ErrorAlert.alertTitle, message: error.localizedDescription, onViewController: self)
-                        return
-                    }
-                    self.setDisplayName(user!, displayname: username)
-                    let userInfo = [Constants.FirebaseKey.email: email, Constants.FirebaseKey.password: password, Constants.FirebaseKey.username: username]
-                    
-                    let node = self.emailToNode(email)
-                    
-                    self.ref.child(node).setValue(userInfo)
-                    
-                    self.signIn(user, withSegue: Constants.Segue.newUserLogin, onViewController: self)
-                    
-                })
+                auth.createAccount(email: email, password: password, username: username)
             } else {
-                self.errorAlert(title: Constants.ErrorAlert.alertTitle, message: Constants.ErrorAlert.loginMissingMessage, onViewController: self)
+                auth.inputErrorAlert()
             }
         }
     }
+    // MARK: - AuthenticationProtocol
+    func loginSuccess(_ user: FIRUser!) {
+        auth.signIn(user, segue: Constants.Segue.newUserLogin)
+    }
     
-    
-    func setDisplayName(_ user: FIRUser, displayname: String) {
-        let changeRequest = user.profileChangeRequest()
-        changeRequest.displayName = displayname
-        //        print("\(changeRequest.displayName!)")
-        changeRequest.commitChanges(){ (error) in
-            if let error = error {
-                print(error.localizedDescription)
-                return
-            }
-            //            self.signedIn(FIRAuth.auth()?.currentUser)
-        }
+    func loginFail(_ error: Error) {
+        self.errorAlert(title: Constants.ErrorAlert.alertTitle, message: error.localizedDescription, onViewController: self)
     }
     
     /*
