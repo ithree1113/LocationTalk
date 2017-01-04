@@ -92,8 +92,8 @@ class FriendListViewController: UIViewController, AccountProtocol, UITableViewDa
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         if (segue.identifier == Constants.Segue.listToAccept) {
-            let acceptVC = segue.destination as! AcceptViewController
-            acceptVC.beIvitedArray = self.beIvitedArray
+            let invitationVC = segue.destination as! InvitationViewController
+            invitationVC.beIvitedArray = self.beIvitedArray
         }
         
     }

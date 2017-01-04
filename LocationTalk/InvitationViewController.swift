@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AcceptViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class InvitationViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var invitationTable: UITableView!
     var beIvitedArray: [FriendInfo] = []
