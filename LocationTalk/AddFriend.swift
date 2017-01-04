@@ -103,8 +103,6 @@ class AddFriend: AccountProtocol {
         
         let emptyInfo = Dictionary<String, Any>.init()
         ref.child("\(myNode)/friend/\(friendNode)").setValue(emptyInfo)
-        
-//        let newMyInfo = FriendInfo.init(myState.email!, username: myState.username!, state: .friends)
         ref.child("\(friendNode)/friend/\(myNode)").setValue(emptyInfo)
     }
     
