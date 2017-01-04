@@ -162,10 +162,10 @@
 		2CDF485F1E1260FE002DD580 /* LocationTalk */ = {
 			isa = PBXGroup;
 			children = (
+				2C4AED351E126A6500FCE88F /* Protocol */,
 				2C4B35E21E154407007C4C30 /* FireBase */,
 				2C4B35DD1E14FF9C007C4C30 /* Model */,
 				2C4AED421E1273D000FCE88F /* Controller */,
-				2C4AED351E126A6500FCE88F /* Protocol */,
 				2CDF48601E1260FE002DD580 /* AppDelegate.swift */,
 				2C4AED331E126A4200FCE88F /* Constants.swift */,
 				2C4B35E01E1514A7007C4C30 /* MyState.swift */,

@@ -58,22 +58,5 @@ class FriendList: AccountProtocol {
         let myNode = self.emailToNode(myState.email!)
         ref.child("\(myNode)/friend").removeObserver(withHandle: _refHandle)
     }
-
-
-//    func checkFriend(_ info: FriendInfo, ref: FIRDatabaseReference) -> FriendState {
-//        let myState = MyState.sharedInstance
-//        let selfNode = self.emailToNode(myState.email!)
-//        let targetNode = self.emailToNode(info.email)
-//        
-//        _refHandle = ref.child("\(selfNode)/friend/\(targetNode)").observe(.value, with: { (sanpshot) in
-//            if sanpshot.exists() {
-//                return FriendState.friends
-//            } else {
-//                return FriendState.none
-//            }
-//        })
-//    }
-    
-    
     
 }

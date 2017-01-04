@@ -19,8 +19,6 @@ class InvitationViewController: UIViewController, UITableViewDataSource, UITable
         // Do any additional setup after loading the view.
         self.invitationTable.dataSource = self
         self.invitationTable.delegate = self
-//        guard let statusBar = UIApplication.shared.value(forKeyPath: "statusBarWindow.statusBar") as? UIView else { return }
-//        statusBar.backgroundColor = UIColor.init(red: 45/255.0, green: 54/255.0, blue: 74/255.0, alpha: 1)
     }
 
     override func didReceiveMemoryWarning() {

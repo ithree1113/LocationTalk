@@ -27,19 +27,6 @@ extension AccountProtocol {
         onViewController.present(alert, animated: true, completion: nil)
     }
     
-    
-//    func signIn(_ user: FIRUser?, withSegue: String ,onViewController: UIViewController) {
-//        print("Login successfully")
-//        let myState = MyState.sharedInstance
-//        myState.signedIn = true
-//        myState.email = user!.email!
-//        myState.username = user!.displayName
-//        DispatchQueue.main.async {
-//            [unowned onViewController] in
-//            onViewController.performSegue(withIdentifier: withSegue, sender: nil)
-//        }
-//    }
-    
     func emailToNode(_ email: String) -> String {
         var range: Range<String.Index>
         var node: String = "\(email)"
