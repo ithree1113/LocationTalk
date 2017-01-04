@@ -45,13 +45,15 @@ class FriendList: AccountProtocol {
                         beIvitedArray.append(friend)
                     }
                 }
+                friendArray = friendArray.sorted(by: { $0.username < $1.username })
+                beIvitedArray = beIvitedArray.sorted(by: { $0.username < $1.username })
                 strongSelf.delagate?.didGetFriendList(friends: friendArray, beInvited: beIvitedArray)
             }
         })
     }
     
     deinit {
-        print("destory")
+        print("FriendList deinit")
         let myState = MyState.sharedInstance
         let myNode = self.emailToNode(myState.email!)
         ref.child("\(myNode)/friend").removeObserver(withHandle: _refHandle)
