@@ -52,6 +52,7 @@ class AddFriend: AccountProtocol {
         let friendNode = self.emailToNode(email)
         _refHandle = ref.child("\(myNode)/friend").observe(.value, with: { [weak self](snapshot) in
             guard let strongSelf = self else {return}
+            strongSelf.ref.child("\(myNode)/friend").removeObserver(withHandle: strongSelf._refHandle)
             if (snapshot.exists()) {
                 let infos = snapshot.value as! Dictionary<String, Any>
                 for (k, v) in infos {
@@ -65,7 +66,6 @@ class AddFriend: AccountProtocol {
             if (availed) {
                 strongSelf.delagate?.didCheckThisEmail(result: .none)
             }
-            strongSelf.ref.child("\(myNode)/friend").removeObserver(withHandle: strongSelf._refHandle)
         })
         
     }
