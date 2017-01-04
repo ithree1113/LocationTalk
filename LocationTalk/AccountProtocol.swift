@@ -11,7 +11,7 @@ import Firebase
 
 protocol AccountProtocol {
     func errorAlert(title: String, message: String, onViewController: UIViewController)
-    func signIn(_ user: FIRUser?, withSegue: String ,onViewController: UIViewController)
+//    func signIn(_ user: FIRUser?, withSegue: String ,onViewController: UIViewController)
     func emailToNode(_ email: String) -> String
 }
 
@@ -28,17 +28,17 @@ extension AccountProtocol {
     }
     
     
-    func signIn(_ user: FIRUser?, withSegue: String ,onViewController: UIViewController) {
-        print("Login successfully")
-        let myState = MyState.sharedInstance
-        myState.signedIn = true
-        myState.email = user!.email!
-        myState.username = user!.displayName
-        DispatchQueue.main.async {
-            [unowned onViewController] in
-            onViewController.performSegue(withIdentifier: withSegue, sender: nil)
-        }
-    }
+//    func signIn(_ user: FIRUser?, withSegue: String ,onViewController: UIViewController) {
+//        print("Login successfully")
+//        let myState = MyState.sharedInstance
+//        myState.signedIn = true
+//        myState.email = user!.email!
+//        myState.username = user!.displayName
+//        DispatchQueue.main.async {
+//            [unowned onViewController] in
+//            onViewController.performSegue(withIdentifier: withSegue, sender: nil)
+//        }
+//    }
     
     func emailToNode(_ email: String) -> String {
         var range: Range<String.Index>

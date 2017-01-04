@@ -28,7 +28,8 @@ class LoginViewController: UIViewController, AccountProtocol, AuthenticationProt
         auth = Authentication.init()
         auth.delagate = self
         if let user = FIRAuth.auth()?.currentUser {
-            self.signIn(user, withSegue: Constants.Segue.userLogin, onViewController: self)
+//            self.signIn(user, withSegue: Constants.Segue.userLogin, onViewController: self)
+            auth.signIn(user, segue: Constants.Segue.userLogin)
         }
         // Do any additional setup after loading the view.
     }
