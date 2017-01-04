@@ -12,6 +12,7 @@ struct Constants {
         static let userLogin = "userLogin"
         static let newUserLogin = "newUserLogin"
         static let listToAdd = "listToAdd"
+        static let listToAccept = "listToAccept"
     }
     
     struct FirebaseKey {
@@ -34,5 +35,6 @@ struct Constants {
     
     struct Cell {
         static let friendList = "friend"
+        static let invitation = "invitation"
     }
 }

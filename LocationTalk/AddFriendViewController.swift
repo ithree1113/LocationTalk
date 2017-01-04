@@ -34,6 +34,10 @@ class AddFriendViewController: UIViewController, UITextFieldDelegate, AccountPro
         // Dispose of any resources that can be recreated.
     }
     
+    deinit {
+        print("AddFriendViewController deinit")
+    }
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         
         if let searchTarget = emailSearchText.text {
@@ -45,14 +49,7 @@ class AddFriendViewController: UIViewController, UITextFieldDelegate, AccountPro
     }
     
     @IBAction func pressAddFriend(_ sender: Any) {
-        
-//        let friendInfoForMe = FriendInfo.init(resultEmailLabel.text!, username: resultNameLabel.text!, state: .invite)
-//        let selfNode = self.emailToNode((FIRAuth.auth()?.currentUser?.email)!)
-//        ref.child("\(selfNode)/friend/\(friendNode!)").setValue(friendInfoForMe.context())
-//        
-//        let myState = MyState.sharedInstance
-//        let friendInfoForYou = FriendInfo.init(myState.email!, username: myState.username!, state: .beInvited)
-//        ref.child("\(friendNode!)/friend/\(selfNode)").setValue(friendInfoForYou.context())
+        addFriend.check(resultEmailLabel.text!)
         
     }
 
@@ -77,6 +74,14 @@ class AddFriendViewController: UIViewController, UITextFieldDelegate, AccountPro
         self.resultEmailLabel.text = "Not Found"
         self.resultNameLabel.text = "Not Found"
         self.addFriendButton.isHidden = true
+    }
+    
+    func didCheckThisEmail(result: FriendState) {
+        if result == .none {
+            addFriend.invite(resultEmailLabel.text!, username: resultNameLabel.text!)
+        } else {
+            self.errorAlert(title: Constants.ErrorAlert.alertTitle, message: "You are already friends, or waiting to accept the invitation.", onViewController: self)
+        }
     }
     
     /*
