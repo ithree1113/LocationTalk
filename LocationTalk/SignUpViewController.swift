@@ -11,16 +11,22 @@ import Firebase
 
 class SignUpViewController: UIViewController, AccountProtocol, AuthenticationProtocol, SignUpViewProtocol {
     
-    @IBOutlet weak var signupView: SignUpView!
-    var auth: Authentication!
+    @IBOutlet weak var signupView: SignUpView! {
+        didSet {
+            signupView.delegate = self
+        }
+    }
+    var auth: Authentication! {
+        didSet {
+           auth.delagate = self 
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        signupView.delegate = self
         auth = Authentication.init()
-        auth.delagate = self
     }
     
     override func didReceiveMemoryWarning() {
@@ -49,7 +55,6 @@ extension SignUpViewController {
         self.presentingViewController?.dismiss(animated: true, completion: nil)
     }
 }
-
 
 // MARK: - AuthenticationProtocol
 extension SignUpViewController {

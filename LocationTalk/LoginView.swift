@@ -39,6 +39,10 @@ class LoginView: UIView, UITextFieldDelegate {
         super.init(coder: aDecoder)
         initViewFromNib()
     }
+    
+    deinit {
+        print("LoginView deinit")
+    }
 
     private func initViewFromNib(){
 

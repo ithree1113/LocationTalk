@@ -44,6 +44,10 @@ class SignUpView: UIView, UITextFieldDelegate {
         initViewFromNib()
     }
     
+    deinit {
+        print("SignUpView deinit")
+    }
+    
     private func initViewFromNib(){
         
         let bundle = Bundle(for: type(of: self))
@@ -69,7 +73,6 @@ class SignUpView: UIView, UITextFieldDelegate {
         
         self.delegate?.didCancelButtonPressed(email: email, password: password, username: username)
     }
-    
 }
 
 // MARK: - UITextFieldDelegate

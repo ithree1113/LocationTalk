@@ -11,15 +11,21 @@ import Firebase
 
 class LoginViewController: UIViewController, AccountProtocol, AuthenticationProtocol, LoginViewProtocol {
     
-    @IBOutlet weak var loginView: LoginView!
-    var auth: Authentication!
+    @IBOutlet weak var loginView: LoginView! {
+        didSet {
+            loginView.delegate = self
+        }
+    }
+    var auth: Authentication! {
+        didSet {
+            auth.delagate = self
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        loginView.delegate = self
         auth = Authentication.init()
-        auth.delagate = self
         
         if let user = FIRAuth.auth()?.currentUser {
             auth.signIn(user, segue: Constants.Segue.loginToMain)
