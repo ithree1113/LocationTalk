@@ -9,28 +9,21 @@
 import UIKit
 import Firebase
 
-class LoginViewController: UIViewController, AccountProtocol, AuthenticationProtocol {
+class LoginViewController: UIViewController, AccountProtocol, AuthenticationProtocol, LoginViewProtocol {
     
-    @IBOutlet weak var passwordField: UITextField!
-    @IBOutlet weak var emailField: UITextField!
-    
+    @IBOutlet weak var loginView: LoginView!
     var auth: Authentication!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        do {
-//            try FIRAuth.auth()?.signOut()
-//            let myState = MyState.sharedInstance
-//            myState.signedIn = false
-//        } catch  {
-//            print("Error signing out: \(error.localizedDescription)")
-//        }
+        // Do any additional setup after loading the view.
+        loginView.delegate = self
         auth = Authentication.init()
         auth.delagate = self
+        
         if let user = FIRAuth.auth()?.currentUser {
-            auth.signIn(user, segue: Constants.Segue.userLogin)
+            auth.signIn(user, segue: Constants.Segue.loginToMain)
         }
-        // Do any additional setup after loading the view.
     }
     
     override func didReceiveMemoryWarning() {
@@ -42,29 +35,10 @@ class LoginViewController: UIViewController, AccountProtocol, AuthenticationProt
         print("LoginViewController deinit")
     }
     
-    @IBAction func pressLogin(_ sender: UIButton) {
-        if let email = emailField.text, let password = passwordField.text {
-            if (email != "" && password != "") {
-                auth.login(email: email, password: password)
-            }
-        } else {
-            auth.inputErrorAlert()
-        }
-    }
-    
     @IBAction func unwindToLogin(segue: UIStoryboardSegue) {
         
     }
-    
-    // MARK: - AuthenticationProtocol
-    func loginSuccess(_ user: FIRUser!) {
-        auth.signIn(user, segue: Constants.Segue.userLogin)
-    }
-    
-    func loginFail(_ error: Error) {
-        self.errorAlert(title: Constants.ErrorAlert.alertTitle, message: error.localizedDescription, onViewController: self)
-    }
-    
+
     /*
     // MARK: - Navigation
 
@@ -74,5 +48,34 @@ class LoginViewController: UIViewController, AccountProtocol, AuthenticationProt
         // Pass the selected object to the new view controller.
     }
     */
+}
 
+// MARK: - LoginViewProtocol
+extension LoginViewController {
+
+    func didLoginButtonPressed(email: String?, password: String?) {
+        if let email = email, let password = password {
+            if (email != "" && password != "") {
+                auth.login(email: email, password: password)
+                
+            } else {
+                auth.inputErrorAlert()
+            }
+        }
+    }
+    
+    func didSignUpButtonPressed(email: String?, password: String?) {
+        performSegue(withIdentifier: Constants.Segue.loginToSignUp, sender: nil)
+    }
+}
+
+// MARK: - AuthenticationProtocol
+extension LoginViewController {
+    func loginSuccess(_ user: FIRUser!) {
+        auth.signIn(user, segue: Constants.Segue.loginToMain)
+    }
+    
+    func loginFail(_ error: Error) {
+        self.errorAlert(title: Constants.ErrorAlert.alertTitle, message: error.localizedDescription, onViewController: self)
+    }
 }

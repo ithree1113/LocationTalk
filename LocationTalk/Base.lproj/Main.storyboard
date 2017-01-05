@@ -230,43 +230,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WoG-VV-aeb">
-                                <rect key="frame" x="16" y="522" width="343" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nkb-fa-h3G">
-                                <rect key="frame" x="38" y="597" width="132" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Create Account"/>
-                                <connections>
-                                    <segue destination="msX-8b-dIh" kind="presentation" identifier="loginToCreate" modalTransitionStyle="coverVertical" id="ikK-xH-mg1"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Zq-rB-hDy">
-                                <rect key="frame" x="254" y="597" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Login"/>
-                                <connections>
-                                    <action selector="pressLogin:" destination="ZWg-cW-rKN" eventType="touchUpInside" id="ORO-Qv-jG2"/>
-                                </connections>
-                            </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1fv-x8-xNq">
-                                <rect key="frame" x="16" y="451" width="343" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mXb-hy-yh1" customClass="LoginView" customModule="LocationTalk" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="0.40784313729999999" blue="0.3411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
-                        <outlet property="emailField" destination="1fv-x8-xNq" id="n2k-1q-kcR"/>
-                        <outlet property="passwordField" destination="WoG-VV-aeb" id="nLf-Pk-PkH"/>
-                        <segue destination="3JS-f9-IoW" kind="show" identifier="userLogin" id="9ve-cG-BF0"/>
+                        <outlet property="loginView" destination="mXb-hy-yh1" id="nR8-4A-bva"/>
+                        <segue destination="3JS-f9-IoW" kind="show" identifier="loginToMain" id="9ve-cG-BF0"/>
+                        <segue destination="msX-8b-dIh" kind="presentation" identifier="loginToSignUp" id="eK4-Jx-aGj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d8d-6T-mYF" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -329,7 +303,7 @@
                         <outlet property="emailField" destination="CQO-Dm-h0o" id="lNM-8U-BXo"/>
                         <outlet property="passwordField" destination="dOv-NP-5lK" id="047-TW-T7d"/>
                         <outlet property="usernameField" destination="88p-eM-Wbh" id="16w-Q4-Rni"/>
-                        <segue destination="3JS-f9-IoW" kind="show" identifier="newUserLogin" id="czh-7P-AVv"/>
+                        <segue destination="3JS-f9-IoW" kind="show" identifier="signupToMain" id="czh-7P-AVv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Swg-m3-TBv" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -376,6 +350,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="9ve-cG-BF0"/>
+        <segue reference="czh-7P-AVv"/>
     </inferredMetricsTieBreakers>
 </document>

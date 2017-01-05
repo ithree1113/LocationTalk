@@ -13,7 +13,6 @@
             <connections>
                 <outlet property="contentView" destination="iN0-l3-epB" id="tla-sp-OAv"/>
                 <outlet property="emailInput" destination="fW1-0Y-6ci" id="qVs-mk-Ols"/>
-                <outlet property="loginButton" destination="x7k-7f-g0R" id="5Lk-cy-fmm"/>
                 <outlet property="passwordInput" destination="PUb-p1-TW8" id="IV6-vZ-JlF"/>
             </connections>
         </placeholder>
@@ -48,6 +47,9 @@
                                 <color key="titleColor" red="0.33333333329999998" green="0.33333333329999998" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
+                            <connections>
+                                <action selector="loginButtonPressed:" destination="-1" eventType="touchUpInside" id="dYg-5s-JR8"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="piX-F9-GPD">
                             <rect key="frame" x="103" y="259" width="65" height="33"/>
@@ -57,6 +59,9 @@
                                 <color key="titleColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="titleShadowColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
+                            <connections>
+                                <action selector="signupButtonPressed:" destination="-1" eventType="touchUpInside" id="FIo-cZ-ccN"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="0.59779002568493156" colorSpace="calibratedWhite"/>

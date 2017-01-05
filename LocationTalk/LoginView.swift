@@ -10,10 +10,7 @@ import UIKit
 
 protocol LoginViewProtocol: class {
     func didLoginButtonPressed(email: String?, password: String?)
-}
-
-fileprivate extension Selector {
-    static let loginButtonPressed = #selector(LoginView.loginButtonPressed)
+    func didSignUpButtonPressed(email: String?, password: String?)
 }
 
 @IBDesignable
@@ -22,20 +19,9 @@ class LoginView: UIView {
     @IBOutlet var contentView: UIView!
     @IBOutlet weak var emailInput: UITextField!
     @IBOutlet weak var passwordInput: UITextField!
-    @IBOutlet weak var loginButton: UIButton! {
-        didSet {
-            loginButton.addTarget(self, action:.loginButtonPressed, for: .touchUpInside)
-        }
-    }
+
     weak var delegate: LoginViewProtocol?
     
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-    }
-    */
     override init(frame: CGRect) {
         super.init(frame: frame)
         initViewFromNib()
@@ -45,7 +31,7 @@ class LoginView: UIView {
         super.init(coder: aDecoder)
         initViewFromNib()
     }
-    
+
     private func initViewFromNib(){
 
         let bundle = Bundle(for: type(of: self))
@@ -55,10 +41,17 @@ class LoginView: UIView {
         self.addSubview(contentView)
     }
     
-    @objc fileprivate func loginButtonPressed() {
+    // MARK: - @IBAction
+    @IBAction fileprivate func loginButtonPressed(_ sender: UIButton) {
         let email = self.emailInput.text
         let password = self.passwordInput.text
-        
         self.delegate?.didLoginButtonPressed(email: email, password: password)
     }
+    
+    @IBAction fileprivate func signupButtonPressed(_ sender: UIButton) {
+        let email = self.emailInput.text
+        let password = self.passwordInput.text
+        self.delegate?.didSignUpButtonPressed(email: email, password: password)
+    }
+    
 }
