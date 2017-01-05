@@ -10,8 +10,7 @@ import Foundation
 import Firebase
 
 protocol AddFriendDelegate: class {
-    func didSearchFriend(email: String, username: String)
-    func notSearchFriend()
+    func didSearchFriend(email: String?, username: String?)
     func didCheckThisEmail(result: FriendState)
 }
 
@@ -31,9 +30,9 @@ class AddFriend: AccountProtocol {
             guard let strongSelf = self else {return}
             if (snapshot.exists()) {
                 let userInfo = snapshot.value as! Dictionary<String, Any>
-                strongSelf.delagate?.didSearchFriend(email: (userInfo[Constants.FirebaseKey.email] as? String)!, username: (userInfo[Constants.FirebaseKey.username] as? String)!)
+                strongSelf.delagate?.didSearchFriend(email: userInfo[Constants.FirebaseKey.email] as? String, username: userInfo[Constants.FirebaseKey.username] as? String)
             } else {
-                strongSelf.delagate?.notSearchFriend()
+                strongSelf.delagate?.didSearchFriend(email: nil, username: nil)
             }
             strongSelf.ref.child(friendNode).removeObserver(withHandle: strongSelf._refHandle)
         })
@@ -113,10 +112,7 @@ class AddFriend: AccountProtocol {
 }
 
 extension AddFriendDelegate {
-    func didSearchFriend(email: String, username: String) {
-        
-    }
-    func notSearchFriend() {
+    func didSearchFriend(email: String?, username: String?) {
         
     }
     func didCheckThisEmail(result: FriendState) {

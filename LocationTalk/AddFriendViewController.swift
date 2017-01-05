@@ -27,6 +27,8 @@ class AddFriendViewController: UIViewController, UITextFieldDelegate, AccountPro
         emailSearchText.delegate = self
         addFriend = AddFriend.init()
         addFriend.delagate = self
+        
+        self.addFriendButton.isHidden = true
     }
     
     override func didReceiveMemoryWarning() {
@@ -71,16 +73,16 @@ extension AddFriendViewController {
 //MARK:- AddFriendDelegate
 extension AddFriendViewController {
     
-    func didSearchFriend(email: String, username: String) {
-        self.resultNameLabel.text = username
-        self.resultEmailLabel.text = email
-        self.addFriendButton.isHidden = false
-    }
-    
-    func notSearchFriend() {
-        self.resultEmailLabel.text = "Not Found"
-        self.resultNameLabel.text = "Not Found"
-        self.addFriendButton.isHidden = true
+    func didSearchFriend(email: String?, username: String?) {
+        if let email = email, let username = username {
+            self.resultNameLabel.text = username
+            self.resultEmailLabel.text = email
+            self.addFriendButton.isHidden = false
+        } else {
+            self.resultEmailLabel.text = "Not Found"
+            self.resultNameLabel.text = "Not Found"
+            self.addFriendButton.isHidden = true
+        }
     }
     
     func didCheckThisEmail(result: FriendState) {
