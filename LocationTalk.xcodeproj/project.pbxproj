@@ -11,7 +11,7 @@
 		2C4AED341E126A4200FCE88F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4AED331E126A4200FCE88F /* Constants.swift */; };
 		2C4AED371E126A7400FCE88F /* AccountProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4AED361E126A7400FCE88F /* AccountProtocol.swift */; };
 		2C4AED391E126AAC00FCE88F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4AED381E126AAC00FCE88F /* LoginViewController.swift */; };
-		2C4AED3B1E126AD800FCE88F /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4AED3A1E126AD800FCE88F /* CreateAccountViewController.swift */; };
+		2C4AED3B1E126AD800FCE88F /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4AED3A1E126AD800FCE88F /* SignUpViewController.swift */; };
 		2C4AED3F1E126EA000FCE88F /* FriendListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4AED3E1E126EA000FCE88F /* FriendListViewController.swift */; };
 		2C4AED411E126EC700FCE88F /* AddFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4AED401E126EC700FCE88F /* AddFriendViewController.swift */; };
 		2C4B35DF1E14FFBE007C4C30 /* FriendInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4B35DE1E14FFBE007C4C30 /* FriendInfo.swift */; };
@@ -21,6 +21,8 @@
 		2CB942401E1CD79F0022A463 /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB9423F1E1CD79F0022A463 /* Authentication.swift */; };
 		2CB9424B1E1D576D0022A463 /* LoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CB9424A1E1D576D0022A463 /* LoginView.xib */; };
 		2CB9424D1E1D5EA80022A463 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB9424C1E1D5EA80022A463 /* LoginView.swift */; };
+		2CDD47901E1E4C8F00728B8C /* SignUpView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CDD478F1E1E4C8F00728B8C /* SignUpView.xib */; };
+		2CDD47921E1E504500728B8C /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDD47911E1E504500728B8C /* SignUpView.swift */; };
 		2CDF48611E1260FE002DD580 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDF48601E1260FE002DD580 /* AppDelegate.swift */; };
 		2CDF48661E1260FE002DD580 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CDF48641E1260FE002DD580 /* Main.storyboard */; };
 		2CDF48691E1260FE002DD580 /* LocationTalk.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2CDF48671E1260FE002DD580 /* LocationTalk.xcdatamodeld */; };
@@ -48,7 +50,7 @@
 		2C4AED331E126A4200FCE88F /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		2C4AED361E126A7400FCE88F /* AccountProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountProtocol.swift; sourceTree = "<group>"; };
 		2C4AED381E126AAC00FCE88F /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		2C4AED3A1E126AD800FCE88F /* CreateAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
+		2C4AED3A1E126AD800FCE88F /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		2C4AED3E1E126EA000FCE88F /* FriendListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendListViewController.swift; sourceTree = "<group>"; };
 		2C4AED401E126EC700FCE88F /* AddFriendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddFriendViewController.swift; sourceTree = "<group>"; };
 		2C4B35DE1E14FFBE007C4C30 /* FriendInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendInfo.swift; sourceTree = "<group>"; };
@@ -58,6 +60,8 @@
 		2CB9423F1E1CD79F0022A463 /* Authentication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Authentication.swift; sourceTree = "<group>"; };
 		2CB9424A1E1D576D0022A463 /* LoginView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginView.xib; sourceTree = "<group>"; };
 		2CB9424C1E1D5EA80022A463 /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		2CDD478F1E1E4C8F00728B8C /* SignUpView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignUpView.xib; sourceTree = "<group>"; };
+		2CDD47911E1E504500728B8C /* SignUpView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		2CDF485D1E1260FE002DD580 /* LocationTalk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LocationTalk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CDF48601E1260FE002DD580 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2CDF48651E1260FE002DD580 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -117,7 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				2C4AED381E126AAC00FCE88F /* LoginViewController.swift */,
-				2C4AED3A1E126AD800FCE88F /* CreateAccountViewController.swift */,
+				2C4AED3A1E126AD800FCE88F /* SignUpViewController.swift */,
 				2C4AED3E1E126EA000FCE88F /* FriendListViewController.swift */,
 				2C4AED401E126EC700FCE88F /* AddFriendViewController.swift */,
 				2CEA506A1E1BA02B0064E553 /* InvitationViewController.swift */,
@@ -148,6 +152,8 @@
 			children = (
 				2CB9424A1E1D576D0022A463 /* LoginView.xib */,
 				2CB9424C1E1D5EA80022A463 /* LoginView.swift */,
+				2CDD478F1E1E4C8F00728B8C /* SignUpView.xib */,
+				2CDD47911E1E504500728B8C /* SignUpView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -303,6 +309,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CDD47901E1E4C8F00728B8C /* SignUpView.xib in Resources */,
 				2CDF486E1E1260FE002DD580 /* LaunchScreen.storyboard in Resources */,
 				2CDF48841E12617A002DD580 /* GoogleService-Info.plist in Resources */,
 				2CDF486B1E1260FE002DD580 /* Assets.xcassets in Resources */,
@@ -418,7 +425,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2C4AED3B1E126AD800FCE88F /* CreateAccountViewController.swift in Sources */,
+				2C4AED3B1E126AD800FCE88F /* SignUpViewController.swift in Sources */,
 				2CEA506B1E1BA02B0064E553 /* InvitationViewController.swift in Sources */,
 				2C4AED391E126AAC00FCE88F /* LoginViewController.swift in Sources */,
 				2CB9424D1E1D5EA80022A463 /* LoginView.swift in Sources */,
@@ -430,6 +437,7 @@
 				2C4AED3F1E126EA000FCE88F /* FriendListViewController.swift in Sources */,
 				2CDF48691E1260FE002DD580 /* LocationTalk.xcdatamodeld in Sources */,
 				2C4AED371E126A7400FCE88F /* AccountProtocol.swift in Sources */,
+				2CDD47921E1E504500728B8C /* SignUpView.swift in Sources */,
 				2C4B35E41E154422007C4C30 /* FriendList.swift in Sources */,
 				2C4AED341E126A4200FCE88F /* Constants.swift in Sources */,
 				2C4B35DF1E14FFBE007C4C30 /* FriendInfo.swift in Sources */,
@@ -497,6 +505,8 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				DEBUG_ACTIVITY_MODE = "";
+				"DEBUG_ACTIVITY_MODE[sdk=iphonesimulator*]" = disable;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -546,6 +556,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				DEBUG_ACTIVITY_MODE = "";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;

@@ -247,10 +247,10 @@
             </objects>
             <point key="canvasLocation" x="-791.20000000000005" y="4.9475262368815596"/>
         </scene>
-        <!--Create Account View Controller-->
+        <!--Sign Up View Controller-->
         <scene sceneID="t1G-9B-9wO">
             <objects>
-                <viewController id="msX-8b-dIh" customClass="CreateAccountViewController" customModule="LocationTalk" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="msX-8b-dIh" customClass="SignUpViewController" customModule="LocationTalk" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="gmQ-v8-ds4"/>
                         <viewControllerLayoutGuide type="bottom" id="BU9-Mu-M1b"/>
@@ -259,55 +259,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cLx-Y8-aLM">
-                                <rect key="frame" x="70" y="277" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Create"/>
-                                <connections>
-                                    <action selector="pressCreateAccount:" destination="msX-8b-dIh" eventType="touchUpInside" id="KyB-wo-Aip"/>
-                                </connections>
-                            </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dOv-NP-5lK">
-                                <rect key="frame" x="16" y="200" width="343" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CQO-Dm-h0o">
-                                <rect key="frame" x="16" y="150" width="343" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="88p-eM-Wbh">
-                                <rect key="frame" x="16" y="100" width="343" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zz5-WP-cfw">
-                                <rect key="frame" x="245" y="277" width="54" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Cancel"/>
-                                <connections>
-                                    <segue destination="bZG-rL-0OV" kind="unwind" unwindAction="unwindToLoginWithSegue:" id="7WJ-PJ-ezZ"/>
-                                </connections>
-                            </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="r26-YV-2Xf" customClass="SignUpView" customModule="LocationTalk" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.27450980392156865" green="0.74509803921568629" blue="0.90588235294117647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
-                        <outlet property="emailField" destination="CQO-Dm-h0o" id="lNM-8U-BXo"/>
-                        <outlet property="passwordField" destination="dOv-NP-5lK" id="047-TW-T7d"/>
-                        <outlet property="usernameField" destination="88p-eM-Wbh" id="16w-Q4-Rni"/>
+                        <outlet property="signupView" destination="r26-YV-2Xf" id="sPj-Ep-81W"/>
                         <segue destination="3JS-f9-IoW" kind="show" identifier="signupToMain" id="czh-7P-AVv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Swg-m3-TBv" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="bZG-rL-0OV" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-791.20000000000005" y="704.79760119940033"/>
         </scene>

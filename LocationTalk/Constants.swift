@@ -9,10 +9,12 @@ import Foundation
 
 struct Constants {
     struct Segue {
-        static let userLogin = "userLogin"
-        static let newUserLogin = "newUserLogin"
+        static let loginToMain = "loginToMain"
+        static let signupToMain = "signupToMain"
+        static let loginToSignUp = "loginToSignUp"
         static let listToAdd = "listToAdd"
         static let listToAccept = "listToAccept"
+        static let listToMessage = "listToMessage"
     }
     
     struct FirebaseKey {
@@ -22,15 +24,9 @@ struct Constants {
         static let state = "state"
     }
     
-//    struct FriendState {
-//        static let friends = "0"
-//        static let invite = "1"
-//        static let beInvited = "2"
-//    }
-    
     struct ErrorAlert {
         static let alertTitle = "Oops!"
-        static let loginMissingMessage = "Don't forget to enter your email, password, and a username."
+        static let loginMissingMessage = "Don't forget to enter your email, password, or a username."
     }
     
     struct Cell {
