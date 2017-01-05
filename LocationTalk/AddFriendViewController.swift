@@ -21,8 +21,6 @@ class AddFriendViewController: UIViewController, UITextFieldDelegate, AccountPro
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
 
         emailSearchText.delegate = self
         addFriend = AddFriend.init()

@@ -16,7 +16,7 @@ class LoginViewController: UIViewController, AccountProtocol, AuthenticationProt
             loginView.delegate = self
         }
     }
-    var auth: Authentication! {
+    var auth: Authentication! = Authentication.init() {
         didSet {
             auth.delagate = self
         }
@@ -24,9 +24,7 @@ class LoginViewController: UIViewController, AccountProtocol, AuthenticationProt
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        auth = Authentication.init()
-        
+
         if let user = FIRAuth.auth()?.currentUser {
             auth.signIn(user, segue: Constants.Segue.loginToMain)
         }
@@ -43,17 +41,14 @@ class LoginViewController: UIViewController, AccountProtocol, AuthenticationProt
     
     @IBAction func unwindToLogin(segue: UIStoryboardSegue) {        
     }
-
 }
 
 // MARK: - LoginViewProtocol
 extension LoginViewController {
-
     func didLoginButtonPressed(email: String?, password: String?) {
         if let email = email, let password = password {
             if (email != "" && password != "") {
                 auth.login(email: email, password: password)
-                
             } else {
                 auth.inputErrorAlert()
             }

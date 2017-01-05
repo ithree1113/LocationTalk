@@ -31,7 +31,6 @@ class SignUpView: UIView, UITextFieldDelegate {
             usernameInput.delegate = self
         }
     }
-    
     weak var delegate: SignUpViewProtocol?
     
     override init(frame: CGRect) {

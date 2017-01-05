@@ -27,7 +27,6 @@ class LoginView: UIView, UITextFieldDelegate {
             passwordInput.delegate = self
         }
     }
-
     weak var delegate: LoginViewProtocol?
     
     override init(frame: CGRect) {

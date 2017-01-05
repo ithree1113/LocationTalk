@@ -11,21 +11,23 @@ import Firebase
 
 class FriendListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, FriendListDelegate {
     
-    @IBOutlet weak var friendListTable: UITableView!
-
+    @IBOutlet weak var friendListTable: UITableView! {
+        didSet {
+            friendListTable.dataSource = self
+            friendListTable.delegate = self
+        }
+    }
+    var list: FriendList! = FriendList.init() {
+        didSet {
+            list.delagate = self
+        }
+    }
     var friendArray: [FriendInfo] = []
     var beIvitedArray: [FriendInfo] = []
-    
-    var list: FriendList!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-        friendListTable.dataSource = self
-        friendListTable.delegate = self
-        list = FriendList.init()
-        list.delagate = self
         list.getFriendList()
     }
     
@@ -39,7 +41,6 @@ class FriendListViewController: UIViewController, UITableViewDataSource, UITable
     }
     
     // MARK: - Navigation
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.

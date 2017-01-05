@@ -10,15 +10,17 @@ import UIKit
 
 class InvitationViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
-    @IBOutlet weak var invitationTable: UITableView!
+    @IBOutlet weak var invitationTable: UITableView! {
+        didSet {
+            self.invitationTable.dataSource = self
+            self.invitationTable.delegate = self
+        }
+    }
     var beIvitedArray: [FriendInfo] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-        self.invitationTable.dataSource = self
-        self.invitationTable.delegate = self
     }
 
     override func didReceiveMemoryWarning() {

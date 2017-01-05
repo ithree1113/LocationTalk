@@ -16,7 +16,7 @@ class SignUpViewController: UIViewController, AccountProtocol, AuthenticationPro
             signupView.delegate = self
         }
     }
-    var auth: Authentication! {
+    var auth: Authentication! = Authentication.init() {
         didSet {
            auth.delagate = self 
         }
@@ -24,9 +24,7 @@ class SignUpViewController: UIViewController, AccountProtocol, AuthenticationPro
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
-        auth = Authentication.init()
+
     }
     
     override func didReceiveMemoryWarning() {
@@ -58,7 +56,6 @@ extension SignUpViewController {
 
 // MARK: - AuthenticationProtocol
 extension SignUpViewController {
-
     func didSignup(user: FIRUser?, error: Error?) {
         if let error = error {
             self.errorAlert(title: Constants.ErrorAlert.alertTitle, message: error.localizedDescription, onViewController: self)
