@@ -17,7 +17,7 @@ class FriendListViewController: UIViewController, UITableViewDataSource, UITable
             friendListTable.delegate = self
         }
     }
-    var list: FriendList! = FriendList.init() {
+    var list: FriendList! {
         didSet {
             list.delagate = self
         }
@@ -28,6 +28,7 @@ class FriendListViewController: UIViewController, UITableViewDataSource, UITable
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        list = FriendList.init() 
         list.getFriendList()
     }
     

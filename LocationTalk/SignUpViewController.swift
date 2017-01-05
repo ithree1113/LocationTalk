@@ -16,7 +16,7 @@ class SignUpViewController: UIViewController, AccountProtocol, AuthenticationPro
             signupView.delegate = self
         }
     }
-    var auth: Authentication! = Authentication.init() {
+    var auth: Authentication! {
         didSet {
            auth.delagate = self 
         }
@@ -24,7 +24,7 @@ class SignUpViewController: UIViewController, AccountProtocol, AuthenticationPro
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        auth = Authentication.init() 
     }
     
     override func didReceiveMemoryWarning() {
