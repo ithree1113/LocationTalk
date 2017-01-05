@@ -9,10 +9,8 @@
 import Foundation
 import Firebase
 protocol AuthenticationProtocol: class {
-    func loginSuccess(_ user: FIRUser!)
-    func loginFail(_ error: Error)
-    func signupSuccess(_ user: FIRUser!)
-    func signupFail(_ error: Error)
+    func didLogin(user: FIRUser?, error: Error?)
+    func didSignup(user: FIRUser?, error: Error?)
 }
 
 
@@ -32,11 +30,7 @@ class Authentication: AccountProtocol {
     func login(email: String, password: String) {
         FIRAuth.auth()?.signIn(withEmail: email, password: password, completion: { [weak self] (user, error) in
             guard let strongSelf = self else {return}
-            if let error = error {
-                strongSelf.delagate?.loginFail(error)
-                return
-            }
-            strongSelf.delagate?.loginSuccess(user)
+            strongSelf.delagate?.didLogin(user: user, error: error)
         })
     }
     
@@ -44,14 +38,14 @@ class Authentication: AccountProtocol {
         FIRAuth.auth()?.createUser(withEmail: email, password: password, completion: { [weak self] (user, error) in
             guard let strongSelf = self else {return}
             if let error = error {
-                strongSelf.delagate?.signupFail(error)
+                strongSelf.delagate?.didSignup(user: user, error: error)
                 return
             }
             strongSelf.setDisplayName(user!, displayname: username)
             let userInfo = [Constants.FirebaseKey.email: email, Constants.FirebaseKey.password: password, Constants.FirebaseKey.username: username]
             let node = strongSelf.emailToNode(email)
             strongSelf.ref.child(node).setValue(userInfo)
-            strongSelf.delagate?.signupSuccess(user)
+            strongSelf.delagate?.didSignup(user: user, error: error)
         })
     }
     
@@ -92,12 +86,8 @@ class Authentication: AccountProtocol {
 }
 
 extension AuthenticationProtocol {
-    func loginSuccess(_ user: FIRUser!) {
+    func didLogin(user: FIRUser?, error: Error?) {
     }
-    func loginFail(_ error: Error) {
-    }
-    func signupSuccess(_ user: FIRUser!) {
-    }
-    func signupFail(_ error: Error) {
+    func didSignup(user: FIRUser?, error: Error?) {
     }
 }

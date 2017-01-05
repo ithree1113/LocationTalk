@@ -61,11 +61,11 @@ extension LoginViewController {
 
 // MARK: - AuthenticationProtocol
 extension LoginViewController {
-    func loginSuccess(_ user: FIRUser!) {
-        auth.signIn(user, segue: Constants.Segue.loginToMain)
-    }
-    
-    func loginFail(_ error: Error) {
-        self.errorAlert(title: Constants.ErrorAlert.alertTitle, message: error.localizedDescription, onViewController: self)
+    func didLogin(user: FIRUser?, error: Error?) {
+        if let error = error {
+            self.errorAlert(title: Constants.ErrorAlert.alertTitle, message: error.localizedDescription, onViewController: self)
+        } else {
+            auth.signIn(user, segue: Constants.Segue.loginToMain)
+        }
     }
 }

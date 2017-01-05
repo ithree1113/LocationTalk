@@ -53,11 +53,12 @@ extension SignUpViewController {
 
 // MARK: - AuthenticationProtocol
 extension SignUpViewController {
-    func signupSuccess(_ user: FIRUser!) {
-        auth.signIn(user, segue: Constants.Segue.signupToMain)
-    }
-    
-    func signupFail(_ error: Error) {
-        self.errorAlert(title: Constants.ErrorAlert.alertTitle, message: error.localizedDescription, onViewController: self)
+
+    func didSignup(user: FIRUser?, error: Error?) {
+        if let error = error {
+            self.errorAlert(title: Constants.ErrorAlert.alertTitle, message: error.localizedDescription, onViewController: self)
+        } else {
+           auth.signIn(user, segue: Constants.Segue.signupToMain)
+        }
     }
 }
