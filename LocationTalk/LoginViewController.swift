@@ -35,19 +35,9 @@ class LoginViewController: UIViewController, AccountProtocol, AuthenticationProt
         print("LoginViewController deinit")
     }
     
-    @IBAction func unwindToLogin(segue: UIStoryboardSegue) {
-        
+    @IBAction func unwindToLogin(segue: UIStoryboardSegue) {        
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 }
 
 // MARK: - LoginViewProtocol

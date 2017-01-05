@@ -38,23 +38,12 @@ class AddFriendViewController: UIViewController, UITextFieldDelegate, AccountPro
         print("AddFriendViewController deinit")
     }
     
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        
-        if let searchTarget = emailSearchText.text {
-            addFriend.searchFriends(searchTarget)
-            friendNode = self.emailToNode(searchTarget)
-        }
-    
-        return true
-    }
-    
     @IBAction func pressDoneButton(_ sender: Any) {
         self.presentingViewController?.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func pressAddFriend(_ sender: Any) {
         addFriend.check(resultEmailLabel.text!)
-        
     }
 
     @IBAction func signOut(_ sender: Any) {
@@ -66,8 +55,22 @@ class AddFriendViewController: UIViewController, UITextFieldDelegate, AccountPro
             print("Error signing out: \(error.localizedDescription)")
         }
     }
+}
+
+// MARK: - UITextFieldDelegate
+extension AddFriendViewController {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if let searchTarget = emailSearchText.text {
+            addFriend.searchFriends(searchTarget)
+            friendNode = self.emailToNode(searchTarget)
+        }
+        return true
+    }
+}
+
+//MARK:- AddFriendDelegate
+extension AddFriendViewController {
     
-    //MARK:- AddFriendDelegate
     func didSearchFriend(email: String, username: String) {
         self.resultNameLabel.text = username
         self.resultEmailLabel.text = email
@@ -87,15 +90,4 @@ class AddFriendViewController: UIViewController, UITextFieldDelegate, AccountPro
             self.errorAlert(title: Constants.ErrorAlert.alertTitle, message: "You are already friends, or waiting to accept the invitation.", onViewController: self)
         }
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

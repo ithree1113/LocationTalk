@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class FriendListViewController: UIViewController, AccountProtocol, UITableViewDataSource, UITableViewDelegate, FriendListDelegate {
+class FriendListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, FriendListDelegate {
     
     @IBOutlet weak var friendListTable: UITableView!
 
@@ -38,18 +38,32 @@ class FriendListViewController: UIViewController, AccountProtocol, UITableViewDa
         print("FriendListViewController deinit")
     }
     
-    //MARK:- FriendListDelegate
+    // MARK: - Navigation
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+        if (segue.identifier == Constants.Segue.listToAccept) {
+            let invitationVC = segue.destination as! InvitationViewController
+            invitationVC.beIvitedArray = self.beIvitedArray
+        }
+    }
+}
+
+//MARK:- FriendListDelegate
+extension FriendListViewController {
     func didGetFriendList(friends friendArray: [FriendInfo], beInvited beIvitedArray: [FriendInfo]) {
         self.friendArray = friendArray
         self.beIvitedArray = beIvitedArray
         self.friendListTable.reloadData()
     }
-    
-    //MARK:- UITableViewDataSource
+}
+
+//MARK:- UITableViewDataSource
+extension FriendListViewController {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 2
     }
-    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
@@ -72,11 +86,13 @@ class FriendListViewController: UIViewController, AccountProtocol, UITableViewDa
         
         let friend = friendArray[indexPath.row]
         cell.textLabel?.text = friend.username
-
+        
         return cell
     }
-    
-    // MARK: - UITableViewDelegate
+}
+
+// MARK: - UITableViewDelegate
+extension FriendListViewController {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if (self.beIvitedArray.count != 0 && indexPath.row == 0) {
             performSegue(withIdentifier: Constants.Segue.listToAccept, sender: nil)
@@ -85,17 +101,4 @@ class FriendListViewController: UIViewController, AccountProtocol, UITableViewDa
         }
         tableView.deselectRow(at: indexPath, animated: true)
     }
-
-    // MARK: - Navigation
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-        if (segue.identifier == Constants.Segue.listToAccept) {
-            let invitationVC = segue.destination as! InvitationViewController
-            invitationVC.beIvitedArray = self.beIvitedArray
-        }
-        
-    }
-
 }

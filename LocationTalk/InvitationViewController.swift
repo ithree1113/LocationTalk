@@ -33,8 +33,11 @@ class InvitationViewController: UIViewController, UITableViewDataSource, UITable
     @IBAction func pressDoneButton(_ sender: Any) {
         self.presentingViewController?.dismiss(animated: true, completion: nil)
     }
+}
 
-    // MARK: - UITableViewDataSource
+// MARK: - UITableViewDataSource
+extension InvitationViewController {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.beIvitedArray.count
     }
@@ -46,9 +49,11 @@ class InvitationViewController: UIViewController, UITableViewDataSource, UITable
         
         return cell
     }
+}
+
+// MARK: - UITableViewDelegate
+extension InvitationViewController {
     
-    
-    // MARK: - UITableViewDelegate
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
@@ -74,16 +79,4 @@ class InvitationViewController: UIViewController, UITableViewDataSource, UITable
         alert.addAction(decline)
         self.present(alert, animated: true, completion: nil)
     }
-    
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
