@@ -14,11 +14,19 @@ protocol LoginViewProtocol: class {
 }
 
 @IBDesignable
-class LoginView: UIView {
+class LoginView: UIView, UITextFieldDelegate {
 
     @IBOutlet var contentView: UIView!
-    @IBOutlet weak var emailInput: UITextField!
-    @IBOutlet weak var passwordInput: UITextField!
+    @IBOutlet weak var emailInput: UITextField! {
+        didSet {
+            emailInput.delegate = self
+        }
+    }
+    @IBOutlet weak var passwordInput: UITextField! {
+        didSet {
+            passwordInput.delegate = self
+        }
+    }
 
     weak var delegate: LoginViewProtocol?
     
@@ -54,4 +62,13 @@ class LoginView: UIView {
         self.delegate?.didSignUpButtonPressed(email: email, password: password)
     }
     
+}
+
+// MARK: - UITextFieldDelegate
+extension LoginView {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        emailInput.resignFirstResponder()
+        passwordInput.resignFirstResponder()
+        return true
+    }
 }

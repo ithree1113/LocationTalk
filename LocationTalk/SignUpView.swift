@@ -13,12 +13,24 @@ protocol SignUpViewProtocol: class {
 }
 
 @IBDesignable
-class SignUpView: UIView {
+class SignUpView: UIView, UITextFieldDelegate {
 
     @IBOutlet var contentView: UIView!
-    @IBOutlet weak var emailInput: UITextField!
-    @IBOutlet weak var passwordInput: UITextField!
-    @IBOutlet weak var usernameInput: UITextField!
+    @IBOutlet weak var emailInput: UITextField! {
+        didSet {
+            emailInput.delegate = self
+        }
+    }
+    @IBOutlet weak var passwordInput: UITextField! {
+        didSet {
+            passwordInput.delegate = self
+        }
+    }
+    @IBOutlet weak var usernameInput: UITextField! {
+        didSet {
+            usernameInput.delegate = self
+        }
+    }
     
     weak var delegate: SignUpViewProtocol?
     
@@ -60,4 +72,12 @@ class SignUpView: UIView {
     
 }
 
-
+// MARK: - UITextFieldDelegate
+extension SignUpView {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        emailInput.resignFirstResponder()
+        passwordInput.resignFirstResponder()
+        usernameInput.resignFirstResponder()
+        return true
+    }
+}
