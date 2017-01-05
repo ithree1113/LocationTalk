@@ -28,20 +28,16 @@ extension AccountProtocol {
     }
     
     func emailToNode(_ email: String) -> String {
-        var range: Range<String.Index>
         var node: String = "\(email)"
         
-        while (node.contains("@")) {
-            range = node.range(of: "@")!
-            node = node.replacingCharacters(in: range, with: "")
+        if (node.contains("@")) {
+            node = node.replacingOccurrences(of: "@", with: "")
         }
         
-        while (node.contains(".")) {
-            range = node.range(of: ".")!
-            node = node.replacingCharacters(in: range, with: "")
+        if (node.contains(".")) {
+            node = node.replacingOccurrences(of: ".", with: "")
         }
-        
-        
+
         return node
     }
 }
