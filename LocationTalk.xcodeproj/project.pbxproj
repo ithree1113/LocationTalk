@@ -19,6 +19,8 @@
 		2C4B35E41E154422007C4C30 /* FriendList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4B35E31E154422007C4C30 /* FriendList.swift */; };
 		2C4B35E61E156C04007C4C30 /* AddFriend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4B35E51E156C04007C4C30 /* AddFriend.swift */; };
 		2CB942401E1CD79F0022A463 /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB9423F1E1CD79F0022A463 /* Authentication.swift */; };
+		2CB9424B1E1D576D0022A463 /* LoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CB9424A1E1D576D0022A463 /* LoginView.xib */; };
+		2CB9424D1E1D5EA80022A463 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB9424C1E1D5EA80022A463 /* LoginView.swift */; };
 		2CDF48611E1260FE002DD580 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDF48601E1260FE002DD580 /* AppDelegate.swift */; };
 		2CDF48661E1260FE002DD580 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CDF48641E1260FE002DD580 /* Main.storyboard */; };
 		2CDF48691E1260FE002DD580 /* LocationTalk.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2CDF48671E1260FE002DD580 /* LocationTalk.xcdatamodeld */; };
@@ -54,6 +56,8 @@
 		2C4B35E31E154422007C4C30 /* FriendList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendList.swift; sourceTree = "<group>"; };
 		2C4B35E51E156C04007C4C30 /* AddFriend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddFriend.swift; sourceTree = "<group>"; };
 		2CB9423F1E1CD79F0022A463 /* Authentication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Authentication.swift; sourceTree = "<group>"; };
+		2CB9424A1E1D576D0022A463 /* LoginView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginView.xib; sourceTree = "<group>"; };
+		2CB9424C1E1D5EA80022A463 /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		2CDF485D1E1260FE002DD580 /* LocationTalk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LocationTalk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CDF48601E1260FE002DD580 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2CDF48651E1260FE002DD580 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -139,6 +143,15 @@
 			name = FireBase;
 			sourceTree = "<group>";
 		};
+		2CB942411E1D537B0022A463 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2CB9424A1E1D576D0022A463 /* LoginView.xib */,
+				2CB9424C1E1D5EA80022A463 /* LoginView.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
 		2CDF48541E1260FE002DD580 = {
 			isa = PBXGroup;
 			children = (
@@ -162,6 +175,7 @@
 		2CDF485F1E1260FE002DD580 /* LocationTalk */ = {
 			isa = PBXGroup;
 			children = (
+				2CB942411E1D537B0022A463 /* View */,
 				2C4AED351E126A6500FCE88F /* Protocol */,
 				2C4B35E21E154407007C4C30 /* FireBase */,
 				2C4B35DD1E14FF9C007C4C30 /* Model */,
@@ -292,6 +306,7 @@
 				2CDF486E1E1260FE002DD580 /* LaunchScreen.storyboard in Resources */,
 				2CDF48841E12617A002DD580 /* GoogleService-Info.plist in Resources */,
 				2CDF486B1E1260FE002DD580 /* Assets.xcassets in Resources */,
+				2CB9424B1E1D576D0022A463 /* LoginView.xib in Resources */,
 				2CDF48661E1260FE002DD580 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -406,6 +421,7 @@
 				2C4AED3B1E126AD800FCE88F /* CreateAccountViewController.swift in Sources */,
 				2CEA506B1E1BA02B0064E553 /* InvitationViewController.swift in Sources */,
 				2C4AED391E126AAC00FCE88F /* LoginViewController.swift in Sources */,
+				2CB9424D1E1D5EA80022A463 /* LoginView.swift in Sources */,
 				2C4AED411E126EC700FCE88F /* AddFriendViewController.swift in Sources */,
 				2C4B35E61E156C04007C4C30 /* AddFriend.swift in Sources */,
 				2C4B35E11E1514A7007C4C30 /* MyState.swift in Sources */,

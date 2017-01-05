@@ -35,7 +35,7 @@
                                         <rect key="frame" x="0.0" y="72" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Z5s-D0-J6c" id="aPR-Eu-z9j">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -54,6 +54,7 @@
                     <connections>
                         <outlet property="friendListTable" destination="cnh-MV-dDA" id="YAL-3a-8wy"/>
                         <segue destination="rRX-nS-J4E" kind="presentation" identifier="listToAccept" id="lqc-ed-Pdw"/>
+                        <segue destination="Ugh-Nt-fvd" kind="presentation" identifier="listToMessage" id="2qR-dK-Lft"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -137,6 +138,24 @@
                 <exit id="VUs-vZ-Om1" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2741.5999999999999" y="133.5832083958021"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="9EE-Ii-HDF">
+            <objects>
+                <viewController id="Ugh-Nt-fvd" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3Gq-EU-bAM"/>
+                        <viewControllerLayoutGuide type="bottom" id="tFx-xQ-yc1"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="oFn-sX-9QM">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Y9S-KM-dkq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1905" y="861"/>
         </scene>
         <!--Invitation View Controller-->
         <scene sceneID="XQc-5p-VNX">
@@ -242,7 +261,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="0.40784313729999999" blue="0.3411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
                         <outlet property="emailField" destination="1fv-x8-xNq" id="n2k-1q-kcR"/>
@@ -304,7 +323,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.27450980392156865" green="0.74509803921568629" blue="0.90588235294117647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
                         <outlet property="emailField" destination="CQO-Dm-h0o" id="lNM-8U-BXo"/>
