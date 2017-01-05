@@ -91,6 +91,16 @@ extension FriendListViewController {
         
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if (section == 0 && beIvitedArray.count != 0) {
+            return Constants.Section.beComfired
+        }
+        if section == 1 {
+            return Constants.Section.friendList
+        }
+        return nil
+    }
 }
 
 // MARK: - UITableViewDelegate

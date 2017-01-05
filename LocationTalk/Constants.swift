@@ -33,4 +33,9 @@ struct Constants {
         static let friendList = "friend"
         static let invitation = "invitation"
     }
+    
+    struct Section {
+        static let friendList = "Friend List"
+        static let beComfired = "Waited to be comfired"
+    }
 }
