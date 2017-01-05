@@ -51,7 +51,7 @@ class FriendListViewController: UIViewController, UITableViewDataSource, UITable
     }
 }
 
-//MARK:- FriendListDelegate
+// MARK: - FriendListDelegate
 extension FriendListViewController {
     func didGetFriendList(friends friendArray: [FriendInfo], beInvited beIvitedArray: [FriendInfo]) {
         self.friendArray = friendArray
@@ -60,7 +60,7 @@ extension FriendListViewController {
     }
 }
 
-//MARK:- UITableViewDataSource
+// MARK: - UITableViewDataSource
 extension FriendListViewController {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 2

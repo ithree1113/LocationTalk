@@ -68,7 +68,7 @@ extension AddFriendViewController {
     }
 }
 
-//MARK:- AddFriendDelegate
+// MARK: - AddFriendDelegate
 extension AddFriendViewController {
     
     func didSearchFriend(email: String?, username: String?) {
