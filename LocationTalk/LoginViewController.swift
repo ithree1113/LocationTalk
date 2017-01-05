@@ -16,7 +16,7 @@ class LoginViewController: UIViewController, AccountProtocol, AuthenticationProt
             loginView.delegate = self
         }
     }
-    var auth: Authentication! = Authentication.init() {
+    var auth: Authentication! {
         didSet {
             auth.delagate = self
         }
@@ -25,6 +25,7 @@ class LoginViewController: UIViewController, AccountProtocol, AuthenticationProt
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        auth = Authentication.init()
         if let user = FIRAuth.auth()?.currentUser {
             auth.signIn(user, segue: Constants.Segue.loginToMain)
         }
