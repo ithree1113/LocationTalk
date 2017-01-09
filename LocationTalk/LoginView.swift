@@ -43,7 +43,7 @@ class LoginView: UIView, UITextFieldDelegate {
         print("LoginView deinit")
     }
 
-    private func initViewFromNib(){
+    private func initViewFromNib() {
 
         let bundle = Bundle(for: type(of: self))
         let nib = UINib(nibName: "LoginView", bundle: bundle)

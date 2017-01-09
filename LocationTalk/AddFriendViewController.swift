@@ -39,7 +39,8 @@ class AddFriendViewController: UIViewController, UITextFieldDelegate, AccountPro
     }
     
     @IBAction func pressDoneButton(_ sender: Any) {
-        self.presentingViewController?.dismiss(animated: true, completion: nil)
+//        self.presentingViewController?.dismiss(animated: true, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
     
     @IBAction func pressAddFriend(_ sender: Any) {

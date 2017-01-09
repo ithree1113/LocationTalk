@@ -47,7 +47,7 @@ class SignUpView: UIView, UITextFieldDelegate {
         print("SignUpView deinit")
     }
     
-    private func initViewFromNib(){
+    private func initViewFromNib() {
         
         let bundle = Bundle(for: type(of: self))
         let nib = UINib(nibName: "SignUpView", bundle: bundle)

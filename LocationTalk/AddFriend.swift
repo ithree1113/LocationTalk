@@ -74,11 +74,13 @@ class AddFriend: AccountProtocol {
         let myState = MyState.sharedInstance
         let myNode = self.emailToNode(myState.email!)
         
+        // On my side
         let friendInfo = FriendInfo.init(email, username: username, state: .invite)
-        ref.child("\(myNode)/friend/\(friendNode)").setValue(friendInfo.context())
+        ref.child("\(myNode)/friend/\(friendNode)").setValue(friendInfo.generateDict())
         
+        // On friend's side
         let myInfo = FriendInfo.init(myState.email!, username: myState.username!, state: .beInvited)
-        ref.child("\(friendNode)/friend/\(myNode)").setValue(myInfo.context())
+        ref.child("\(friendNode)/friend/\(myNode)").setValue(myInfo.generateDict())
         
     }
     
@@ -87,12 +89,14 @@ class AddFriend: AccountProtocol {
         let myState = MyState.sharedInstance
         let myNode = self.emailToNode(myState.email!)
         
-        var newFriendInfo = FriendInfo.init(info.context())
+        // On my side
+        var newFriendInfo = FriendInfo.init(info.generateDict())
         newFriendInfo.state = .friends
-        ref.child("\(myNode)/friend/\(friendNode)").setValue(newFriendInfo.context())
+        ref.child("\(myNode)/friend/\(friendNode)").setValue(newFriendInfo.generateDict())
 
+        // On friend's side
         let newMyInfo = FriendInfo.init(myState.email!, username: myState.username!, state: .friends)
-        ref.child("\(friendNode)/friend/\(myNode)").setValue(newMyInfo.context())
+        ref.child("\(friendNode)/friend/\(myNode)").setValue(newMyInfo.generateDict())
     }
     
     func decline(_ info: FriendInfo) {
