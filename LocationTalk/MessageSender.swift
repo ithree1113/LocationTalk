@@ -24,13 +24,13 @@ class MessageSender: AccountProtocol {
         let myNode = self.emailToNode(myState.email!)
         
         // On my side
-        ref.child("\(myNode)/send/\(friendNode)").setValue(message.generateDict())
+        ref.child("\(myNode)/send").childByAutoId().setValue(message.generateDict())
         
         // On friend's side
         var receiveMessage = Message.init(message: message.generateDict())
         receiveMessage.email = myState.email!
         receiveMessage.username = myState.username!
-        ref.child("\(friendNode)/receive").setValue(receiveMessage.generateDict())
+        ref.child("\(friendNode)/receive").childByAutoId().setValue(receiveMessage.generateDict())
     }
     
     
