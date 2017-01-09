@@ -22,6 +22,8 @@ struct Constants {
         static let username = "username"
         static let password = "password"
         static let state = "state"
+        static let time = "time"
+        static let content = "content"
     }
     
     struct ErrorAlert {

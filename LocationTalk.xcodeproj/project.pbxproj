@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		2587373A9BC996D82E0FB565 /* Pods_LocationTalk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09560E0EB15FE83AC6051FBD /* Pods_LocationTalk.framework */; };
+		2C1DDB091E22C378007C4165 /* CustomPresentAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1DDB081E22C378007C4165 /* CustomPresentAnimationController.swift */; };
+		2C1DDB0D1E23B2CF007C4165 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1DDB0C1E23B2CF007C4165 /* Message.swift */; };
+		2C1DDB0F1E23BF69007C4165 /* MessageSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1DDB0E1E23BF69007C4165 /* MessageSender.swift */; };
+		2C3D0D1F1E22295E008184B0 /* icon.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C3D0D1E1E22295E008184B0 /* icon.xcassets */; };
+		2C3D0D211E223AA5008184B0 /* SendMessageHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C3D0D201E223AA5008184B0 /* SendMessageHeaderView.xib */; };
+		2C3D0D231E224788008184B0 /* SendMessageHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3D0D221E224788008184B0 /* SendMessageHeaderView.swift */; };
 		2C4AED341E126A4200FCE88F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4AED331E126A4200FCE88F /* Constants.swift */; };
 		2C4AED371E126A7400FCE88F /* AccountProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4AED361E126A7400FCE88F /* AccountProtocol.swift */; };
 		2C4AED391E126AAC00FCE88F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4AED381E126AAC00FCE88F /* LoginViewController.swift */; };
@@ -23,6 +29,7 @@
 		2CB9424D1E1D5EA80022A463 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB9424C1E1D5EA80022A463 /* LoginView.swift */; };
 		2CDD47901E1E4C8F00728B8C /* SignUpView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CDD478F1E1E4C8F00728B8C /* SignUpView.xib */; };
 		2CDD47921E1E504500728B8C /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDD47911E1E504500728B8C /* SignUpView.swift */; };
+		2CDD47941E1E950E00728B8C /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDD47931E1E950E00728B8C /* MessageViewController.swift */; };
 		2CDF48611E1260FE002DD580 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDF48601E1260FE002DD580 /* AppDelegate.swift */; };
 		2CDF48661E1260FE002DD580 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CDF48641E1260FE002DD580 /* Main.storyboard */; };
 		2CDF48691E1260FE002DD580 /* LocationTalk.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2CDF48671E1260FE002DD580 /* LocationTalk.xcdatamodeld */; };
@@ -47,6 +54,12 @@
 /* Begin PBXFileReference section */
 		09560E0EB15FE83AC6051FBD /* Pods_LocationTalk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LocationTalk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		11540A9C0B3C9CCB3758A532 /* Pods_LocationTalkTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LocationTalkTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C1DDB081E22C378007C4165 /* CustomPresentAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPresentAnimationController.swift; sourceTree = "<group>"; };
+		2C1DDB0C1E23B2CF007C4165 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		2C1DDB0E1E23BF69007C4165 /* MessageSender.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageSender.swift; sourceTree = "<group>"; };
+		2C3D0D1E1E22295E008184B0 /* icon.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = icon.xcassets; sourceTree = "<group>"; };
+		2C3D0D201E223AA5008184B0 /* SendMessageHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SendMessageHeaderView.xib; sourceTree = "<group>"; };
+		2C3D0D221E224788008184B0 /* SendMessageHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendMessageHeaderView.swift; sourceTree = "<group>"; };
 		2C4AED331E126A4200FCE88F /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		2C4AED361E126A7400FCE88F /* AccountProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountProtocol.swift; sourceTree = "<group>"; };
 		2C4AED381E126AAC00FCE88F /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -62,6 +75,7 @@
 		2CB9424C1E1D5EA80022A463 /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		2CDD478F1E1E4C8F00728B8C /* SignUpView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignUpView.xib; sourceTree = "<group>"; };
 		2CDD47911E1E504500728B8C /* SignUpView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		2CDD47931E1E950E00728B8C /* MessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
 		2CDF485D1E1260FE002DD580 /* LocationTalk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LocationTalk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CDF48601E1260FE002DD580 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2CDF48651E1260FE002DD580 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -109,6 +123,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		2C1DDB071E22C33F007C4165 /* Animation */ = {
+			isa = PBXGroup;
+			children = (
+				2C1DDB081E22C378007C4165 /* CustomPresentAnimationController.swift */,
+			);
+			name = Animation;
+			sourceTree = "<group>";
+		};
 		2C4AED351E126A6500FCE88F /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
@@ -125,6 +147,7 @@
 				2C4AED3E1E126EA000FCE88F /* FriendListViewController.swift */,
 				2C4AED401E126EC700FCE88F /* AddFriendViewController.swift */,
 				2CEA506A1E1BA02B0064E553 /* InvitationViewController.swift */,
+				2CDD47931E1E950E00728B8C /* MessageViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -133,6 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				2C4B35DE1E14FFBE007C4C30 /* FriendInfo.swift */,
+				2C1DDB0C1E23B2CF007C4165 /* Message.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -143,6 +167,7 @@
 				2CB9423F1E1CD79F0022A463 /* Authentication.swift */,
 				2C4B35E31E154422007C4C30 /* FriendList.swift */,
 				2C4B35E51E156C04007C4C30 /* AddFriend.swift */,
+				2C1DDB0E1E23BF69007C4165 /* MessageSender.swift */,
 			);
 			name = FireBase;
 			sourceTree = "<group>";
@@ -154,6 +179,8 @@
 				2CB9424C1E1D5EA80022A463 /* LoginView.swift */,
 				2CDD478F1E1E4C8F00728B8C /* SignUpView.xib */,
 				2CDD47911E1E504500728B8C /* SignUpView.swift */,
+				2C3D0D201E223AA5008184B0 /* SendMessageHeaderView.xib */,
+				2C3D0D221E224788008184B0 /* SendMessageHeaderView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -181,12 +208,14 @@
 		2CDF485F1E1260FE002DD580 /* LocationTalk */ = {
 			isa = PBXGroup;
 			children = (
+				2C1DDB071E22C33F007C4165 /* Animation */,
 				2CB942411E1D537B0022A463 /* View */,
 				2C4AED351E126A6500FCE88F /* Protocol */,
 				2C4B35E21E154407007C4C30 /* FireBase */,
 				2C4B35DD1E14FF9C007C4C30 /* Model */,
 				2C4AED421E1273D000FCE88F /* Controller */,
 				2CDF48601E1260FE002DD580 /* AppDelegate.swift */,
+				2C3D0D1E1E22295E008184B0 /* icon.xcassets */,
 				2C4AED331E126A4200FCE88F /* Constants.swift */,
 				2C4B35E01E1514A7007C4C30 /* MyState.swift */,
 				2CDF48641E1260FE002DD580 /* Main.storyboard */,
@@ -311,8 +340,10 @@
 			files = (
 				2CDD47901E1E4C8F00728B8C /* SignUpView.xib in Resources */,
 				2CDF486E1E1260FE002DD580 /* LaunchScreen.storyboard in Resources */,
+				2C3D0D1F1E22295E008184B0 /* icon.xcassets in Resources */,
 				2CDF48841E12617A002DD580 /* GoogleService-Info.plist in Resources */,
 				2CDF486B1E1260FE002DD580 /* Assets.xcassets in Resources */,
+				2C3D0D211E223AA5008184B0 /* SendMessageHeaderView.xib in Resources */,
 				2CB9424B1E1D576D0022A463 /* LoginView.xib in Resources */,
 				2CDF48661E1260FE002DD580 /* Main.storyboard in Resources */,
 			);
@@ -430,15 +461,20 @@
 				2C4AED391E126AAC00FCE88F /* LoginViewController.swift in Sources */,
 				2CB9424D1E1D5EA80022A463 /* LoginView.swift in Sources */,
 				2C4AED411E126EC700FCE88F /* AddFriendViewController.swift in Sources */,
+				2C3D0D231E224788008184B0 /* SendMessageHeaderView.swift in Sources */,
+				2C1DDB091E22C378007C4165 /* CustomPresentAnimationController.swift in Sources */,
 				2C4B35E61E156C04007C4C30 /* AddFriend.swift in Sources */,
 				2C4B35E11E1514A7007C4C30 /* MyState.swift in Sources */,
 				2CDF48611E1260FE002DD580 /* AppDelegate.swift in Sources */,
+				2C1DDB0F1E23BF69007C4165 /* MessageSender.swift in Sources */,
 				2CB942401E1CD79F0022A463 /* Authentication.swift in Sources */,
 				2C4AED3F1E126EA000FCE88F /* FriendListViewController.swift in Sources */,
 				2CDF48691E1260FE002DD580 /* LocationTalk.xcdatamodeld in Sources */,
 				2C4AED371E126A7400FCE88F /* AccountProtocol.swift in Sources */,
 				2CDD47921E1E504500728B8C /* SignUpView.swift in Sources */,
+				2CDD47941E1E950E00728B8C /* MessageViewController.swift in Sources */,
 				2C4B35E41E154422007C4C30 /* FriendList.swift in Sources */,
+				2C1DDB0D1E23B2CF007C4165 /* Message.swift in Sources */,
 				2C4AED341E126A4200FCE88F /* Constants.swift in Sources */,
 				2C4B35DF1E14FFBE007C4C30 /* FriendInfo.swift in Sources */,
 			);
