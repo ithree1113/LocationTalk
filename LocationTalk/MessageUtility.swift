@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class MessageSender: AccountProtocol {
+class MessageUtility: AccountProtocol {
 
     let ref: FIRDatabaseReference!
     fileprivate var _refHandle: FIRDatabaseHandle!
