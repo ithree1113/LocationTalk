@@ -19,7 +19,7 @@
 		2C4AED391E126AAC00FCE88F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4AED381E126AAC00FCE88F /* LoginViewController.swift */; };
 		2C4AED3B1E126AD800FCE88F /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4AED3A1E126AD800FCE88F /* SignUpViewController.swift */; };
 		2C4AED3F1E126EA000FCE88F /* FriendListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4AED3E1E126EA000FCE88F /* FriendListViewController.swift */; };
-		2C4AED411E126EC700FCE88F /* AddFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4AED401E126EC700FCE88F /* AddFriendViewController.swift */; };
+		2C4AED411E126EC700FCE88F /* AddFriendByEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4AED401E126EC700FCE88F /* AddFriendByEmailViewController.swift */; };
 		2C4B35DF1E14FFBE007C4C30 /* FriendInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4B35DE1E14FFBE007C4C30 /* FriendInfo.swift */; };
 		2C4B35E11E1514A7007C4C30 /* MyState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4B35E01E1514A7007C4C30 /* MyState.swift */; };
 		2C4B35E41E154422007C4C30 /* FriendList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4B35E31E154422007C4C30 /* FriendList.swift */; };
@@ -37,6 +37,13 @@
 		2CDF486E1E1260FE002DD580 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CDF486C1E1260FE002DD580 /* LaunchScreen.storyboard */; };
 		2CDF48791E1260FE002DD580 /* LocationTalkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDF48781E1260FE002DD580 /* LocationTalkTests.swift */; };
 		2CDF48841E12617A002DD580 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2CDF48831E12617A002DD580 /* GoogleService-Info.plist */; };
+		2CE1D1431E28D642007F3804 /* AddFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE1D1421E28D642007F3804 /* AddFriendViewController.swift */; };
+		2CE1D1451E28DA09007F3804 /* AddFriendByQRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE1D1441E28DA09007F3804 /* AddFriendByQRViewController.swift */; };
+		2CE1D1471E28DBA6007F3804 /* MyQRcodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE1D1461E28DBA6007F3804 /* MyQRcodeViewController.swift */; };
+		2CE1D1491E28DBC9007F3804 /* QRcodeScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE1D1481E28DBC9007F3804 /* QRcodeScannerViewController.swift */; };
+		2CE1D14B1E2B64B2007F3804 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE1D14A1E2B64B2007F3804 /* LocationViewController.swift */; };
+		2CE1D1501E2B697A007F3804 /* MyPlaceServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE1D14F1E2B697A007F3804 /* MyPlaceServices.swift */; };
+		2CE1D1531E2B83ED007F3804 /* UserPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE1D1521E2B83ED007F3804 /* UserPermission.swift */; };
 		2CEA506B1E1BA02B0064E553 /* InvitationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CEA506A1E1BA02B0064E553 /* InvitationViewController.swift */; };
 		B7B524B9CBFE0F7D403B98C8 /* Pods_LocationTalkTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11540A9C0B3C9CCB3758A532 /* Pods_LocationTalkTests.framework */; };
 /* End PBXBuildFile section */
@@ -65,7 +72,7 @@
 		2C4AED381E126AAC00FCE88F /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		2C4AED3A1E126AD800FCE88F /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		2C4AED3E1E126EA000FCE88F /* FriendListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendListViewController.swift; sourceTree = "<group>"; };
-		2C4AED401E126EC700FCE88F /* AddFriendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddFriendViewController.swift; sourceTree = "<group>"; };
+		2C4AED401E126EC700FCE88F /* AddFriendByEmailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddFriendByEmailViewController.swift; sourceTree = "<group>"; };
 		2C4B35DE1E14FFBE007C4C30 /* FriendInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendInfo.swift; sourceTree = "<group>"; };
 		2C4B35E01E1514A7007C4C30 /* MyState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyState.swift; sourceTree = "<group>"; };
 		2C4B35E31E154422007C4C30 /* FriendList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendList.swift; sourceTree = "<group>"; };
@@ -87,6 +94,13 @@
 		2CDF48781E1260FE002DD580 /* LocationTalkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTalkTests.swift; sourceTree = "<group>"; };
 		2CDF487A1E1260FE002DD580 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2CDF48831E12617A002DD580 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		2CE1D1421E28D642007F3804 /* AddFriendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddFriendViewController.swift; sourceTree = "<group>"; };
+		2CE1D1441E28DA09007F3804 /* AddFriendByQRViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddFriendByQRViewController.swift; sourceTree = "<group>"; };
+		2CE1D1461E28DBA6007F3804 /* MyQRcodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyQRcodeViewController.swift; sourceTree = "<group>"; };
+		2CE1D1481E28DBC9007F3804 /* QRcodeScannerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRcodeScannerViewController.swift; sourceTree = "<group>"; };
+		2CE1D14A1E2B64B2007F3804 /* LocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
+		2CE1D14F1E2B697A007F3804 /* MyPlaceServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPlaceServices.swift; sourceTree = "<group>"; };
+		2CE1D1521E2B83ED007F3804 /* UserPermission.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserPermission.swift; sourceTree = "<group>"; };
 		2CEA506A1E1BA02B0064E553 /* InvitationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InvitationViewController.swift; sourceTree = "<group>"; };
 		6E3F199E7C9595CF6BAF78A4 /* Pods-LocationTalkTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LocationTalkTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LocationTalkTests/Pods-LocationTalkTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8693A8104F68067565DB7835 /* Pods-LocationTalkTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LocationTalkTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LocationTalkTests/Pods-LocationTalkTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -145,9 +159,14 @@
 				2C4AED381E126AAC00FCE88F /* LoginViewController.swift */,
 				2C4AED3A1E126AD800FCE88F /* SignUpViewController.swift */,
 				2C4AED3E1E126EA000FCE88F /* FriendListViewController.swift */,
-				2C4AED401E126EC700FCE88F /* AddFriendViewController.swift */,
+				2CE1D1421E28D642007F3804 /* AddFriendViewController.swift */,
+				2C4AED401E126EC700FCE88F /* AddFriendByEmailViewController.swift */,
+				2CE1D1441E28DA09007F3804 /* AddFriendByQRViewController.swift */,
+				2CE1D1461E28DBA6007F3804 /* MyQRcodeViewController.swift */,
+				2CE1D1481E28DBC9007F3804 /* QRcodeScannerViewController.swift */,
 				2CEA506A1E1BA02B0064E553 /* InvitationViewController.swift */,
 				2CDD47931E1E950E00728B8C /* MessageViewController.swift */,
+				2CE1D14A1E2B64B2007F3804 /* LocationViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -208,6 +227,8 @@
 		2CDF485F1E1260FE002DD580 /* LocationTalk */ = {
 			isa = PBXGroup;
 			children = (
+				2CE1D1511E2B83A2007F3804 /* Utility */,
+				2CE1D14C1E2B67B8007F3804 /* Google */,
 				2C1DDB071E22C33F007C4165 /* Animation */,
 				2CB942411E1D537B0022A463 /* View */,
 				2C4AED351E126A6500FCE88F /* Protocol */,
@@ -235,6 +256,22 @@
 				2CDF487A1E1260FE002DD580 /* Info.plist */,
 			);
 			path = LocationTalkTests;
+			sourceTree = "<group>";
+		};
+		2CE1D14C1E2B67B8007F3804 /* Google */ = {
+			isa = PBXGroup;
+			children = (
+				2CE1D14F1E2B697A007F3804 /* MyPlaceServices.swift */,
+			);
+			name = Google;
+			sourceTree = "<group>";
+		};
+		2CE1D1511E2B83A2007F3804 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				2CE1D1521E2B83ED007F3804 /* UserPermission.swift */,
+			);
+			name = Utility;
 			sourceTree = "<group>";
 		};
 		FD54DE1D69AC193F91628469 /* Pods */ = {
@@ -458,20 +495,27 @@
 			files = (
 				2C4AED3B1E126AD800FCE88F /* SignUpViewController.swift in Sources */,
 				2CEA506B1E1BA02B0064E553 /* InvitationViewController.swift in Sources */,
+				2CE1D1471E28DBA6007F3804 /* MyQRcodeViewController.swift in Sources */,
 				2C4AED391E126AAC00FCE88F /* LoginViewController.swift in Sources */,
 				2CB9424D1E1D5EA80022A463 /* LoginView.swift in Sources */,
-				2C4AED411E126EC700FCE88F /* AddFriendViewController.swift in Sources */,
+				2C4AED411E126EC700FCE88F /* AddFriendByEmailViewController.swift in Sources */,
+				2CE1D1531E2B83ED007F3804 /* UserPermission.swift in Sources */,
 				2C3D0D231E224788008184B0 /* SendMessageHeaderView.swift in Sources */,
+				2CE1D1501E2B697A007F3804 /* MyPlaceServices.swift in Sources */,
+				2CE1D14B1E2B64B2007F3804 /* LocationViewController.swift in Sources */,
 				2C1DDB091E22C378007C4165 /* CustomPresentAnimationController.swift in Sources */,
 				2C4B35E61E156C04007C4C30 /* AddFriend.swift in Sources */,
+				2CE1D1431E28D642007F3804 /* AddFriendViewController.swift in Sources */,
 				2C4B35E11E1514A7007C4C30 /* MyState.swift in Sources */,
 				2CDF48611E1260FE002DD580 /* AppDelegate.swift in Sources */,
 				2C1DDB0F1E23BF69007C4165 /* MessageUtility.swift in Sources */,
+				2CE1D1491E28DBC9007F3804 /* QRcodeScannerViewController.swift in Sources */,
 				2CB942401E1CD79F0022A463 /* Authentication.swift in Sources */,
 				2C4AED3F1E126EA000FCE88F /* FriendListViewController.swift in Sources */,
 				2CDF48691E1260FE002DD580 /* LocationTalk.xcdatamodeld in Sources */,
 				2C4AED371E126A7400FCE88F /* AccountProtocol.swift in Sources */,
 				2CDD47921E1E504500728B8C /* SignUpView.swift in Sources */,
+				2CE1D1451E28DA09007F3804 /* AddFriendByQRViewController.swift in Sources */,
 				2CDD47941E1E950E00728B8C /* MessageViewController.swift in Sources */,
 				2C4B35E41E154422007C4C30 /* FriendList.swift in Sources */,
 				2C1DDB0D1E23B2CF007C4165 /* Message.swift in Sources */,

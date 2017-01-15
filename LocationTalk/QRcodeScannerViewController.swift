@@ -1,5 +1,5 @@
 //
-//  AddFriendViewController.swift
+//  QRcodeScannerViewController.swift
 //  LocationTalk
 //
 //  Created by 鄭宇翔 on 2017/1/13.
@@ -8,11 +8,8 @@
 
 import UIKit
 
-class AddFriendViewController: UIViewController {
+class QRcodeScannerViewController: UIViewController {
 
-    @IBOutlet weak var byEmailView: UIView!
-    @IBOutlet weak var byQRcodeView: UIView!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -24,9 +21,6 @@ class AddFriendViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func doneButtonPressed(_ sender: UIBarButtonItem) {
-        dismiss(animated: true, completion: nil)
-    }
 
     /*
     // MARK: - Navigation
