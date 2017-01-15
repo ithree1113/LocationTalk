@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import GooglePlaces
 
-class MessageViewController: UIViewController, SendMessageHeaderViewDataSource {
+class MessageViewController: UIViewController, SendMessageHeaderViewDataSource, MyPlaceServicesProtocol, CLLocationManagerDelegate {
 
     @IBOutlet weak var headerView: SendMessageHeaderView! {
         didSet {
@@ -22,16 +23,26 @@ class MessageViewController: UIViewController, SendMessageHeaderViewDataSource {
     }
     
     var friendSelected: FriendInfo!
+    let userPermission = UserPermission()
+    var placeSelected: GMSPlace!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
+        userPermission.location()
+        
+        let myPlaceServices = MyPlaceServices.sharedInstance
+        myPlaceServices.delegate = self
+        myPlaceServices.currentPlace()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    deinit {
+        print("MessageViewController deinit")
     }
     
     @IBAction func sendButtonPressed(_ sender: UIBarButtonItem) {
@@ -62,5 +73,26 @@ class MessageViewController: UIViewController, SendMessageHeaderViewDataSource {
 extension MessageViewController {
     func userNameInTheHeader() -> String {
         return friendSelected.username
+    }
+    
+    func didLocationChangeBtnPressed() {
+        performSegue(withIdentifier: Constants.Segue.messageToLocation, sender: nil)
+    }
+}
+
+// MARK: - MyPlaceServiceProtocol
+extension MessageViewController {
+    func getCurrentPlace(place: GMSPlace?, error: Error?) {
+        if let error = error {
+            print("\(error.localizedDescription)")
+            return
+        }
+        
+        if let place = place {
+            placeSelected = place
+            DispatchQueue.main.async {
+                self.headerView.locationLabel.text = place.formattedAddress
+            }
+        }
     }
 }

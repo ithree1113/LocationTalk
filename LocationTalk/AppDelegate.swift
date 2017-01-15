@@ -9,6 +9,7 @@
 import UIKit
 import CoreData
 import Firebase
+import GooglePlaces
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        FIRApp.configure()
+        
         // Bar's background color
         UINavigationBar.appearance().barTintColor = UIColor.init(red: 45/255.0, green: 54/255.0, blue: 74/255.0, alpha: 1)
         UINavigationBar.appearance().tintColor = UIColor.white
@@ -27,6 +28,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         guard let statusBar = UIApplication.shared.value(forKeyPath: "statusBarWindow.statusBar") as? UIView else { return true}
         statusBar.backgroundColor = UIColor.init(red: 45/255.0, green: 54/255.0, blue: 74/255.0, alpha: 1)
         
+        FIRApp.configure()
+        
+        if (GMSPlacesClient.provideAPIKey(Constants.APIKey.placeAPI)) {
+            print("yes")
+        }
         return true
     }
 

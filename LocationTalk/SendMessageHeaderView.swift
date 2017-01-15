@@ -13,7 +13,7 @@ protocol SendMessageHeaderViewDataSource: class {
     func didLocationChangeBtnPressed()
 }
 
-//@IBDesignable
+@IBDesignable
 class SendMessageHeaderView: UIView {
 
     @IBOutlet var contentView: UIView!
@@ -37,7 +37,11 @@ class SendMessageHeaderView: UIView {
             timeLabel.text = formatter.string(from: timeNow)
         }
     }
-    @IBOutlet weak var locationLabel: UILabel!
+    @IBOutlet weak var locationLabel: UILabel! {
+        didSet {
+            locationLabel.text = ""
+        }
+    }
 
     weak var delegate: SendMessageHeaderViewDataSource? {
         didSet {

@@ -8,6 +8,11 @@
 import Foundation
 
 struct Constants {
+    
+    struct APIKey {
+        static let placeAPI = ""
+    }
+    
     struct Segue {
         static let loginToMain = "loginToMain"
         static let signupToMain = "signupToMain"
@@ -15,6 +20,7 @@ struct Constants {
         static let listToAdd = "listToAdd"
         static let listToAccept = "listToAccept"
         static let listToMessage = "listToMessage"
+        static let messageToLocation = "messageToLocation"
     }
     
     struct FirebaseKey {
