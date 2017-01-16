@@ -30,6 +30,9 @@ struct Constants {
         static let state = "state"
         static let time = "time"
         static let content = "content"
+        static let latitude = "latitude"
+        static let longitude = "longitude"
+        static let place = "place"
     }
     
     struct ErrorAlert {

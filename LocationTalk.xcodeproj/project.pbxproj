@@ -227,7 +227,7 @@
 		2CDF485F1E1260FE002DD580 /* LocationTalk */ = {
 			isa = PBXGroup;
 			children = (
-				2CE1D1511E2B83A2007F3804 /* Utility */,
+				2CE1D1511E2B83A2007F3804 /* Tool */,
 				2CE1D14C1E2B67B8007F3804 /* Google */,
 				2C1DDB071E22C33F007C4165 /* Animation */,
 				2CB942411E1D537B0022A463 /* View */,
@@ -266,12 +266,12 @@
 			name = Google;
 			sourceTree = "<group>";
 		};
-		2CE1D1511E2B83A2007F3804 /* Utility */ = {
+		2CE1D1511E2B83A2007F3804 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
 				2CE1D1521E2B83ED007F3804 /* UserPermission.swift */,
 			);
-			name = Utility;
+			name = Tool;
 			sourceTree = "<group>";
 		};
 		FD54DE1D69AC193F91628469 /* Pods */ = {

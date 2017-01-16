@@ -46,7 +46,10 @@ class MessageViewController: UIViewController, SendMessageHeaderViewDataSource, 
     }
     
     @IBAction func sendButtonPressed(_ sender: UIBarButtonItem) {
-        let message = Message.init(email: friendSelected.email, username: friendSelected.username, time: headerView.timeLabel.text!, content: contentTextView.text)
+        let message = Message.init(friendSelected: friendSelected,
+                                   place: placeSelected,
+                                   time: headerView.timeLabel.text!,
+                                   content: contentTextView.text)
         let messageUtility = MessageUtility.init()
         messageUtility.send(message: message)
         
