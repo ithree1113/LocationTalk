@@ -9,9 +9,8 @@ import Foundation
 
 struct Constants {
     
-    struct APIKey {
-        static let placeAPI = ""
-    }
+    static let googleApiKey = ""
+    
     
     struct Segue {
         static let loginToMain = "loginToMain"
@@ -43,6 +42,7 @@ struct Constants {
     struct Cell {
         static let friendList = "friend"
         static let invitation = "invitation"
+        static let locationResult = "locationResult"
     }
     
     struct Section {
