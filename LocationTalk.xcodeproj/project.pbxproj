@@ -11,6 +11,8 @@
 		2C1DDB091E22C378007C4165 /* CustomPresentAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1DDB081E22C378007C4165 /* CustomPresentAnimationController.swift */; };
 		2C1DDB0D1E23B2CF007C4165 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1DDB0C1E23B2CF007C4165 /* Message.swift */; };
 		2C1DDB0F1E23BF69007C4165 /* MessageUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1DDB0E1E23BF69007C4165 /* MessageUtility.swift */; };
+		2C2B56401E2CFF82003E0F0A /* LocationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C2B563F1E2CFF82003E0F0A /* LocationView.xib */; };
+		2C2B56421E2D0462003E0F0A /* LocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2B56411E2D0462003E0F0A /* LocationView.swift */; };
 		2C3D0D1F1E22295E008184B0 /* icon.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C3D0D1E1E22295E008184B0 /* icon.xcassets */; };
 		2C3D0D211E223AA5008184B0 /* SendMessageHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C3D0D201E223AA5008184B0 /* SendMessageHeaderView.xib */; };
 		2C3D0D231E224788008184B0 /* SendMessageHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3D0D221E224788008184B0 /* SendMessageHeaderView.swift */; };
@@ -64,6 +66,8 @@
 		2C1DDB081E22C378007C4165 /* CustomPresentAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPresentAnimationController.swift; sourceTree = "<group>"; };
 		2C1DDB0C1E23B2CF007C4165 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		2C1DDB0E1E23BF69007C4165 /* MessageUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageUtility.swift; sourceTree = "<group>"; };
+		2C2B563F1E2CFF82003E0F0A /* LocationView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LocationView.xib; sourceTree = "<group>"; };
+		2C2B56411E2D0462003E0F0A /* LocationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationView.swift; sourceTree = "<group>"; };
 		2C3D0D1E1E22295E008184B0 /* icon.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = icon.xcassets; sourceTree = "<group>"; };
 		2C3D0D201E223AA5008184B0 /* SendMessageHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SendMessageHeaderView.xib; sourceTree = "<group>"; };
 		2C3D0D221E224788008184B0 /* SendMessageHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendMessageHeaderView.swift; sourceTree = "<group>"; };
@@ -200,6 +204,8 @@
 				2CDD47911E1E504500728B8C /* SignUpView.swift */,
 				2C3D0D201E223AA5008184B0 /* SendMessageHeaderView.xib */,
 				2C3D0D221E224788008184B0 /* SendMessageHeaderView.swift */,
+				2C2B563F1E2CFF82003E0F0A /* LocationView.xib */,
+				2C2B56411E2D0462003E0F0A /* LocationView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -382,6 +388,7 @@
 				2CDF486B1E1260FE002DD580 /* Assets.xcassets in Resources */,
 				2C3D0D211E223AA5008184B0 /* SendMessageHeaderView.xib in Resources */,
 				2CB9424B1E1D576D0022A463 /* LoginView.xib in Resources */,
+				2C2B56401E2CFF82003E0F0A /* LocationView.xib in Resources */,
 				2CDF48661E1260FE002DD580 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -515,6 +522,7 @@
 				2CDF48691E1260FE002DD580 /* LocationTalk.xcdatamodeld in Sources */,
 				2C4AED371E126A7400FCE88F /* AccountProtocol.swift in Sources */,
 				2CDD47921E1E504500728B8C /* SignUpView.swift in Sources */,
+				2C2B56421E2D0462003E0F0A /* LocationView.swift in Sources */,
 				2CE1D1451E28DA09007F3804 /* AddFriendByQRViewController.swift in Sources */,
 				2CDD47941E1E950E00728B8C /* MessageViewController.swift in Sources */,
 				2C4B35E41E154422007C4C30 /* FriendList.swift in Sources */,
