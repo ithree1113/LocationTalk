@@ -10,6 +10,7 @@ import UIKit
 import CoreData
 import Firebase
 import GooglePlaces
+import GoogleMaps
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -30,9 +31,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         FIRApp.configure()
         
-        if (GMSPlacesClient.provideAPIKey(Constants.APIKey.placeAPI)) {
-            print("yes")
-        }
+        GMSPlacesClient.provideAPIKey(Constants.googleApiKey)
+        GMSServices.provideAPIKey(Constants.googleApiKey)
+            
         return true
     }
 

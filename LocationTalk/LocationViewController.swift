@@ -7,13 +7,32 @@
 //
 
 import UIKit
+import GooglePlaces
+protocol LocationViewControllerDelegate: class {
+    func didChangeLocation(newPlace: GMSPlace)
+}
 
-class LocationViewController: UIViewController {
 
+class LocationViewController: UIViewController, LocationViewDelegate, MyPlaceServicesDelegate {
+
+    @IBOutlet weak var locationView: LocationView! {
+        didSet {
+            locationView.delegate = self
+        }
+    }
+    
+    var placeSelected: GMSPlace!
+    
+    weak var delegate: LocationViewControllerDelegate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.locationView.placeSelected = placeSelected
     }
 
     override func didReceiveMemoryWarning() {
@@ -22,6 +41,7 @@ class LocationViewController: UIViewController {
     }
     
     @IBAction func doneButtonPressed(_ sender: UIBarButtonItem) {
+        self.delegate?.didChangeLocation(newPlace: placeSelected)
         dismiss(animated: true, completion: nil)
     }
 
@@ -35,4 +55,40 @@ class LocationViewController: UIViewController {
     }
     */
 
+}
+
+// MARK: - LocationViewDelegate
+extension LocationViewController {
+    func searchBarTextDidChange(searchText: String) {
+        let myPlaceServices = MyPlaceServices.sharedInstance
+        myPlaceServices.delegate = self
+        myPlaceServices.autocomplete(searchText: searchText)
+    }
+    
+    func locatonViewDidSelect(result: GMSAutocompletePrediction) {
+        let myPlaceServices = MyPlaceServices.sharedInstance
+        myPlaceServices.delegate = self
+        myPlaceServices.placeBy(placeID: result.placeID!)
+    }
+}
+
+// MARK: - MyPlaceServicesDelegate
+extension LocationViewController {
+    func getAutoComplete(results: [GMSAutocompletePrediction]?, error: Error?) {
+        if let error = error {
+            print("\(error.localizedDescription)")
+            return
+        }
+        self.locationView.searchResultArray = results!
+    }
+    
+    func getPlaceByPlaceID(place: GMSPlace?, error: Error?) {
+        if let error = error {
+            print("\(error.localizedDescription)")
+            return
+        }
+        
+        self.locationView.placeSelected = place
+        placeSelected = place
+    }
 }

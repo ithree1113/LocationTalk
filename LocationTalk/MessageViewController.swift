@@ -9,7 +9,7 @@
 import UIKit
 import GooglePlaces
 
-class MessageViewController: UIViewController, SendMessageHeaderViewDataSource, MyPlaceServicesProtocol, CLLocationManagerDelegate {
+class MessageViewController: UIViewController, SendMessageHeaderViewDataSource, MyPlaceServicesDelegate, CLLocationManagerDelegate, LocationViewControllerDelegate {
 
     @IBOutlet weak var headerView: SendMessageHeaderView! {
         didSet {
@@ -60,15 +60,18 @@ class MessageViewController: UIViewController, SendMessageHeaderViewDataSource, 
         dismiss(animated: true, completion: nil)
     }
 
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        if segue.identifier == Constants.Segue.messageToLocation {
+            let locationVC = segue.destination as! LocationViewController
+            locationVC.placeSelected = placeSelected
+            locationVC.delegate = self
+        }
+        
     }
-    */
 
 }
 
@@ -85,17 +88,23 @@ extension MessageViewController {
 
 // MARK: - MyPlaceServiceProtocol
 extension MessageViewController {
-    func getCurrentPlace(place: GMSPlace?, error: Error?) {
+    func get(currentPlace: GMSPlace?, error: Error?) {
         if let error = error {
             print("\(error.localizedDescription)")
             return
         }
         
-        if let place = place {
-            placeSelected = place
-            DispatchQueue.main.async {
-                self.headerView.locationLabel.text = place.formattedAddress
-            }
+        placeSelected = currentPlace
+        DispatchQueue.main.async {
+            self.headerView.locationLabel.text = currentPlace!.formattedAddress
         }
+    }
+}
+
+// MARK: - LocationViewControllerDelegate
+extension MessageViewController {
+    func didChangeLocation(newPlace: GMSPlace) {
+        placeSelected = newPlace
+        self.headerView.locationLabel.text = newPlace.formattedAddress
     }
 }
