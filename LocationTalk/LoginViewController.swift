@@ -7,27 +7,30 @@
 //
 
 import UIKit
-import Firebase
 
-class LoginViewController: UIViewController, AccountProtocol, AuthenticationProtocol, LoginViewProtocol {
+class LoginViewController: UIViewController, AccountProtocol, FirebaseAuthDelegate, LoginViewDelegate {
     
     @IBOutlet weak var loginView: LoginView! {
         didSet {
             loginView.delegate = self
         }
     }
-    var auth: Authentication! {
+    var firebaseAuth: FirebaseAuth! {
         didSet {
-            auth.delagate = self
+            firebaseAuth.delagate = self
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        auth = Authentication.init()
-        if let user = FIRAuth.auth()?.currentUser {
-            auth.signIn(user, segue: Constants.Segue.loginToMain)
+        
+        firebaseAuth = FirebaseAuth.init()
+        if let user = firebaseAuth.currentUser() {
+            MyState.sharedInstance.signedIn(email: user.email!, username: user.displayName!)
+            DispatchQueue.main.async {
+                self.performSegue(withIdentifier: Constants.Segue.loginToMain, sender: nil)
+            }
+            
         }
     }
     
@@ -44,30 +47,33 @@ class LoginViewController: UIViewController, AccountProtocol, AuthenticationProt
     }
 }
 
-// MARK: - LoginViewProtocol
+// MARK: - LoginViewDelegate
 extension LoginViewController {
-    func didLoginButtonPressed(email: String?, password: String?) {
+    func loginViewLoginWith(email: String?, password: String?) {
         if let email = email, let password = password {
             if (email != "" && password != "") {
-                auth.login(email: email, password: password)
+                firebaseAuth.login(email: email, password: password)
             } else {
-                auth.inputErrorAlert()
+                firebaseAuth.inputErrorAlert()
             }
         }
     }
     
-    func didSignUpButtonPressed(email: String?, password: String?) {
+    func loginViewSignUpWith(email: String?, password: String?) {
         performSegue(withIdentifier: Constants.Segue.loginToSignUp, sender: nil)
     }
 }
 
-// MARK: - AuthenticationProtocol
+// MARK: - FirebaseAuthDelegate
 extension LoginViewController {
-    func didLogin(user: FIRUser?, error: Error?) {
+    func firebaseAuthDidLogin(error: Error?) {
         if let error = error {
             self.errorAlert(title: Constants.ErrorAlert.alertTitle, message: error.localizedDescription, onViewController: self)
         } else {
-            auth.signIn(user, segue: Constants.Segue.loginToMain)
+            MyState.sharedInstance.signedIn(email: loginView.emailInput.text! , username: firebaseAuth.currentUser()!.displayName!)
+            DispatchQueue.main.async {
+                self.performSegue(withIdentifier: Constants.Segue.loginToMain, sender: nil)
+            }
         }
     }
 }

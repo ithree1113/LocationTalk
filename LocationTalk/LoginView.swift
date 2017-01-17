@@ -8,9 +8,9 @@
 
 import UIKit
 
-protocol LoginViewProtocol: class {
-    func didLoginButtonPressed(email: String?, password: String?)
-    func didSignUpButtonPressed(email: String?, password: String?)
+protocol LoginViewDelegate: class {
+    func loginViewLoginWith(email: String?, password: String?)
+    func loginViewSignUpWith(email: String?, password: String?)
 }
 
 @IBDesignable
@@ -27,7 +27,7 @@ class LoginView: UIView, UITextFieldDelegate {
             passwordInput.delegate = self
         }
     }
-    weak var delegate: LoginViewProtocol?
+    weak var delegate: LoginViewDelegate?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -56,13 +56,13 @@ class LoginView: UIView, UITextFieldDelegate {
     @IBAction fileprivate func loginButtonPressed(_ sender: UIButton) {
         let email = self.emailInput.text
         let password = self.passwordInput.text
-        self.delegate?.didLoginButtonPressed(email: email, password: password)
+        self.delegate?.loginViewLoginWith(email: email, password: password)
     }
     
     @IBAction fileprivate func signupButtonPressed(_ sender: UIButton) {
         let email = self.emailInput.text
         let password = self.passwordInput.text
-        self.delegate?.didSignUpButtonPressed(email: email, password: password)
+        self.delegate?.loginViewSignUpWith(email: email, password: password)
     }
     
 }

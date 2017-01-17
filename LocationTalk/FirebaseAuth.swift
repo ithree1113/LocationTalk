@@ -8,15 +8,15 @@
 
 import Foundation
 import Firebase
-protocol AuthenticationProtocol: class {
-    func didLogin(user: FIRUser?, error: Error?)
-    func didSignup(user: FIRUser?, error: Error?)
+protocol FirebaseAuthDelegate: class {
+    func firebaseAuthDidLogin(error: Error?)
+    func firebaseAuthDidSignUp(error: Error?)
 }
 
 
-class Authentication: AccountProtocol {
+class FirebaseAuth: AccountProtocol {
     
-    weak var delagate: AuthenticationProtocol?
+    weak var delagate: FirebaseAuthDelegate?
     var ref: FIRDatabaseReference!
     
     init() {
@@ -27,40 +27,28 @@ class Authentication: AccountProtocol {
         print("Authentication deinit")
     }
     
+    func currentUser() -> FIRUser? {
+        return FIRAuth.auth()?.currentUser
+    }
+    
     func login(email: String, password: String) {
         FIRAuth.auth()?.signIn(withEmail: email, password: password, completion: { [weak self] (user, error) in
             guard let strongSelf = self else {return}
-            strongSelf.delagate?.didLogin(user: user, error: error)
+            strongSelf.delagate?.firebaseAuthDidLogin(error: error)
         })
     }
     
-    func signup(email: String, password: String, username: String) {
+    func signUp(email: String, password: String, username: String) {
         FIRAuth.auth()?.createUser(withEmail: email, password: password, completion: { [weak self] (user, error) in
             guard let strongSelf = self else {return}
-            if let error = error {
-                strongSelf.delagate?.didSignup(user: user, error: error)
-                return
+            if error == nil {
+                strongSelf.setDisplayName(user!, displayname: username)
+                let userInfo = [Constants.FirebaseKey.email: email, Constants.FirebaseKey.password: password, Constants.FirebaseKey.username: username]
+                let node = strongSelf.emailToNode(email)
+                strongSelf.ref.child(node).setValue(userInfo)
             }
-            strongSelf.setDisplayName(user!, displayname: username)
-            let userInfo = [Constants.FirebaseKey.email: email, Constants.FirebaseKey.password: password, Constants.FirebaseKey.username: username]
-            let node = strongSelf.emailToNode(email)
-            strongSelf.ref.child(node).setValue(userInfo)
-            strongSelf.delagate?.didSignup(user: user, error: error)
+            strongSelf.delagate?.firebaseAuthDidSignUp(error: error)
         })
-    }
-    
-    
-    func signIn(_ user: FIRUser?, segue: String) {
-        print("Login successfully")
-        let myState = MyState.sharedInstance
-        myState.signedIn = true
-        myState.email = user!.email!
-        myState.username = user!.displayName
-        DispatchQueue.main.async {
-            if let vc = self.delagate as? UIViewController {
-                vc.performSegue(withIdentifier: segue, sender: nil)
-            }
-        }
     }
     
     func setDisplayName(_ user: FIRUser, displayname: String) {
@@ -85,9 +73,9 @@ class Authentication: AccountProtocol {
     }
 }
 
-extension AuthenticationProtocol {
-    func didLogin(user: FIRUser?, error: Error?) {
+extension FirebaseAuthDelegate {
+    func firebaseAuthDidLogin(error: Error?) {
     }
-    func didSignup(user: FIRUser?, error: Error?) {
+    func firebaseAuthDidSignUp(error: Error?) {
     }
 }

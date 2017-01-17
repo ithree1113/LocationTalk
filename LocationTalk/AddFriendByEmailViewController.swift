@@ -46,7 +46,8 @@ class AddFriendByEmailViewController: UIViewController, UITextFieldDelegate, Acc
         do {
             try FIRAuth.auth()?.signOut()
             let myState = MyState.sharedInstance
-            myState.signedIn = false
+//            myState.signedIn = false
+            myState.signedOut()
         } catch  {
             print("Error signing out: \(error.localizedDescription)")
         }

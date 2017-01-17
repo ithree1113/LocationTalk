@@ -353,7 +353,7 @@
                         </subviews>
                     </view>
                     <connections>
-                        <outlet property="signupView" destination="r26-YV-2Xf" id="sPj-Ep-81W"/>
+                        <outlet property="signUpView" destination="r26-YV-2Xf" id="Zab-Rs-Vr6"/>
                         <segue destination="3JS-f9-IoW" kind="show" identifier="signupToMain" id="czh-7P-AVv"/>
                     </connections>
                 </viewController>
@@ -520,6 +520,6 @@
         <image name="send" width="29" height="29"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="9ve-cG-BF0"/>
+        <segue reference="czh-7P-AVv"/>
     </inferredMetricsTieBreakers>
 </document>

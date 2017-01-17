@@ -7,9 +7,9 @@
 //
 
 import UIKit
-protocol SignUpViewProtocol: class {
-    func didSignupButtonPressed(email: String?, password: String?, username: String?)
-    func didCancelButtonPressed(email: String?, password: String?, username: String?)
+protocol SignUpViewDelegate: class {
+    func signUpViewDidSignUpWith(email: String?, password: String?, username: String?)
+    func signUpViewDidCancelWith(email: String?, password: String?, username: String?)
 }
 
 @IBDesignable
@@ -31,7 +31,7 @@ class SignUpView: UIView, UITextFieldDelegate {
             usernameInput.delegate = self
         }
     }
-    weak var delegate: SignUpViewProtocol?
+    weak var delegate: SignUpViewDelegate?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -62,7 +62,7 @@ class SignUpView: UIView, UITextFieldDelegate {
         let password = self.passwordInput.text
         let username = self.usernameInput.text
         
-        self.delegate?.didSignupButtonPressed(email: email, password: password, username: username)
+        self.delegate?.signUpViewDidSignUpWith(email: email, password: password, username: username)
     }
     
     @IBAction fileprivate func cancelButtonPressed(_ sender: UIButton) {
@@ -70,7 +70,7 @@ class SignUpView: UIView, UITextFieldDelegate {
         let password = self.passwordInput.text
         let username = self.usernameInput.text
         
-        self.delegate?.didCancelButtonPressed(email: email, password: password, username: username)
+        self.delegate?.signUpViewDidCancelWith(email: email, password: password, username: username)
     }
 }
 

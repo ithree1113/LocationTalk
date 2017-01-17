@@ -7,24 +7,23 @@
 //
 
 import UIKit
-import Firebase
 
-class SignUpViewController: UIViewController, AccountProtocol, AuthenticationProtocol, SignUpViewProtocol {
+class SignUpViewController: UIViewController, AccountProtocol, FirebaseAuthDelegate, SignUpViewDelegate {
     
-    @IBOutlet weak var signupView: SignUpView! {
+    @IBOutlet weak var signUpView: SignUpView! {
         didSet {
-            signupView.delegate = self
+            signUpView.delegate = self
         }
     }
-    var auth: Authentication! {
+    var firebaseAuth: FirebaseAuth! {
         didSet {
-           auth.delagate = self 
+           firebaseAuth.delagate = self
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        auth = Authentication.init() 
+        firebaseAuth = FirebaseAuth.init()
     }
     
     override func didReceiveMemoryWarning() {
@@ -37,30 +36,33 @@ class SignUpViewController: UIViewController, AccountProtocol, AuthenticationPro
     }
 }
 
-// MARK: - SignUpViewProtocol
+// MARK: - SignUpViewDelegate
 extension SignUpViewController {
-    func didSignupButtonPressed(email: String?, password: String?, username: String?) {
+    func signUpViewDidSignUpWith(email: String?, password: String?, username: String?) {
         if let email = email, let password = password, let username = username {
             if (email != "" && password != "" && username != "") {
-                auth.signup(email: email, password: password, username: username)
+                firebaseAuth.signUp(email: email, password: password, username: username)
             } else {
-                auth.inputErrorAlert()
+                firebaseAuth.inputErrorAlert()
             }
         }
     }
 
-    func didCancelButtonPressed(email: String?, password: String?, username: String?) {
+    func signUpViewDidCancelWith(email: String?, password: String?, username: String?) {
         self.presentingViewController?.dismiss(animated: true, completion: nil)
     }
 }
 
-// MARK: - AuthenticationProtocol
+// MARK: - FirebaseAuthDelegate
 extension SignUpViewController {
-    func didSignup(user: FIRUser?, error: Error?) {
+    func firebaseAuthDidSignUp(error: Error?) {
         if let error = error {
             self.errorAlert(title: Constants.ErrorAlert.alertTitle, message: error.localizedDescription, onViewController: self)
         } else {
-           auth.signIn(user, segue: Constants.Segue.signupToMain)
+            MyState.sharedInstance.signedIn(email: signUpView.emailInput.text! , username: signUpView.usernameInput.text!)
+            DispatchQueue.main.async {
+                self.performSegue(withIdentifier: Constants.Segue.signupToMain, sender: nil)
+            }
         }
     }
 }

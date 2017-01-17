@@ -26,7 +26,7 @@
 		2C4B35E11E1514A7007C4C30 /* MyState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4B35E01E1514A7007C4C30 /* MyState.swift */; };
 		2C4B35E41E154422007C4C30 /* FriendList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4B35E31E154422007C4C30 /* FriendList.swift */; };
 		2C4B35E61E156C04007C4C30 /* AddFriend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4B35E51E156C04007C4C30 /* AddFriend.swift */; };
-		2CB942401E1CD79F0022A463 /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB9423F1E1CD79F0022A463 /* Authentication.swift */; };
+		2CB942401E1CD79F0022A463 /* FirebaseAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB9423F1E1CD79F0022A463 /* FirebaseAuth.swift */; };
 		2CB9424B1E1D576D0022A463 /* LoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CB9424A1E1D576D0022A463 /* LoginView.xib */; };
 		2CB9424D1E1D5EA80022A463 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB9424C1E1D5EA80022A463 /* LoginView.swift */; };
 		2CDD47901E1E4C8F00728B8C /* SignUpView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CDD478F1E1E4C8F00728B8C /* SignUpView.xib */; };
@@ -81,7 +81,7 @@
 		2C4B35E01E1514A7007C4C30 /* MyState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyState.swift; sourceTree = "<group>"; };
 		2C4B35E31E154422007C4C30 /* FriendList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendList.swift; sourceTree = "<group>"; };
 		2C4B35E51E156C04007C4C30 /* AddFriend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddFriend.swift; sourceTree = "<group>"; };
-		2CB9423F1E1CD79F0022A463 /* Authentication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Authentication.swift; sourceTree = "<group>"; };
+		2CB9423F1E1CD79F0022A463 /* FirebaseAuth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseAuth.swift; sourceTree = "<group>"; };
 		2CB9424A1E1D576D0022A463 /* LoginView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginView.xib; sourceTree = "<group>"; };
 		2CB9424C1E1D5EA80022A463 /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		2CDD478F1E1E4C8F00728B8C /* SignUpView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignUpView.xib; sourceTree = "<group>"; };
@@ -187,7 +187,7 @@
 		2C4B35E21E154407007C4C30 /* FireBase */ = {
 			isa = PBXGroup;
 			children = (
-				2CB9423F1E1CD79F0022A463 /* Authentication.swift */,
+				2CB9423F1E1CD79F0022A463 /* FirebaseAuth.swift */,
 				2C4B35E31E154422007C4C30 /* FriendList.swift */,
 				2C4B35E51E156C04007C4C30 /* AddFriend.swift */,
 				2C1DDB0E1E23BF69007C4165 /* MessageUtility.swift */,
@@ -517,7 +517,7 @@
 				2CDF48611E1260FE002DD580 /* AppDelegate.swift in Sources */,
 				2C1DDB0F1E23BF69007C4165 /* MessageUtility.swift in Sources */,
 				2CE1D1491E28DBC9007F3804 /* QRcodeScannerViewController.swift in Sources */,
-				2CB942401E1CD79F0022A463 /* Authentication.swift in Sources */,
+				2CB942401E1CD79F0022A463 /* FirebaseAuth.swift in Sources */,
 				2C4AED3F1E126EA000FCE88F /* FriendListViewController.swift in Sources */,
 				2CDF48691E1260FE002DD580 /* LocationTalk.xcdatamodeld in Sources */,
 				2C4AED371E126A7400FCE88F /* AccountProtocol.swift in Sources */,
