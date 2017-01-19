@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Firebase
 
 class FriendListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, FriendListDelegate {
     
@@ -30,7 +29,7 @@ class FriendListViewController: UIViewController, UITableViewDataSource, UITable
         super.viewDidLoad()
 
         list = FriendList.init() 
-        list.getFriendList()
+        list.getFriendListFrom(MyProfile.shared.email)
     }
     
     override func didReceiveMemoryWarning() {
@@ -58,8 +57,8 @@ class FriendListViewController: UIViewController, UITableViewDataSource, UITable
 
 // MARK: - FriendListDelegate
 extension FriendListViewController {
-    func didGetFriendList(friends friendArray: [FriendInfo], beInvited beIvitedArray: [FriendInfo]) {
-        self.friendArray = friendArray
+    func friendListDidGetList(friends friendsArray: [FriendInfo], beInvited beIvitedArray: [FriendInfo]) {
+        self.friendArray = friendsArray
         self.beIvitedArray = beIvitedArray
         self.friendListTable.reloadData()
     }

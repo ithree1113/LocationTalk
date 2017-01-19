@@ -20,16 +20,15 @@ class MessageUtility: AccountProtocol {
     
     func send(message: Message) {
         let friendNode = self.emailToNode(message.email)
-        let myState = MyState.sharedInstance
-        let myNode = self.emailToNode(myState.email!)
+        let myNode = self.emailToNode(MyProfile.shared.email)
         
         // On my side
         ref.child("\(myNode)/send").childByAutoId().setValue(message.generateDict())
         
         // On friend's side
         var receiveMessage = Message.init(message: message.generateDict())
-        receiveMessage.email = myState.email!
-        receiveMessage.username = myState.username!
+        receiveMessage.email = MyProfile.shared.email
+        receiveMessage.username = MyProfile.shared.username
         ref.child("\(friendNode)/receive").childByAutoId().setValue(receiveMessage.generateDict())
     }
     

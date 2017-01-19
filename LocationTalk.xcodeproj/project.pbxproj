@@ -23,7 +23,7 @@
 		2C4AED3F1E126EA000FCE88F /* FriendListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4AED3E1E126EA000FCE88F /* FriendListViewController.swift */; };
 		2C4AED411E126EC700FCE88F /* AddFriendByEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4AED401E126EC700FCE88F /* AddFriendByEmailViewController.swift */; };
 		2C4B35DF1E14FFBE007C4C30 /* FriendInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4B35DE1E14FFBE007C4C30 /* FriendInfo.swift */; };
-		2C4B35E11E1514A7007C4C30 /* MyState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4B35E01E1514A7007C4C30 /* MyState.swift */; };
+		2C4B35E11E1514A7007C4C30 /* MyProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4B35E01E1514A7007C4C30 /* MyProfile.swift */; };
 		2C4B35E41E154422007C4C30 /* FriendList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4B35E31E154422007C4C30 /* FriendList.swift */; };
 		2C4B35E61E156C04007C4C30 /* AddFriend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4B35E51E156C04007C4C30 /* AddFriend.swift */; };
 		2CB942401E1CD79F0022A463 /* FirebaseAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB9423F1E1CD79F0022A463 /* FirebaseAuth.swift */; };
@@ -78,7 +78,7 @@
 		2C4AED3E1E126EA000FCE88F /* FriendListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendListViewController.swift; sourceTree = "<group>"; };
 		2C4AED401E126EC700FCE88F /* AddFriendByEmailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddFriendByEmailViewController.swift; sourceTree = "<group>"; };
 		2C4B35DE1E14FFBE007C4C30 /* FriendInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendInfo.swift; sourceTree = "<group>"; };
-		2C4B35E01E1514A7007C4C30 /* MyState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyState.swift; sourceTree = "<group>"; };
+		2C4B35E01E1514A7007C4C30 /* MyProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyProfile.swift; sourceTree = "<group>"; };
 		2C4B35E31E154422007C4C30 /* FriendList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendList.swift; sourceTree = "<group>"; };
 		2C4B35E51E156C04007C4C30 /* AddFriend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddFriend.swift; sourceTree = "<group>"; };
 		2CB9423F1E1CD79F0022A463 /* FirebaseAuth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseAuth.swift; sourceTree = "<group>"; };
@@ -244,7 +244,7 @@
 				2CDF48601E1260FE002DD580 /* AppDelegate.swift */,
 				2C3D0D1E1E22295E008184B0 /* icon.xcassets */,
 				2C4AED331E126A4200FCE88F /* Constants.swift */,
-				2C4B35E01E1514A7007C4C30 /* MyState.swift */,
+				2C4B35E01E1514A7007C4C30 /* MyProfile.swift */,
 				2CDF48641E1260FE002DD580 /* Main.storyboard */,
 				2CDF486A1E1260FE002DD580 /* Assets.xcassets */,
 				2CDF486C1E1260FE002DD580 /* LaunchScreen.storyboard */,
@@ -513,7 +513,7 @@
 				2C1DDB091E22C378007C4165 /* CustomPresentAnimationController.swift in Sources */,
 				2C4B35E61E156C04007C4C30 /* AddFriend.swift in Sources */,
 				2CE1D1431E28D642007F3804 /* AddFriendViewController.swift in Sources */,
-				2C4B35E11E1514A7007C4C30 /* MyState.swift in Sources */,
+				2C4B35E11E1514A7007C4C30 /* MyProfile.swift in Sources */,
 				2CDF48611E1260FE002DD580 /* AppDelegate.swift in Sources */,
 				2C1DDB0F1E23BF69007C4165 /* MessageUtility.swift in Sources */,
 				2CE1D1491E28DBC9007F3804 /* QRcodeScannerViewController.swift in Sources */,

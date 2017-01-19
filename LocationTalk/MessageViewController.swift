@@ -46,7 +46,7 @@ class MessageViewController: UIViewController, SendMessageHeaderViewDataSource, 
     }
     
     @IBAction func sendButtonPressed(_ sender: UIBarButtonItem) {
-        let message = Message.init(friendSelected: friendSelected,
+        let message = Message.init(target: friendSelected,
                                    place: placeSelected,
                                    time: headerView.timeLabel.text!,
                                    content: contentTextView.text)
@@ -70,9 +70,7 @@ class MessageViewController: UIViewController, SendMessageHeaderViewDataSource, 
             locationVC.placeSelected = placeSelected
             locationVC.delegate = self
         }
-        
     }
-
 }
 
 // MARK: - SendMessageHeaderViewDataSource

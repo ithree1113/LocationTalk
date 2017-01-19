@@ -42,7 +42,7 @@ struct FriendInfo {
         }
     }
     
-    init(_ email: String, username: String, state: FriendState) {
+    init(email: String, username: String, state: FriendState) {
         self.email = email
         self.username = username
         self.state = state

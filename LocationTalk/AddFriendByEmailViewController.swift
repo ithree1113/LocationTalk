@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Firebase
 
 class AddFriendByEmailViewController: UIViewController, UITextFieldDelegate, AccountProtocol, AddFriendDelegate {
     
@@ -43,14 +42,7 @@ class AddFriendByEmailViewController: UIViewController, UITextFieldDelegate, Acc
     }
 
     @IBAction func signOut(_ sender: Any) {
-        do {
-            try FIRAuth.auth()?.signOut()
-            let myState = MyState.sharedInstance
-//            myState.signedIn = false
-            myState.signedOut()
-        } catch  {
-            print("Error signing out: \(error.localizedDescription)")
-        }
+        FirebaseAuth.init().signOut()
     }
 }
 

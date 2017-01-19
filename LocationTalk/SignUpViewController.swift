@@ -59,7 +59,7 @@ extension SignUpViewController {
         if let error = error {
             self.errorAlert(title: Constants.ErrorAlert.alertTitle, message: error.localizedDescription, onViewController: self)
         } else {
-            MyState.sharedInstance.signedIn(email: signUpView.emailInput.text! , username: signUpView.usernameInput.text!)
+            MyProfile.shared.signedIn(email: signUpView.emailInput.text!, username: signUpView.usernameInput.text!)
             DispatchQueue.main.async {
                 self.performSegue(withIdentifier: Constants.Segue.signupToMain, sender: nil)
             }

@@ -7,14 +7,12 @@
 //
 
 import UIKit
-import Firebase
 
-class MyState: NSObject {
-    static let sharedInstance = MyState()
+class MyProfile: NSObject {
+    static let shared = MyProfile()
     
-//    var signedIn = false
-    var email: String?
-    var username: String?
+    var email: String = ""
+    var username: String = ""
     
     func signedIn(email: String, username: String) {
         self.email = email

@@ -62,6 +62,15 @@ class FirebaseAuth: AccountProtocol {
         }
     }
     
+    func signOut() {
+        do {
+            try FIRAuth.auth()?.signOut()
+            MyProfile.shared.signedOut()
+        } catch  {
+            print("Error signing out: \(error.localizedDescription)")
+        }
+    }
+    
     func inputErrorAlert() {
         // Called upon signup error to let the user know signup didn't work.        
         let alert = UIAlertController(title: Constants.ErrorAlert.alertTitle, message: Constants.ErrorAlert.loginMissingMessage, preferredStyle: UIAlertControllerStyle.alert)

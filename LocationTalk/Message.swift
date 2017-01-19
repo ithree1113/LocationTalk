@@ -18,9 +18,9 @@ struct Message {
     var latitude: Double
     var longitude: Double
     
-    init(friendSelected: FriendInfo, place: GMSPlace, time: String, content: String) {
-        self.email = friendSelected.email
-        self.username = friendSelected.username
+    init(target: FriendInfo, place: GMSPlace, time: String, content: String) {
+        self.email = target.email
+        self.username = target.username
         self.place = place.formattedAddress
         self.latitude = place.coordinate.latitude
         self.longitude = place.coordinate.longitude

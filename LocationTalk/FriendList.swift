@@ -10,7 +10,7 @@ import Foundation
 import Firebase
 
 protocol FriendListDelegate: class {
-    func didGetFriendList(friends friendArray: [FriendInfo], beInvited beIvitedArray: [FriendInfo])
+    func friendListDidGetList(friends friendsArray: [FriendInfo], beInvited beIvitedArray: [FriendInfo])
 }
 
 
@@ -24,12 +24,11 @@ class FriendList: AccountProtocol {
         self.ref = FIRDatabase.database().reference()
     }
     
-    func getFriendList() {
+    func getFriendListFrom(_ email: String) {
         
-        let myState = MyState.sharedInstance
-        let myNode = self.emailToNode(myState.email!)
+        let node = self.emailToNode(email)
         
-        _refHandle = ref.child("\(myNode)/friend").observe(.value, with: { [weak self](snapshot) in
+        _refHandle = ref.child("\(node)/friend").observe(.value, with: { [weak self](snapshot) in
             guard let strongSelf = self else {return}
             if (snapshot.exists()) {
                 let friends = snapshot.value as! Dictionary<String, Any>
@@ -47,15 +46,14 @@ class FriendList: AccountProtocol {
                 }
                 friendArray = friendArray.sorted(by: { $0.username < $1.username })
                 beIvitedArray = beIvitedArray.sorted(by: { $0.username < $1.username })
-                strongSelf.delagate?.didGetFriendList(friends: friendArray, beInvited: beIvitedArray)
+                strongSelf.delagate?.friendListDidGetList(friends: friendArray, beInvited: beIvitedArray)
             }
         })
     }
     
     deinit {
         print("FriendList deinit")
-        let myState = MyState.sharedInstance
-        let myNode = self.emailToNode(myState.email!)
+        let myNode = self.emailToNode(MyProfile.shared.email)
         ref.child("\(myNode)/friend").removeObserver(withHandle: _refHandle)
     }
     

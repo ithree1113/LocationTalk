@@ -26,7 +26,7 @@ class LoginViewController: UIViewController, AccountProtocol, FirebaseAuthDelega
         
         firebaseAuth = FirebaseAuth.init()
         if let user = firebaseAuth.currentUser() {
-            MyState.sharedInstance.signedIn(email: user.email!, username: user.displayName!)
+            MyProfile.shared.signedIn(email: user.email!, username: user.displayName!)
             DispatchQueue.main.async {
                 self.performSegue(withIdentifier: Constants.Segue.loginToMain, sender: nil)
             }
@@ -70,7 +70,7 @@ extension LoginViewController {
         if let error = error {
             self.errorAlert(title: Constants.ErrorAlert.alertTitle, message: error.localizedDescription, onViewController: self)
         } else {
-            MyState.sharedInstance.signedIn(email: loginView.emailInput.text! , username: firebaseAuth.currentUser()!.displayName!)
+            MyProfile.shared.signedIn(email: loginView.emailInput.text!, username: firebaseAuth.currentUser()!.displayName!)
             DispatchQueue.main.async {
                 self.performSegue(withIdentifier: Constants.Segue.loginToMain, sender: nil)
             }
