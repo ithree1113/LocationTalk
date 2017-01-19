@@ -8,22 +8,24 @@
 
 import UIKit
 
-class AddFriendByEmailViewController: UIViewController, UITextFieldDelegate, AccountProtocol, AddFriendDelegate {
+class AddFriendByEmailViewController: UIViewController, UITextFieldDelegate, AccountProtocol, FirebaseFriendDelegate {
     
     @IBOutlet weak var emailSearchText: UITextField!
     @IBOutlet weak var resultEmailLabel: UILabel!
     @IBOutlet weak var resultNameLabel: UILabel!
     @IBOutlet weak var addFriendButton: UIButton!
-    
-    var friendNode: String?
-    var addFriend: AddFriend!
+
+    var firebaseFriend: FirebaseFriend! {
+        didSet {
+            firebaseFriend.delagate = self
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         emailSearchText.delegate = self
-        addFriend = AddFriend.init()
-        addFriend.delagate = self
+        firebaseFriend = FirebaseFriend.init()
         
         self.addFriendButton.isHidden = true
     }
@@ -38,7 +40,7 @@ class AddFriendByEmailViewController: UIViewController, UITextFieldDelegate, Acc
     }
     
     @IBAction func addFriendBtnPressed(_ sender: Any) {
-        addFriend.check(resultEmailLabel.text!)
+        firebaseFriend.checkRelationshipBy(email: resultEmailLabel.text!)
     }
 
     @IBAction func signOut(_ sender: Any) {
@@ -50,21 +52,22 @@ class AddFriendByEmailViewController: UIViewController, UITextFieldDelegate, Acc
 extension AddFriendByEmailViewController {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if let searchTarget = emailSearchText.text {
-            addFriend.searchFriends(searchTarget)
-            friendNode = self.emailToNode(searchTarget)
+            firebaseFriend.search(email: searchTarget)
         }
         return true
     }
 }
 
-// MARK: - AddFriendDelegate
+// MARK: - FirebaseFriendDelegate
 extension AddFriendByEmailViewController {
     
-    func didSearchFriend(email: String?, username: String?) {
+    func firebaseFriendDidSearch(email: String?, username: String?) {
         if let email = email, let username = username {
             self.resultNameLabel.text = username
             self.resultEmailLabel.text = email
-            self.addFriendButton.isHidden = false
+            if email != MyProfile.shared.email {
+                self.addFriendButton.isHidden = false
+            }
         } else {
             self.resultEmailLabel.text = "Not Found"
             self.resultNameLabel.text = "Not Found"
@@ -72,9 +75,9 @@ extension AddFriendByEmailViewController {
         }
     }
     
-    func didCheckThisEmail(result: FriendState) {
+    func firebaseFriendDidCheckRelationship(result: FriendState) {
         if result == .none {
-            addFriend.invite(resultEmailLabel.text!, username: resultNameLabel.text!)
+            firebaseFriend.invite(resultEmailLabel.text!, username: resultNameLabel.text!)
         } else {
             self.errorAlert(title: Constants.ErrorAlert.alertTitle, message: "You are already friends, or waiting to accept the invitation.", onViewController: self)
         }

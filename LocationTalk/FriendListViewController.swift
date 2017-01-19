@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FriendListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, FriendListDelegate {
+class FriendListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, FirebaseFriendDelegate {
     
     @IBOutlet weak var friendListTable: UITableView! {
         didSet {
@@ -16,9 +16,9 @@ class FriendListViewController: UIViewController, UITableViewDataSource, UITable
             friendListTable.delegate = self
         }
     }
-    var list: FriendList! {
+    var firebaseFriend: FirebaseFriend! {
         didSet {
-            list.delagate = self
+            firebaseFriend.delagate = self
         }
     }
     var friendArray: [FriendInfo] = []
@@ -28,8 +28,8 @@ class FriendListViewController: UIViewController, UITableViewDataSource, UITable
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        list = FriendList.init() 
-        list.getFriendListFrom(MyProfile.shared.email)
+        firebaseFriend = FirebaseFriend.init()
+        firebaseFriend.getFriendListFrom(MyProfile.shared.email)
     }
     
     override func didReceiveMemoryWarning() {
@@ -57,7 +57,7 @@ class FriendListViewController: UIViewController, UITableViewDataSource, UITable
 
 // MARK: - FriendListDelegate
 extension FriendListViewController {
-    func friendListDidGetList(friends friendsArray: [FriendInfo], beInvited beIvitedArray: [FriendInfo]) {
+    func firebaseFriendDidGetList(friends friendsArray: [FriendInfo], beInvited beIvitedArray: [FriendInfo]) {
         self.friendArray = friendsArray
         self.beIvitedArray = beIvitedArray
         self.friendListTable.reloadData()

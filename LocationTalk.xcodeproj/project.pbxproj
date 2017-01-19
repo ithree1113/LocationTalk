@@ -24,8 +24,6 @@
 		2C4AED411E126EC700FCE88F /* AddFriendByEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4AED401E126EC700FCE88F /* AddFriendByEmailViewController.swift */; };
 		2C4B35DF1E14FFBE007C4C30 /* FriendInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4B35DE1E14FFBE007C4C30 /* FriendInfo.swift */; };
 		2C4B35E11E1514A7007C4C30 /* MyProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4B35E01E1514A7007C4C30 /* MyProfile.swift */; };
-		2C4B35E41E154422007C4C30 /* FriendList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4B35E31E154422007C4C30 /* FriendList.swift */; };
-		2C4B35E61E156C04007C4C30 /* AddFriend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4B35E51E156C04007C4C30 /* AddFriend.swift */; };
 		2CB942401E1CD79F0022A463 /* FirebaseAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB9423F1E1CD79F0022A463 /* FirebaseAuth.swift */; };
 		2CB9424B1E1D576D0022A463 /* LoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CB9424A1E1D576D0022A463 /* LoginView.xib */; };
 		2CB9424D1E1D5EA80022A463 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB9424C1E1D5EA80022A463 /* LoginView.swift */; };
@@ -47,6 +45,7 @@
 		2CE1D1501E2B697A007F3804 /* MyPlaceServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE1D14F1E2B697A007F3804 /* MyPlaceServices.swift */; };
 		2CE1D1531E2B83ED007F3804 /* UserPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE1D1521E2B83ED007F3804 /* UserPermission.swift */; };
 		2CEA506B1E1BA02B0064E553 /* InvitationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CEA506A1E1BA02B0064E553 /* InvitationViewController.swift */; };
+		2CF5A4DB1E30C68A008514DD /* FirebaseFriend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF5A4DA1E30C68A008514DD /* FirebaseFriend.swift */; };
 		B7B524B9CBFE0F7D403B98C8 /* Pods_LocationTalkTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11540A9C0B3C9CCB3758A532 /* Pods_LocationTalkTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -79,8 +78,6 @@
 		2C4AED401E126EC700FCE88F /* AddFriendByEmailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddFriendByEmailViewController.swift; sourceTree = "<group>"; };
 		2C4B35DE1E14FFBE007C4C30 /* FriendInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendInfo.swift; sourceTree = "<group>"; };
 		2C4B35E01E1514A7007C4C30 /* MyProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyProfile.swift; sourceTree = "<group>"; };
-		2C4B35E31E154422007C4C30 /* FriendList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendList.swift; sourceTree = "<group>"; };
-		2C4B35E51E156C04007C4C30 /* AddFriend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddFriend.swift; sourceTree = "<group>"; };
 		2CB9423F1E1CD79F0022A463 /* FirebaseAuth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseAuth.swift; sourceTree = "<group>"; };
 		2CB9424A1E1D576D0022A463 /* LoginView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginView.xib; sourceTree = "<group>"; };
 		2CB9424C1E1D5EA80022A463 /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -106,6 +103,7 @@
 		2CE1D14F1E2B697A007F3804 /* MyPlaceServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPlaceServices.swift; sourceTree = "<group>"; };
 		2CE1D1521E2B83ED007F3804 /* UserPermission.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserPermission.swift; sourceTree = "<group>"; };
 		2CEA506A1E1BA02B0064E553 /* InvitationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InvitationViewController.swift; sourceTree = "<group>"; };
+		2CF5A4DA1E30C68A008514DD /* FirebaseFriend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseFriend.swift; sourceTree = "<group>"; };
 		6E3F199E7C9595CF6BAF78A4 /* Pods-LocationTalkTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LocationTalkTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LocationTalkTests/Pods-LocationTalkTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8693A8104F68067565DB7835 /* Pods-LocationTalkTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LocationTalkTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LocationTalkTests/Pods-LocationTalkTests.release.xcconfig"; sourceTree = "<group>"; };
 		B4E7EC6D96A811EDD0B14B98 /* Pods-LocationTalk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LocationTalk.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LocationTalk/Pods-LocationTalk.debug.xcconfig"; sourceTree = "<group>"; };
@@ -188,9 +186,8 @@
 			isa = PBXGroup;
 			children = (
 				2CB9423F1E1CD79F0022A463 /* FirebaseAuth.swift */,
-				2C4B35E31E154422007C4C30 /* FriendList.swift */,
-				2C4B35E51E156C04007C4C30 /* AddFriend.swift */,
 				2C1DDB0E1E23BF69007C4165 /* MessageUtility.swift */,
+				2CF5A4DA1E30C68A008514DD /* FirebaseFriend.swift */,
 			);
 			name = FireBase;
 			sourceTree = "<group>";
@@ -511,7 +508,6 @@
 				2CE1D1501E2B697A007F3804 /* MyPlaceServices.swift in Sources */,
 				2CE1D14B1E2B64B2007F3804 /* LocationViewController.swift in Sources */,
 				2C1DDB091E22C378007C4165 /* CustomPresentAnimationController.swift in Sources */,
-				2C4B35E61E156C04007C4C30 /* AddFriend.swift in Sources */,
 				2CE1D1431E28D642007F3804 /* AddFriendViewController.swift in Sources */,
 				2C4B35E11E1514A7007C4C30 /* MyProfile.swift in Sources */,
 				2CDF48611E1260FE002DD580 /* AppDelegate.swift in Sources */,
@@ -525,9 +521,9 @@
 				2C2B56421E2D0462003E0F0A /* LocationView.swift in Sources */,
 				2CE1D1451E28DA09007F3804 /* AddFriendByQRViewController.swift in Sources */,
 				2CDD47941E1E950E00728B8C /* MessageViewController.swift in Sources */,
-				2C4B35E41E154422007C4C30 /* FriendList.swift in Sources */,
 				2C1DDB0D1E23B2CF007C4165 /* Message.swift in Sources */,
 				2C4AED341E126A4200FCE88F /* Constants.swift in Sources */,
+				2CF5A4DB1E30C68A008514DD /* FirebaseFriend.swift in Sources */,
 				2C4B35DF1E14FFBE007C4C30 /* FriendInfo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
