@@ -8,25 +8,26 @@
 
 import UIKit
 
-class LoginViewController: UIViewController, AccountProtocol, FirebaseAuthDelegate, LoginViewDelegate {
+class LoginViewController: UIViewController, AccountProtocol, AuthDelegate, LoginViewDelegate {
     
     @IBOutlet weak var loginView: LoginView! {
         didSet {
             loginView.delegate = self
         }
     }
-    var firebaseAuth: FirebaseAuth! {
+    
+    var auth: AuthProtocol! {
         didSet {
-            firebaseAuth.delagate = self
+            auth.delagate = self
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        firebaseAuth = FirebaseAuth.init()
-        if let user = firebaseAuth.currentUser() {
-            MyProfile.shared.signedIn(email: user.email!, username: user.displayName!)
+        auth = Database().auth()
+        if let user = auth.currentUser() {
+            MyProfile.shared.signedIn(email: user.email, username: user.username)
             DispatchQueue.main.async {
                 self.performSegue(withIdentifier: Constants.Segue.loginToMain, sender: nil)
             }
@@ -52,9 +53,9 @@ extension LoginViewController {
     func loginViewLoginWith(email: String?, password: String?) {
         if let email = email, let password = password {
             if (email != "" && password != "") {
-                firebaseAuth.login(email: email, password: password)
+                auth.login(email: email, password: password)
             } else {
-                firebaseAuth.inputErrorAlert()
+                auth.inputErrorAlert()
             }
         }
     }
@@ -64,13 +65,13 @@ extension LoginViewController {
     }
 }
 
-// MARK: - FirebaseAuthDelegate
+// MARK: - AuthDelegate
 extension LoginViewController {
-    func firebaseAuthDidLogin(error: Error?) {
+    func authDidLogin(error: Error?) {
         if let error = error {
             self.errorAlert(title: Constants.ErrorAlert.alertTitle, message: error.localizedDescription, onViewController: self)
         } else {
-            MyProfile.shared.signedIn(email: loginView.emailInput.text!, username: firebaseAuth.currentUser()!.displayName!)
+            MyProfile.shared.signedIn(email: loginView.emailInput.text!, username: auth.currentUser()!.username)
             DispatchQueue.main.async {
                 self.performSegue(withIdentifier: Constants.Segue.loginToMain, sender: nil)
             }

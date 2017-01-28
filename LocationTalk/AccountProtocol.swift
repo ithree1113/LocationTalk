@@ -11,7 +11,6 @@ import Firebase
 
 protocol AccountProtocol {
     func errorAlert(title: String, message: String, onViewController: UIViewController)
-//    func signIn(_ user: FIRUser?, withSegue: String ,onViewController: UIViewController)
     func emailToNode(_ email: String) -> String
 }
 

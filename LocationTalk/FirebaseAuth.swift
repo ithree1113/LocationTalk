@@ -8,33 +8,27 @@
 
 import Foundation
 import Firebase
-protocol FirebaseAuthDelegate: class {
-    func firebaseAuthDidLogin(error: Error?)
-    func firebaseAuthDidSignUp(error: Error?)
-}
 
-
-class FirebaseAuth: AccountProtocol {
+class FirebaseAuth: MyFirebase, AccountProtocol, AuthProtocol {
     
-    weak var delagate: FirebaseAuthDelegate?
-    var ref: FIRDatabaseReference!
-    
-    init() {
-        self.ref = FIRDatabase.database().reference()
-    }
+    weak var delagate: AuthDelegate?
     
     deinit {
         print("Authentication deinit")
     }
     
-    func currentUser() -> FIRUser? {
-        return FIRAuth.auth()?.currentUser
+    func currentUser() -> MyUser? {
+        if let user = FIRAuth.auth()?.currentUser {
+            let myUser = MyUser.init(email: user.email!, username: user.displayName!)
+            return myUser
+        }
+        return nil
     }
     
     func login(email: String, password: String) {
         FIRAuth.auth()?.signIn(withEmail: email, password: password, completion: { [weak self] (user, error) in
             guard let strongSelf = self else {return}
-            strongSelf.delagate?.firebaseAuthDidLogin(error: error)
+            strongSelf.delagate?.authDidLogin(error: error)
         })
     }
     
@@ -47,7 +41,7 @@ class FirebaseAuth: AccountProtocol {
                 let node = strongSelf.emailToNode(email)
                 strongSelf.ref.child(node).setValue(userInfo)
             }
-            strongSelf.delagate?.firebaseAuthDidSignUp(error: error)
+            strongSelf.delagate?.authDidSignUp(error: error)
         })
     }
     
@@ -79,12 +73,5 @@ class FirebaseAuth: AccountProtocol {
         if let vc = self.delagate as? UIViewController {
             vc.present(alert, animated: true, completion: nil)
         }
-    }
-}
-
-extension FirebaseAuthDelegate {
-    func firebaseAuthDidLogin(error: Error?) {
-    }
-    func firebaseAuthDidSignUp(error: Error?) {
     }
 }

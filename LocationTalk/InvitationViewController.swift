@@ -61,14 +61,14 @@ extension InvitationViewController {
         
         let alert = UIAlertController.init(title: "", message: "Do you accept this invitation?", preferredStyle: .actionSheet)
         let accept = UIAlertAction.init(title: "Accept", style: .default) { (action) in
-            let addFriend = AddFriend.init()
-            addFriend.accept(self.beIvitedArray[indexPath.row])
+            let friendship = Database().friendship()
+            friendship?.accept(self.beIvitedArray[indexPath.row])
             self.beIvitedArray.remove(at: indexPath.row)
             self.invitationTable.deleteRows(at: [indexPath], with: .automatic)
         }
         let decline = UIAlertAction.init(title: "Decline", style: .destructive) { (action) in
-            let addFriend = AddFriend.init()
-            addFriend.decline(self.beIvitedArray[indexPath.row])
+            let friendship = Database().friendship()
+            friendship?.decline(self.beIvitedArray[indexPath.row])
             self.beIvitedArray.remove(at: indexPath.row)
             self.invitationTable.deleteRows(at: [indexPath], with: .automatic)
         }

@@ -8,22 +8,22 @@
 
 import UIKit
 
-class SignUpViewController: UIViewController, AccountProtocol, FirebaseAuthDelegate, SignUpViewDelegate {
+class SignUpViewController: UIViewController, AccountProtocol, AuthDelegate, SignUpViewDelegate {
     
     @IBOutlet weak var signUpView: SignUpView! {
         didSet {
             signUpView.delegate = self
         }
     }
-    var firebaseAuth: FirebaseAuth! {
+    var auth: AuthProtocol! {
         didSet {
-           firebaseAuth.delagate = self
+           auth.delagate = self
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        firebaseAuth = FirebaseAuth.init()
+        auth = Database().auth()
     }
     
     override func didReceiveMemoryWarning() {
@@ -41,9 +41,9 @@ extension SignUpViewController {
     func signUpViewDidSignUpWith(email: String?, password: String?, username: String?) {
         if let email = email, let password = password, let username = username {
             if (email != "" && password != "" && username != "") {
-                firebaseAuth.signUp(email: email, password: password, username: username)
+                auth.signUp(email: email, password: password, username: username)
             } else {
-                firebaseAuth.inputErrorAlert()
+                auth.inputErrorAlert()
             }
         }
     }
@@ -53,9 +53,9 @@ extension SignUpViewController {
     }
 }
 
-// MARK: - FirebaseAuthDelegate
+// MARK: - AuthDelegate
 extension SignUpViewController {
-    func firebaseAuthDidSignUp(error: Error?) {
+    func authDidSignUp(error: Error?) {
         if let error = error {
             self.errorAlert(title: Constants.ErrorAlert.alertTitle, message: error.localizedDescription, onViewController: self)
         } else {

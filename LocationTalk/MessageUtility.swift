@@ -9,14 +9,9 @@
 import UIKit
 import Firebase
 
-class MessageUtility: AccountProtocol {
+class MessageUtility: MyFirebase, AccountProtocol, MessageProtocol {
 
-    let ref: FIRDatabaseReference!
     fileprivate var _refHandle: FIRDatabaseHandle!
-    
-    init() {
-        self.ref = FIRDatabase.database().reference()
-    }
     
     func send(message: Message) {
         let friendNode = self.emailToNode(message.email)

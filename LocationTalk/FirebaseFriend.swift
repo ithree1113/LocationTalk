@@ -8,22 +8,14 @@
 
 import Foundation
 import Firebase
-protocol FirebaseFriendDelegate: class {
-    func firebaseFriendDidGetList(friends friendsArray: [FriendInfo], beInvited beIvitedArray: [FriendInfo])
-    func firebaseFriendDidSearch(email: String?, username: String?)
-    func firebaseFriendDidCheckRelationship(result: FriendState)
-}
 
 
-class FirebaseFriend: AccountProtocol {
-    let ref: FIRDatabaseReference!
+class FirebaseFriend: MyFirebase, AccountProtocol, FriendshipProtocol {
+
     fileprivate var _refHandle: FIRDatabaseHandle!
     fileprivate var _friendListHandle: FIRDatabaseHandle?
-    weak var delagate: FirebaseFriendDelegate?
+    weak var delegate: FriendshipDelegate?
     
-    init() {
-        self.ref = FIRDatabase.database().reference()
-    }
     
     deinit {
         print("FirebaseFriend deinit")
@@ -59,20 +51,20 @@ class FirebaseFriend: AccountProtocol {
                 // To sort the list
                 friendArray = friendArray.sorted(by: { $0.username < $1.username })
                 beIvitedArray = beIvitedArray.sorted(by: { $0.username < $1.username })
-                strongSelf.delagate?.firebaseFriendDidGetList(friends: friendArray, beInvited: beIvitedArray)
+                strongSelf.delegate?.friendshipDidGetList(friends: friendArray, beInvited: beIvitedArray)
             }
         })
     }
     
-    func search(email: String) {
+    func search(_ email: String) {
         let friendNode = self.emailToNode(email)
         _refHandle = ref.child(friendNode).observe(.value, with: { [weak self] (snapshot) in
             guard let strongSelf = self else {return}
             if (snapshot.exists()) {
                 let userInfo = snapshot.value as! Dictionary<String, Any>
-                strongSelf.delagate?.firebaseFriendDidSearch(email: userInfo[Constants.FirebaseKey.email] as? String, username: userInfo[Constants.FirebaseKey.username] as? String)
+                strongSelf.delegate?.friendshipDidSearch(email: userInfo[Constants.FirebaseKey.email] as? String, username: userInfo[Constants.FirebaseKey.username] as? String)
             } else {
-                strongSelf.delagate?.firebaseFriendDidSearch(email: nil, username: nil)
+                strongSelf.delegate?.friendshipDidSearch(email: nil, username: nil)
             }
             strongSelf.ref.child(friendNode).removeObserver(withHandle: strongSelf._refHandle)
         })
@@ -94,16 +86,16 @@ class FirebaseFriend: AccountProtocol {
                     if (k == friendNode) {
                         // This email is in the friend list.
                         let friendInfo = FriendInfo.init(v as! Dictionary<String, Any>)
-                        strongSelf.delagate?.firebaseFriendDidCheckRelationship(result: friendInfo.state)
+                        strongSelf.delegate?.friendshipDidCheckRelationship(result: friendInfo.state)
                         return
                     }
                 }
             }
-            strongSelf.delagate?.firebaseFriendDidCheckRelationship(result: .none)
+            strongSelf.delegate?.friendshipDidCheckRelationship(result: .none)
         })
     }
     
-    func invite(_ email: String, username: String) {
+    func invite(email: String, username: String) {
         let friendNode = self.emailToNode(email)
         let myNode = self.emailToNode(MyProfile.shared.email)
         
@@ -141,11 +133,3 @@ class FirebaseFriend: AccountProtocol {
     }
 }
 
-extension FirebaseFriendDelegate {
-    func firebaseFriendDidGetList(friends friendsArray: [FriendInfo], beInvited beIvitedArray: [FriendInfo]) {
-    }
-    func firebaseFriendDidSearch(email: String?, username: String?) {
-    }
-    func firebaseFriendDidCheckRelationship(result: FriendState) {
-    }
-}

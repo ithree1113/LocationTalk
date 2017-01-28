@@ -8,26 +8,26 @@
 
 import UIKit
 
-class AddFriendByEmailViewController: UIViewController, UITextFieldDelegate, AccountProtocol, FirebaseFriendDelegate {
+class AddFriendByEmailViewController: UIViewController, AccountProtocol, FriendshipDelegate, AddFriendByEmailViewDelegate {
     
-    @IBOutlet weak var emailSearchText: UITextField!
-    @IBOutlet weak var resultEmailLabel: UILabel!
-    @IBOutlet weak var resultNameLabel: UILabel!
-    @IBOutlet weak var addFriendButton: UIButton!
-
-    var firebaseFriend: FirebaseFriend! {
+    @IBOutlet weak var addFriendByEmailView: AddFriendByEmailView! {
         didSet {
-            firebaseFriend.delagate = self
+            addFriendByEmailView.delegate = self
+            addFriendByEmailView.addButton.isHidden = true
+        }
+    }
+
+    var friendship: FriendshipProtocol! {
+        didSet {
+            friendship.delegate = self
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        emailSearchText.delegate = self
-        firebaseFriend = FirebaseFriend.init()
+        friendship = Database().friendship()
         
-        self.addFriendButton.isHidden = true
     }
     
     override func didReceiveMemoryWarning() {
@@ -38,46 +38,44 @@ class AddFriendByEmailViewController: UIViewController, UITextFieldDelegate, Acc
     deinit {
         print("AddFriendByEmailViewController deinit")
     }
-    
-    @IBAction func addFriendBtnPressed(_ sender: Any) {
-        firebaseFriend.checkRelationshipBy(email: resultEmailLabel.text!)
-    }
 
     @IBAction func signOut(_ sender: Any) {
         FirebaseAuth.init().signOut()
     }
 }
 
-// MARK: - UITextFieldDelegate
+// MARK: - AddFriendByEmailViewDelegate
 extension AddFriendByEmailViewController {
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if let searchTarget = emailSearchText.text {
-            firebaseFriend.search(email: searchTarget)
+    func addFriendByEmailViewShouldReturn(_ textField: UITextField, email: String) {
+        textField.resignFirstResponder()
+        if !(email.isEmpty) {
+            friendship.search(email)
         }
-        return true
+    }
+    
+    func addButtonDidPressed() {
+        friendship.checkRelationshipBy(email: addFriendByEmailView.searchText.text!)
     }
 }
 
-// MARK: - FirebaseFriendDelegate
+// MARK: - FriendshipDelegate
 extension AddFriendByEmailViewController {
     
-    func firebaseFriendDidSearch(email: String?, username: String?) {
+    func friendshipDidSearch(email: String?, username: String?) {
         if let email = email, let username = username {
-            self.resultNameLabel.text = username
-            self.resultEmailLabel.text = email
+            addFriendByEmailView.usernameResultLabel.text = username
             if email != MyProfile.shared.email {
-                self.addFriendButton.isHidden = false
+                addFriendByEmailView.addButton.isHidden = false
             }
         } else {
-            self.resultEmailLabel.text = "Not Found"
-            self.resultNameLabel.text = "Not Found"
-            self.addFriendButton.isHidden = true
+            addFriendByEmailView.usernameResultLabel.text = "Not Found"
+            addFriendByEmailView.addButton.isHidden = true
         }
     }
     
-    func firebaseFriendDidCheckRelationship(result: FriendState) {
+    func friendshipDidCheckRelationship(result: FriendState) {
         if result == .none {
-            firebaseFriend.invite(resultEmailLabel.text!, username: resultNameLabel.text!)
+            friendship.invite(email: addFriendByEmailView.searchText.text!, username: addFriendByEmailView.usernameResultLabel.text!)
         } else {
             self.errorAlert(title: Constants.ErrorAlert.alertTitle, message: "You are already friends, or waiting to accept the invitation.", onViewController: self)
         }

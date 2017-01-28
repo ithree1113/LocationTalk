@@ -11,6 +11,8 @@ struct Constants {
     
     static let googleApiKey = ""
     
+    static let database = "Firebase"
+    
     
     struct Segue {
         static let loginToMain = "loginToMain"

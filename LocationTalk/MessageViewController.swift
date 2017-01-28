@@ -50,8 +50,8 @@ class MessageViewController: UIViewController, SendMessageHeaderViewDataSource, 
                                    place: placeSelected,
                                    time: headerView.timeLabel.text!,
                                    content: contentTextView.text)
-        let messageUtility = MessageUtility.init()
-        messageUtility.send(message: message)
+        let messageUtility = Database().message()
+        messageUtility?.send(message: message)
         
         dismiss(animated: true, completion: nil)
     }

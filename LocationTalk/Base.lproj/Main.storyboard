@@ -107,14 +107,14 @@
                                 </items>
                             </navigationBar>
                             <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="r3E-fx-crF">
-                                <rect key="frame" x="0.0" y="251" width="375" height="416"/>
+                                <rect key="frame" x="0.0" y="186" width="375" height="481"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <connections>
                                     <segue destination="wNh-OF-UEA" kind="embed" id="10S-um-8ET"/>
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fRu-Yp-v5X">
-                                <rect key="frame" x="0.0" y="251" width="375" height="416"/>
+                                <rect key="frame" x="0.0" y="186" width="375" height="481"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <connections>
                                     <segue destination="kEz-fk-RfV" kind="embed" id="JPF-Ii-BQ3"/>
@@ -124,10 +124,8 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="addFriendButton" destination="OUM-ch-RdP" id="GoK-iF-Ud2"/>
                         <outlet property="byEmailView" destination="fRu-Yp-v5X" id="yw8-sS-Sk1"/>
                         <outlet property="byQRcodeView" destination="r3E-fx-crF" id="iCc-61-V15"/>
-                        <outlet property="emailSearchText" destination="DER-ZU-klZ" id="aWt-LI-IXw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1b6-ss-4SI" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -388,32 +386,11 @@
                         <viewControllerLayoutGuide type="bottom" id="XOa-vv-3jS"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="auk-4L-RmD">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="416"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="481"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DER-ZU-klZ">
-                                <rect key="frame" x="16" y="80" width="343" height="30"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q7q-q1-KEL">
-                                <rect key="frame" x="16" y="148" width="343" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o3Q-zx-wRi">
-                                <rect key="frame" x="16" y="197" width="343" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jr2-si-JwW">
-                                <rect key="frame" x="274" y="328" width="71" height="30"/>
+                                <rect key="frame" x="274" y="393" width="71" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                                 <state key="normal" title="SignOut"/>
                                 <connections>
@@ -421,28 +398,22 @@
                                     <segue destination="aqZ-fV-5xB" kind="unwind" unwindAction="unwindToLoginWithSegue:" id="xSa-ki-mE0"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OUM-ch-RdP">
-                                <rect key="frame" x="136" y="294" width="102" height="30"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="W19-2h-EMa" customClass="AddFriendByEmailView" customModule="LocationTalk" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="286"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Add"/>
-                                <connections>
-                                    <action selector="addFriendBtnPressed:" destination="kEz-fk-RfV" eventType="touchUpInside" id="KxO-59-mzM"/>
-                                </connections>
-                            </button>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="addFriendButton" destination="OUM-ch-RdP" id="S26-n9-j3Q"/>
-                        <outlet property="emailSearchText" destination="DER-ZU-klZ" id="xrN-AO-Xnp"/>
-                        <outlet property="resultEmailLabel" destination="Q7q-q1-KEL" id="bzR-X0-e0q"/>
-                        <outlet property="resultNameLabel" destination="o3Q-zx-wRi" id="gBz-by-dUW"/>
+                        <outlet property="addFriendByEmailView" destination="W19-2h-EMa" id="Bzs-gz-8Rs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h7X-px-OzR" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="aqZ-fV-5xB" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2624" y="73"/>
+            <point key="canvasLocation" x="2622" y="50"/>
         </scene>
         <!--Add Friend ByQR View Controller-->
         <scene sceneID="OJQ-oP-GNd">
@@ -453,18 +424,18 @@
                         <viewControllerLayoutGuide type="bottom" id="Gah-cw-bPa"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="83M-Ex-92h">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="416"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="481"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pRz-iw-19S">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="416"/>
+                                <rect key="frame" x="0.0" y="65" width="375" height="416"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <connections>
                                     <segue destination="37m-RY-Sd8" kind="embed" id="diA-RP-w17"/>
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FhF-I4-Eqc">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="416"/>
+                                <rect key="frame" x="0.0" y="65" width="375" height="416"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <connections>
                                     <segue destination="m5B-jk-fOZ" kind="embed" id="5HA-Mp-9uP"/>
@@ -476,7 +447,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qMw-gJ-deJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2621.5999999999999" y="524.43778110944527"/>
+            <point key="canvasLocation" x="2623" y="551"/>
         </scene>
         <!--MyQ Rcode View Controller-->
         <scene sceneID="DoP-XM-Pg1">

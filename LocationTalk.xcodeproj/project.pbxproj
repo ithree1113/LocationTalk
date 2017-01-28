@@ -37,6 +37,14 @@
 		2CDF486E1E1260FE002DD580 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CDF486C1E1260FE002DD580 /* LaunchScreen.storyboard */; };
 		2CDF48791E1260FE002DD580 /* LocationTalkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDF48781E1260FE002DD580 /* LocationTalkTests.swift */; };
 		2CDF48841E12617A002DD580 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2CDF48831E12617A002DD580 /* GoogleService-Info.plist */; };
+		2CE029D01E3CAB3F00A1D15C /* MyUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE029CF1E3CAB3F00A1D15C /* MyUser.swift */; };
+		2CE029D21E3CAD5300A1D15C /* AuthProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE029D11E3CAD5300A1D15C /* AuthProtocol.swift */; };
+		2CE029D41E3CADC600A1D15C /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE029D31E3CADC600A1D15C /* Database.swift */; };
+		2CE029D61E3CCC4300A1D15C /* MyFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE029D51E3CCC4300A1D15C /* MyFirebase.swift */; };
+		2CE029D81E3CCE3000A1D15C /* FriendshipProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE029D71E3CCE3000A1D15C /* FriendshipProtocol.swift */; };
+		2CE029DA1E3CDC9A00A1D15C /* MessageProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE029D91E3CDC9A00A1D15C /* MessageProtocol.swift */; };
+		2CE029DC1E3CDFD600A1D15C /* AddFriendByEmailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CE029DB1E3CDFD600A1D15C /* AddFriendByEmailView.xib */; };
+		2CE029DE1E3CE34500A1D15C /* AddFriendByEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE029DD1E3CE34500A1D15C /* AddFriendByEmailView.swift */; };
 		2CE1D1431E28D642007F3804 /* AddFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE1D1421E28D642007F3804 /* AddFriendViewController.swift */; };
 		2CE1D1451E28DA09007F3804 /* AddFriendByQRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE1D1441E28DA09007F3804 /* AddFriendByQRViewController.swift */; };
 		2CE1D1471E28DBA6007F3804 /* MyQRcodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE1D1461E28DBA6007F3804 /* MyQRcodeViewController.swift */; };
@@ -95,6 +103,14 @@
 		2CDF48781E1260FE002DD580 /* LocationTalkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTalkTests.swift; sourceTree = "<group>"; };
 		2CDF487A1E1260FE002DD580 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2CDF48831E12617A002DD580 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		2CE029CF1E3CAB3F00A1D15C /* MyUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyUser.swift; sourceTree = "<group>"; };
+		2CE029D11E3CAD5300A1D15C /* AuthProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthProtocol.swift; sourceTree = "<group>"; };
+		2CE029D31E3CADC600A1D15C /* Database.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
+		2CE029D51E3CCC4300A1D15C /* MyFirebase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyFirebase.swift; sourceTree = "<group>"; };
+		2CE029D71E3CCE3000A1D15C /* FriendshipProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendshipProtocol.swift; sourceTree = "<group>"; };
+		2CE029D91E3CDC9A00A1D15C /* MessageProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageProtocol.swift; sourceTree = "<group>"; };
+		2CE029DB1E3CDFD600A1D15C /* AddFriendByEmailView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddFriendByEmailView.xib; sourceTree = "<group>"; };
+		2CE029DD1E3CE34500A1D15C /* AddFriendByEmailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddFriendByEmailView.swift; sourceTree = "<group>"; };
 		2CE1D1421E28D642007F3804 /* AddFriendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddFriendViewController.swift; sourceTree = "<group>"; };
 		2CE1D1441E28DA09007F3804 /* AddFriendByQRViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddFriendByQRViewController.swift; sourceTree = "<group>"; };
 		2CE1D1461E28DBA6007F3804 /* MyQRcodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyQRcodeViewController.swift; sourceTree = "<group>"; };
@@ -151,6 +167,9 @@
 			isa = PBXGroup;
 			children = (
 				2C4AED361E126A7400FCE88F /* AccountProtocol.swift */,
+				2CE029D11E3CAD5300A1D15C /* AuthProtocol.swift */,
+				2CE029D71E3CCE3000A1D15C /* FriendshipProtocol.swift */,
+				2CE029D91E3CDC9A00A1D15C /* MessageProtocol.swift */,
 			);
 			name = Protocol;
 			sourceTree = "<group>";
@@ -178,6 +197,7 @@
 			children = (
 				2C4B35DE1E14FFBE007C4C30 /* FriendInfo.swift */,
 				2C1DDB0C1E23B2CF007C4165 /* Message.swift */,
+				2CE029CF1E3CAB3F00A1D15C /* MyUser.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -185,6 +205,7 @@
 		2C4B35E21E154407007C4C30 /* FireBase */ = {
 			isa = PBXGroup;
 			children = (
+				2CE029D51E3CCC4300A1D15C /* MyFirebase.swift */,
 				2CB9423F1E1CD79F0022A463 /* FirebaseAuth.swift */,
 				2C1DDB0E1E23BF69007C4165 /* MessageUtility.swift */,
 				2CF5A4DA1E30C68A008514DD /* FirebaseFriend.swift */,
@@ -203,6 +224,8 @@
 				2C3D0D221E224788008184B0 /* SendMessageHeaderView.swift */,
 				2C2B563F1E2CFF82003E0F0A /* LocationView.xib */,
 				2C2B56411E2D0462003E0F0A /* LocationView.swift */,
+				2CE029DB1E3CDFD600A1D15C /* AddFriendByEmailView.xib */,
+				2CE029DD1E3CE34500A1D15C /* AddFriendByEmailView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -239,6 +262,7 @@
 				2C4B35DD1E14FF9C007C4C30 /* Model */,
 				2C4AED421E1273D000FCE88F /* Controller */,
 				2CDF48601E1260FE002DD580 /* AppDelegate.swift */,
+				2CE029D31E3CADC600A1D15C /* Database.swift */,
 				2C3D0D1E1E22295E008184B0 /* icon.xcassets */,
 				2C4AED331E126A4200FCE88F /* Constants.swift */,
 				2C4B35E01E1514A7007C4C30 /* MyProfile.swift */,
@@ -378,6 +402,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CE029DC1E3CDFD600A1D15C /* AddFriendByEmailView.xib in Resources */,
 				2CDD47901E1E4C8F00728B8C /* SignUpView.xib in Resources */,
 				2CDF486E1E1260FE002DD580 /* LaunchScreen.storyboard in Resources */,
 				2C3D0D1F1E22295E008184B0 /* icon.xcassets in Resources */,
@@ -498,7 +523,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C4AED3B1E126AD800FCE88F /* SignUpViewController.swift in Sources */,
+				2CE029D21E3CAD5300A1D15C /* AuthProtocol.swift in Sources */,
 				2CEA506B1E1BA02B0064E553 /* InvitationViewController.swift in Sources */,
+				2CE029DA1E3CDC9A00A1D15C /* MessageProtocol.swift in Sources */,
 				2CE1D1471E28DBA6007F3804 /* MyQRcodeViewController.swift in Sources */,
 				2C4AED391E126AAC00FCE88F /* LoginViewController.swift in Sources */,
 				2CB9424D1E1D5EA80022A463 /* LoginView.swift in Sources */,
@@ -506,6 +533,7 @@
 				2CE1D1531E2B83ED007F3804 /* UserPermission.swift in Sources */,
 				2C3D0D231E224788008184B0 /* SendMessageHeaderView.swift in Sources */,
 				2CE1D1501E2B697A007F3804 /* MyPlaceServices.swift in Sources */,
+				2CE029D61E3CCC4300A1D15C /* MyFirebase.swift in Sources */,
 				2CE1D14B1E2B64B2007F3804 /* LocationViewController.swift in Sources */,
 				2C1DDB091E22C378007C4165 /* CustomPresentAnimationController.swift in Sources */,
 				2CE1D1431E28D642007F3804 /* AddFriendViewController.swift in Sources */,
@@ -514,16 +542,20 @@
 				2C1DDB0F1E23BF69007C4165 /* MessageUtility.swift in Sources */,
 				2CE1D1491E28DBC9007F3804 /* QRcodeScannerViewController.swift in Sources */,
 				2CB942401E1CD79F0022A463 /* FirebaseAuth.swift in Sources */,
+				2CE029DE1E3CE34500A1D15C /* AddFriendByEmailView.swift in Sources */,
 				2C4AED3F1E126EA000FCE88F /* FriendListViewController.swift in Sources */,
 				2CDF48691E1260FE002DD580 /* LocationTalk.xcdatamodeld in Sources */,
+				2CE029D01E3CAB3F00A1D15C /* MyUser.swift in Sources */,
 				2C4AED371E126A7400FCE88F /* AccountProtocol.swift in Sources */,
 				2CDD47921E1E504500728B8C /* SignUpView.swift in Sources */,
 				2C2B56421E2D0462003E0F0A /* LocationView.swift in Sources */,
 				2CE1D1451E28DA09007F3804 /* AddFriendByQRViewController.swift in Sources */,
 				2CDD47941E1E950E00728B8C /* MessageViewController.swift in Sources */,
+				2CE029D41E3CADC600A1D15C /* Database.swift in Sources */,
 				2C1DDB0D1E23B2CF007C4165 /* Message.swift in Sources */,
 				2C4AED341E126A4200FCE88F /* Constants.swift in Sources */,
 				2CF5A4DB1E30C68A008514DD /* FirebaseFriend.swift in Sources */,
+				2CE029D81E3CCE3000A1D15C /* FriendshipProtocol.swift in Sources */,
 				2C4B35DF1E14FFBE007C4C30 /* FriendInfo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
