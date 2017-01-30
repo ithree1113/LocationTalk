@@ -8,17 +8,29 @@
 
 import UIKit
 
-class MessageTableListViewController: UIViewController, UITableViewDataSource, MessageDelegate {
+class MessageTableListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, MessageDelegate, ShowMessageViewDelegate {
 
     @IBOutlet weak var messageListTable: UITableView! {
         didSet {
             messageListTable.dataSource = self
+            messageListTable.delegate = self
         }
     }
     
     var messageUtility: MessageProtocol! {
         didSet {
             messageUtility.delegate = self
+        }
+    }
+    
+    var showMessageView: ShowMessageView! {
+        didSet {
+            showMessageView.delegate = self
+            showMessageView.frame.size.width = UIScreen.main.bounds.size.width
+            showMessageView.frame.size.height = UIScreen.main.bounds.size.height/2
+            showMessageView.frame.origin.x = UIScreen.main.bounds.origin.x
+            showMessageView.frame.origin.y = UIScreen.main.bounds.size.height
+            showMessageView.isHidden = true
         }
     }
     
@@ -29,7 +41,9 @@ class MessageTableListViewController: UIViewController, UITableViewDataSource, M
         // Do any additional setup after loading the view.
         messageUtility = Database().message()
         messageUtility.getMessageList()
-        
+
+        showMessageView = ShowMessageView.init(frame: CGRect.zero)
+        self.view.addSubview(showMessageView)
     }
 
     override func didReceiveMemoryWarning() {
@@ -37,6 +51,9 @@ class MessageTableListViewController: UIViewController, UITableViewDataSource, M
         // Dispose of any resources that can be recreated.
     }
     
+    deinit {
+        print("MessageTableListViewController deinit")
+    }
 
     /*
     // MARK: - Navigation
@@ -65,6 +82,24 @@ extension MessageTableListViewController {
         return cell
     }
 }
+
+// MARK: - UITableViewDelegate
+extension MessageTableListViewController {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        showMessageView.isHidden = false
+        showMessageView.messageTextField.text = messageArray[indexPath.row].content
+        MyAnimation().present(view: showMessageView, to: UIScreen.main.bounds.size.height/2)
+    }
+}
+
+// MARK :- ShowMessageViewDelegate
+extension MessageTableListViewController {
+    func ShowMessageViewCloseBtnPressed(_ sender: UIButton) {
+        MyAnimation().disappear(view: showMessageView)
+    }
+}
+
 
 // MARK: - MessageUtilityDelegate
 extension MessageTableListViewController {

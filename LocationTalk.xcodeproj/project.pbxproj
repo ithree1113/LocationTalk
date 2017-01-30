@@ -29,6 +29,9 @@
 		2CB9424D1E1D5EA80022A463 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB9424C1E1D5EA80022A463 /* LoginView.swift */; };
 		2CD507C81E3DDEA30095CD4E /* MessageListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD507C71E3DDEA30095CD4E /* MessageListViewController.swift */; };
 		2CD507CA1E3E1C1E0095CD4E /* MessageTableListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD507C91E3E1C1E0095CD4E /* MessageTableListViewController.swift */; };
+		2CD507D01E3F79190095CD4E /* ShowMessageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CD507CF1E3F79190095CD4E /* ShowMessageView.xib */; };
+		2CD507D21E3F7A180095CD4E /* ShowMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD507D11E3F7A180095CD4E /* ShowMessageView.swift */; };
+		2CD507D41E3F90130095CD4E /* MyAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD507D31E3F90130095CD4E /* MyAnimation.swift */; };
 		2CDD47901E1E4C8F00728B8C /* SignUpView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CDD478F1E1E4C8F00728B8C /* SignUpView.xib */; };
 		2CDD47921E1E504500728B8C /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDD47911E1E504500728B8C /* SignUpView.swift */; };
 		2CDD47941E1E950E00728B8C /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDD47931E1E950E00728B8C /* MessageViewController.swift */; };
@@ -93,6 +96,9 @@
 		2CB9424C1E1D5EA80022A463 /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		2CD507C71E3DDEA30095CD4E /* MessageListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageListViewController.swift; sourceTree = "<group>"; };
 		2CD507C91E3E1C1E0095CD4E /* MessageTableListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageTableListViewController.swift; sourceTree = "<group>"; };
+		2CD507CF1E3F79190095CD4E /* ShowMessageView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShowMessageView.xib; sourceTree = "<group>"; };
+		2CD507D11E3F7A180095CD4E /* ShowMessageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowMessageView.swift; sourceTree = "<group>"; };
+		2CD507D31E3F90130095CD4E /* MyAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyAnimation.swift; sourceTree = "<group>"; };
 		2CDD478F1E1E4C8F00728B8C /* SignUpView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignUpView.xib; sourceTree = "<group>"; };
 		2CDD47911E1E504500728B8C /* SignUpView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		2CDD47931E1E950E00728B8C /* MessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
@@ -163,6 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				2C1DDB081E22C378007C4165 /* CustomPresentAnimationController.swift */,
+				2CD507D31E3F90130095CD4E /* MyAnimation.swift */,
 			);
 			name = Animation;
 			sourceTree = "<group>";
@@ -232,6 +239,8 @@
 				2C2B56411E2D0462003E0F0A /* LocationView.swift */,
 				2CE029DB1E3CDFD600A1D15C /* AddFriendByEmailView.xib */,
 				2CE029DD1E3CE34500A1D15C /* AddFriendByEmailView.swift */,
+				2CD507CF1E3F79190095CD4E /* ShowMessageView.xib */,
+				2CD507D11E3F7A180095CD4E /* ShowMessageView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -415,6 +424,7 @@
 				2CDF48841E12617A002DD580 /* GoogleService-Info.plist in Resources */,
 				2CDF486B1E1260FE002DD580 /* Assets.xcassets in Resources */,
 				2C3D0D211E223AA5008184B0 /* SendMessageHeaderView.xib in Resources */,
+				2CD507D01E3F79190095CD4E /* ShowMessageView.xib in Resources */,
 				2CB9424B1E1D576D0022A463 /* LoginView.xib in Resources */,
 				2C2B56401E2CFF82003E0F0A /* LocationView.xib in Resources */,
 				2CDF48661E1260FE002DD580 /* Main.storyboard in Resources */,
@@ -536,6 +546,7 @@
 				2CE1D1471E28DBA6007F3804 /* MyQRcodeViewController.swift in Sources */,
 				2C4AED391E126AAC00FCE88F /* LoginViewController.swift in Sources */,
 				2CB9424D1E1D5EA80022A463 /* LoginView.swift in Sources */,
+				2CD507D41E3F90130095CD4E /* MyAnimation.swift in Sources */,
 				2C4AED411E126EC700FCE88F /* AddFriendByEmailViewController.swift in Sources */,
 				2CE1D1531E2B83ED007F3804 /* UserPermission.swift in Sources */,
 				2C3D0D231E224788008184B0 /* SendMessageHeaderView.swift in Sources */,
@@ -555,6 +566,7 @@
 				2CE029D01E3CAB3F00A1D15C /* MyUser.swift in Sources */,
 				2C4AED371E126A7400FCE88F /* AccountProtocol.swift in Sources */,
 				2CDD47921E1E504500728B8C /* SignUpView.swift in Sources */,
+				2CD507D21E3F7A180095CD4E /* ShowMessageView.swift in Sources */,
 				2C2B56421E2D0462003E0F0A /* LocationView.swift in Sources */,
 				2CE1D1451E28DA09007F3804 /* AddFriendByQRViewController.swift in Sources */,
 				2CDD47941E1E950E00728B8C /* MessageViewController.swift in Sources */,

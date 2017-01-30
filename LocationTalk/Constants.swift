@@ -13,6 +13,11 @@ struct Constants {
     
     static let database = "Firebase"
     
+    struct SwitchMode {
+        static let tableMode = "List Mode"
+        static let mapMode = "Map mode"
+    }
+    
     
     struct Segue {
         static let loginToMain = "loginToMain"
@@ -45,7 +50,10 @@ struct Constants {
         static let friendList = "friend"
         static let invitation = "invitation"
         static let locationResult = "locationResult"
+        static let messageList = "messageList"
     }
+    
+    
     
     struct Section {
         static let friendList = "Friend List"
