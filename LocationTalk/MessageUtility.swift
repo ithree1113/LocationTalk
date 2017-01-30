@@ -43,7 +43,7 @@ class MessageUtility: MyFirebase, AccountProtocol, MessageProtocol {
                     let message = Message(message: v as! Dictionary<String, Any>)
                     messageList.append(message)
                 }
-                messageList = messageList.sorted(by: {$1.time < $0.time})
+                messageList = messageList.sorted(by: {$0.time < $1.time})
                 strongSelf.delegate?.messageDidGetList(messageList)
             }
         })
