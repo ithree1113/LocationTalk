@@ -9,9 +9,11 @@
 import UIKit
 import Firebase
 
+
 class MessageUtility: MyFirebase, AccountProtocol, MessageProtocol {
 
     fileprivate var _refHandle: FIRDatabaseHandle!
+    weak var delegate: MessageDelegate?
     
     func send(message: Message) {
         let friendNode = self.emailToNode(message.email)
@@ -26,6 +28,27 @@ class MessageUtility: MyFirebase, AccountProtocol, MessageProtocol {
         receiveMessage.username = MyProfile.shared.username
         ref.child("\(friendNode)/receive").childByAutoId().setValue(receiveMessage.generateDict())
     }
+    
+    func getMessageList() {
+        let myNode = self.emailToNode(MyProfile.shared.email)
+        
+        _refHandle = ref.child("\(myNode)/receive").observe(.value, with: { [weak self](snapshot) in
+            guard let strongSelf = self else {return}
+            if snapshot.exists() {
+                let messages = snapshot.value as! Dictionary<String, Any>
+                
+                var messageList: [Message] = []
+                
+                for(_, v) in messages {
+                    let message = Message(message: v as! Dictionary<String, Any>)
+                    messageList.append(message)
+                }
+                messageList = messageList.sorted(by: {$1.time < $0.time})
+                strongSelf.delegate?.messageDidGetList(messageList)
+            }
+        })
+    }
+    
     
     
 }

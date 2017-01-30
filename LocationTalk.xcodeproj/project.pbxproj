@@ -27,6 +27,8 @@
 		2CB942401E1CD79F0022A463 /* FirebaseAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB9423F1E1CD79F0022A463 /* FirebaseAuth.swift */; };
 		2CB9424B1E1D576D0022A463 /* LoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CB9424A1E1D576D0022A463 /* LoginView.xib */; };
 		2CB9424D1E1D5EA80022A463 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB9424C1E1D5EA80022A463 /* LoginView.swift */; };
+		2CD507C81E3DDEA30095CD4E /* MessageListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD507C71E3DDEA30095CD4E /* MessageListViewController.swift */; };
+		2CD507CA1E3E1C1E0095CD4E /* MessageTableListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD507C91E3E1C1E0095CD4E /* MessageTableListViewController.swift */; };
 		2CDD47901E1E4C8F00728B8C /* SignUpView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CDD478F1E1E4C8F00728B8C /* SignUpView.xib */; };
 		2CDD47921E1E504500728B8C /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDD47911E1E504500728B8C /* SignUpView.swift */; };
 		2CDD47941E1E950E00728B8C /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDD47931E1E950E00728B8C /* MessageViewController.swift */; };
@@ -89,6 +91,8 @@
 		2CB9423F1E1CD79F0022A463 /* FirebaseAuth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseAuth.swift; sourceTree = "<group>"; };
 		2CB9424A1E1D576D0022A463 /* LoginView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginView.xib; sourceTree = "<group>"; };
 		2CB9424C1E1D5EA80022A463 /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		2CD507C71E3DDEA30095CD4E /* MessageListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageListViewController.swift; sourceTree = "<group>"; };
+		2CD507C91E3E1C1E0095CD4E /* MessageTableListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageTableListViewController.swift; sourceTree = "<group>"; };
 		2CDD478F1E1E4C8F00728B8C /* SignUpView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignUpView.xib; sourceTree = "<group>"; };
 		2CDD47911E1E504500728B8C /* SignUpView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		2CDD47931E1E950E00728B8C /* MessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
@@ -188,6 +192,8 @@
 				2CEA506A1E1BA02B0064E553 /* InvitationViewController.swift */,
 				2CDD47931E1E950E00728B8C /* MessageViewController.swift */,
 				2CE1D14A1E2B64B2007F3804 /* LocationViewController.swift */,
+				2CD507C71E3DDEA30095CD4E /* MessageListViewController.swift */,
+				2CD507C91E3E1C1E0095CD4E /* MessageTableListViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -207,8 +213,8 @@
 			children = (
 				2CE029D51E3CCC4300A1D15C /* MyFirebase.swift */,
 				2CB9423F1E1CD79F0022A463 /* FirebaseAuth.swift */,
-				2C1DDB0E1E23BF69007C4165 /* MessageUtility.swift */,
 				2CF5A4DA1E30C68A008514DD /* FirebaseFriend.swift */,
+				2C1DDB0E1E23BF69007C4165 /* MessageUtility.swift */,
 			);
 			name = FireBase;
 			sourceTree = "<group>";
@@ -525,6 +531,7 @@
 				2C4AED3B1E126AD800FCE88F /* SignUpViewController.swift in Sources */,
 				2CE029D21E3CAD5300A1D15C /* AuthProtocol.swift in Sources */,
 				2CEA506B1E1BA02B0064E553 /* InvitationViewController.swift in Sources */,
+				2CD507CA1E3E1C1E0095CD4E /* MessageTableListViewController.swift in Sources */,
 				2CE029DA1E3CDC9A00A1D15C /* MessageProtocol.swift in Sources */,
 				2CE1D1471E28DBA6007F3804 /* MyQRcodeViewController.swift in Sources */,
 				2C4AED391E126AAC00FCE88F /* LoginViewController.swift in Sources */,
@@ -556,6 +563,7 @@
 				2C4AED341E126A4200FCE88F /* Constants.swift in Sources */,
 				2CF5A4DB1E30C68A008514DD /* FirebaseFriend.swift in Sources */,
 				2CE029D81E3CCE3000A1D15C /* FriendshipProtocol.swift in Sources */,
+				2CD507C81E3DDEA30095CD4E /* MessageListViewController.swift in Sources */,
 				2C4B35DF1E14FFBE007C4C30 /* FriendInfo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

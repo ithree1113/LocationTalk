@@ -7,7 +7,13 @@
 //
 
 import Foundation
+protocol MessageDelegate: class {
+    func messageDidGetList(_ list: [Message])
+}
 
 protocol MessageProtocol {
+    
+    weak var delegate: MessageDelegate? {get set}
     func send(message: Message)
+    func getMessageList()
 }
