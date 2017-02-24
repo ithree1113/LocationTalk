@@ -24,7 +24,7 @@ class MyPlaceServices {
     
     weak var delegate: MyPlaceServicesDelegate?
     
-    var autocompleteFilter: GMSPlacesAutocompleteTypeFilter = .noFilter
+//    var autocompleteFilter: GMSPlacesAutocompleteTypeFilter = .noFilter
     
     private init() {
         
@@ -44,9 +44,9 @@ class MyPlaceServices {
         }
     }
     
-    func autocomplete(searchText: String) {
+    func autocomplete(searchText: String, filterType: GMSPlacesAutocompleteTypeFilter) {
         let filter = GMSAutocompleteFilter.init()
-        filter.type = autocompleteFilter
+        filter.type = filterType
         
         placeClient.autocompleteQuery(searchText, bounds: nil, filter: filter) { (results, error) in
             self.delegate?.getAutoComplete(results: results, error: error)

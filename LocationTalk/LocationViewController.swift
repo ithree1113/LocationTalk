@@ -62,7 +62,7 @@ extension LocationViewController {
     func searchBarTextDidChange(searchText: String) {
         let myPlaceServices = MyPlaceServices.sharedInstance
         myPlaceServices.delegate = self
-        myPlaceServices.autocomplete(searchText: searchText)
+        myPlaceServices.autocomplete(searchText: searchText, filterType: .noFilter)
     }
     
     func locatonViewDidSelect(result: GMSAutocompletePrediction) {

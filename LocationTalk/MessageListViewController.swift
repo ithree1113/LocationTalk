@@ -15,9 +15,12 @@ class MessageListViewController: UIViewController {
     
     @IBOutlet weak var messageListByTableView: UIView!
     
+    let userPermission = UserPermission()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        userPermission.location()
         initialViewStatus()
     }
 
