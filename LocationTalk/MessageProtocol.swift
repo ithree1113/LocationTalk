@@ -16,4 +16,5 @@ protocol MessageProtocol {
     weak var delegate: MessageDelegate? {get set}
     func send(message: Message)
     func getMessageList()
+    func unlock(message: Message)
 }

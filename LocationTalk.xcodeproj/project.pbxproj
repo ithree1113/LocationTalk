@@ -13,6 +13,10 @@
 		2C1DDB0F1E23BF69007C4165 /* MessageUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1DDB0E1E23BF69007C4165 /* MessageUtility.swift */; };
 		2C2B56401E2CFF82003E0F0A /* LocationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C2B563F1E2CFF82003E0F0A /* LocationView.xib */; };
 		2C2B56421E2D0462003E0F0A /* LocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2B56411E2D0462003E0F0A /* LocationView.swift */; };
+		2C3AE4501E5EDF6400431706 /* MessageListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3AE44E1E5EDF6400431706 /* MessageListCell.swift */; };
+		2C3AE4511E5EDF6400431706 /* MessageListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C3AE44F1E5EDF6400431706 /* MessageListCell.xib */; };
+		2C3AE4561E5EE3AD00431706 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3AE4551E5EE3AD00431706 /* Extension.swift */; };
+		2C3AE4581E5F235600431706 /* MessageMapListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3AE4571E5F235600431706 /* MessageMapListViewController.swift */; };
 		2C3D0D1F1E22295E008184B0 /* icon.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C3D0D1E1E22295E008184B0 /* icon.xcassets */; };
 		2C3D0D211E223AA5008184B0 /* SendMessageHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C3D0D201E223AA5008184B0 /* SendMessageHeaderView.xib */; };
 		2C3D0D231E224788008184B0 /* SendMessageHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3D0D221E224788008184B0 /* SendMessageHeaderView.swift */; };
@@ -27,6 +31,7 @@
 		2CB942401E1CD79F0022A463 /* FirebaseAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB9423F1E1CD79F0022A463 /* FirebaseAuth.swift */; };
 		2CB9424B1E1D576D0022A463 /* LoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CB9424A1E1D576D0022A463 /* LoginView.xib */; };
 		2CB9424D1E1D5EA80022A463 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB9424C1E1D5EA80022A463 /* LoginView.swift */; };
+		2CBFB2E81E6031C8008AE60C /* AuthObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBFB2E71E6031C8008AE60C /* AuthObject.swift */; };
 		2CD507C81E3DDEA30095CD4E /* MessageListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD507C71E3DDEA30095CD4E /* MessageListViewController.swift */; };
 		2CD507CA1E3E1C1E0095CD4E /* MessageTableListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD507C91E3E1C1E0095CD4E /* MessageTableListViewController.swift */; };
 		2CD507D01E3F79190095CD4E /* ShowMessageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CD507CF1E3F79190095CD4E /* ShowMessageView.xib */; };
@@ -80,6 +85,10 @@
 		2C1DDB0E1E23BF69007C4165 /* MessageUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageUtility.swift; sourceTree = "<group>"; };
 		2C2B563F1E2CFF82003E0F0A /* LocationView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LocationView.xib; sourceTree = "<group>"; };
 		2C2B56411E2D0462003E0F0A /* LocationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationView.swift; sourceTree = "<group>"; };
+		2C3AE44E1E5EDF6400431706 /* MessageListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageListCell.swift; sourceTree = "<group>"; };
+		2C3AE44F1E5EDF6400431706 /* MessageListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessageListCell.xib; sourceTree = "<group>"; };
+		2C3AE4551E5EE3AD00431706 /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		2C3AE4571E5F235600431706 /* MessageMapListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageMapListViewController.swift; sourceTree = "<group>"; };
 		2C3D0D1E1E22295E008184B0 /* icon.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = icon.xcassets; sourceTree = "<group>"; };
 		2C3D0D201E223AA5008184B0 /* SendMessageHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SendMessageHeaderView.xib; sourceTree = "<group>"; };
 		2C3D0D221E224788008184B0 /* SendMessageHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendMessageHeaderView.swift; sourceTree = "<group>"; };
@@ -94,6 +103,7 @@
 		2CB9423F1E1CD79F0022A463 /* FirebaseAuth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseAuth.swift; sourceTree = "<group>"; };
 		2CB9424A1E1D576D0022A463 /* LoginView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginView.xib; sourceTree = "<group>"; };
 		2CB9424C1E1D5EA80022A463 /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		2CBFB2E71E6031C8008AE60C /* AuthObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthObject.swift; sourceTree = "<group>"; };
 		2CD507C71E3DDEA30095CD4E /* MessageListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageListViewController.swift; sourceTree = "<group>"; };
 		2CD507C91E3E1C1E0095CD4E /* MessageTableListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageTableListViewController.swift; sourceTree = "<group>"; };
 		2CD507CF1E3F79190095CD4E /* ShowMessageView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShowMessageView.xib; sourceTree = "<group>"; };
@@ -174,6 +184,14 @@
 			name = Animation;
 			sourceTree = "<group>";
 		};
+		2C3AE4521E5EE35400431706 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				2C3AE4551E5EE3AD00431706 /* Extension.swift */,
+			);
+			name = Extension;
+			sourceTree = "<group>";
+		};
 		2C4AED351E126A6500FCE88F /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
@@ -201,6 +219,7 @@
 				2CE1D14A1E2B64B2007F3804 /* LocationViewController.swift */,
 				2CD507C71E3DDEA30095CD4E /* MessageListViewController.swift */,
 				2CD507C91E3E1C1E0095CD4E /* MessageTableListViewController.swift */,
+				2C3AE4571E5F235600431706 /* MessageMapListViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -241,8 +260,18 @@
 				2CE029DD1E3CE34500A1D15C /* AddFriendByEmailView.swift */,
 				2CD507CF1E3F79190095CD4E /* ShowMessageView.xib */,
 				2CD507D11E3F7A180095CD4E /* ShowMessageView.swift */,
+				2C3AE44E1E5EDF6400431706 /* MessageListCell.swift */,
+				2C3AE44F1E5EDF6400431706 /* MessageListCell.xib */,
 			);
 			name = View;
+			sourceTree = "<group>";
+		};
+		2CBFB2E61E6030EF008AE60C /* Abstract */ = {
+			isa = PBXGroup;
+			children = (
+				2CBFB2E71E6031C8008AE60C /* AuthObject.swift */,
+			);
+			name = Abstract;
 			sourceTree = "<group>";
 		};
 		2CDF48541E1260FE002DD580 = {
@@ -268,6 +297,8 @@
 		2CDF485F1E1260FE002DD580 /* LocationTalk */ = {
 			isa = PBXGroup;
 			children = (
+				2CBFB2E61E6030EF008AE60C /* Abstract */,
+				2C3AE4521E5EE35400431706 /* Extension */,
 				2CE1D1511E2B83A2007F3804 /* Tool */,
 				2CE1D14C1E2B67B8007F3804 /* Google */,
 				2C1DDB071E22C33F007C4165 /* Animation */,
@@ -418,6 +449,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2CE029DC1E3CDFD600A1D15C /* AddFriendByEmailView.xib in Resources */,
+				2C3AE4511E5EDF6400431706 /* MessageListCell.xib in Resources */,
 				2CDD47901E1E4C8F00728B8C /* SignUpView.xib in Resources */,
 				2CDF486E1E1260FE002DD580 /* LaunchScreen.storyboard in Resources */,
 				2C3D0D1F1E22295E008184B0 /* icon.xcassets in Resources */,
@@ -555,6 +587,7 @@
 				2CE1D14B1E2B64B2007F3804 /* LocationViewController.swift in Sources */,
 				2C1DDB091E22C378007C4165 /* CustomPresentAnimationController.swift in Sources */,
 				2CE1D1431E28D642007F3804 /* AddFriendViewController.swift in Sources */,
+				2C3AE4581E5F235600431706 /* MessageMapListViewController.swift in Sources */,
 				2C4B35E11E1514A7007C4C30 /* MyProfile.swift in Sources */,
 				2CDF48611E1260FE002DD580 /* AppDelegate.swift in Sources */,
 				2C1DDB0F1E23BF69007C4165 /* MessageUtility.swift in Sources */,
@@ -570,7 +603,10 @@
 				2C2B56421E2D0462003E0F0A /* LocationView.swift in Sources */,
 				2CE1D1451E28DA09007F3804 /* AddFriendByQRViewController.swift in Sources */,
 				2CDD47941E1E950E00728B8C /* MessageViewController.swift in Sources */,
+				2C3AE4561E5EE3AD00431706 /* Extension.swift in Sources */,
 				2CE029D41E3CADC600A1D15C /* Database.swift in Sources */,
+				2C3AE4501E5EDF6400431706 /* MessageListCell.swift in Sources */,
+				2CBFB2E81E6031C8008AE60C /* AuthObject.swift in Sources */,
 				2C1DDB0D1E23B2CF007C4165 /* Message.swift in Sources */,
 				2C4AED341E126A4200FCE88F /* Constants.swift in Sources */,
 				2CF5A4DB1E30C68A008514DD /* FirebaseFriend.swift in Sources */,
@@ -719,6 +755,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = UG6S92QCHF;
 				INFOPLIST_FILE = LocationTalk/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = EddieCheng.LocationTalk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -733,6 +770,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = UG6S92QCHF;
 				INFOPLIST_FILE = LocationTalk/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = EddieCheng.LocationTalk;
 				PRODUCT_NAME = "$(TARGET_NAME)";

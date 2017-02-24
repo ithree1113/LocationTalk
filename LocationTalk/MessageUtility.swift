@@ -39,8 +39,9 @@ class MessageUtility: MyFirebase, AccountProtocol, MessageProtocol {
                 
                 var messageList: [Message] = []
                 
-                for(_, v) in messages {
-                    let message = Message(message: v as! Dictionary<String, Any>)
+                for(k, v) in messages {
+                    var message = Message(message: v as! Dictionary<String, Any>)
+                    message.key = k
                     messageList.append(message)
                 }
                 messageList = messageList.sorted(by: {$0.time < $1.time})
@@ -49,6 +50,12 @@ class MessageUtility: MyFirebase, AccountProtocol, MessageProtocol {
         })
     }
     
+    func unlock(message: Message) {
+        let myNode = self.emailToNode(MyProfile.shared.email)
+        var message = message
+        message.isLock = false
+        ref.child("\(myNode)/receive/\(message.key)").setValue(message.generateDict())
+    }
     
     
 }

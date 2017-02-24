@@ -17,6 +17,8 @@ struct Message {
     var place: String?
     var latitude: Double
     var longitude: Double
+    var isLock: Bool
+    var key: String = ""
     
     init(target: FriendInfo, place: GMSPlace, time: String, content: String) {
         self.email = target.email
@@ -26,6 +28,7 @@ struct Message {
         self.longitude = place.coordinate.longitude
         self.time = time
         self.content = content
+        self.isLock = true
     }
     
     init(message: Dictionary<String, Any>) {
@@ -36,6 +39,7 @@ struct Message {
         self.place = message[Constants.FirebaseKey.place] as! String?
         self.latitude = message[Constants.FirebaseKey.latitude]! as! Double
         self.longitude = message[Constants.FirebaseKey.longitude]! as! Double
+        self.isLock = Bool.init(message[Constants.FirebaseKey.isLock]! as! String)!
     }
     
     func generateDict() -> Dictionary<String, Any> {
@@ -46,8 +50,27 @@ struct Message {
                        Constants.FirebaseKey.content: self.content,
                        Constants.FirebaseKey.place: self.place ?? "",
                        Constants.FirebaseKey.latitude: self.latitude,
-                       Constants.FirebaseKey.longitude: self.longitude] as [String : Any]
+                       Constants.FirebaseKey.longitude: self.longitude,
+                       Constants.FirebaseKey.isLock: self.isLock.description] as [String : Any]
         
         return message 
+    }
+    
+    func isInTheRange(user: CLLocationCoordinate2D?) -> Bool {
+        
+        if let user = user {
+            let latDiff = user.latitude - self.latitude
+            let lonDiff = user.longitude - self.longitude
+            
+            let distance = sqrt((latDiff * latDiff) + (lonDiff * lonDiff))
+            
+            if distance < Constants.range {
+                return true
+            } else {
+                return false
+            }
+        } else {
+            return false
+        }
     }
 }

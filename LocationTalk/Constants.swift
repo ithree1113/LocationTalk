@@ -13,6 +13,8 @@ struct Constants {
     
     static let database = "Firebase"
     
+    static let range = 0.01 // About 1 KM
+    
     struct SwitchMode {
         static let tableMode = "List Mode"
         static let mapMode = "Map mode"
@@ -39,6 +41,7 @@ struct Constants {
         static let latitude = "latitude"
         static let longitude = "longitude"
         static let place = "place"
+        static let isLock = "isLock"
     }
     
     struct ErrorAlert {
@@ -53,10 +56,12 @@ struct Constants {
         static let messageList = "messageList"
     }
     
-    
-    
     struct Section {
         static let friendList = "Friend List"
         static let beComfired = "Waited to be comfired"
+    }
+    
+    struct Xib {
+        static let messageListCell = "MessageListCell"
     }
 }

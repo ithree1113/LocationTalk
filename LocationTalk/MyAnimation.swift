@@ -14,6 +14,7 @@ class MyAnimation {
     
     
     func present(view: UIView, to y: CGFloat) {
+        view.isHidden = false
         UIView.animate(withDuration: 0.3, delay: 0, options: .curveLinear, animations: {
             view.frame.origin.y = y
         }) { (finish) in
