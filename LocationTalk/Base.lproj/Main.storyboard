@@ -398,27 +398,17 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="I3P-GE-0ed">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="SNC-a6-tSS">
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <connections>
-                                    <segue destination="jUP-fA-1LJ" kind="embed" id="oka-ow-Xd8"/>
-                                </connections>
-                            </containerView>
-                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bch-nw-Yne">
-                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <connections>
-                                    <segue destination="uvH-P7-um2" kind="embed" id="VYv-UZ-nVz"/>
-                                </connections>
-                            </containerView>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Message List" id="Ug0-0L-N5M"/>
                     <connections>
-                        <outlet property="messageListByMapView" destination="I3P-GE-0ed" id="HeK-1Y-ljR"/>
-                        <outlet property="messageListByTableView" destination="Bch-nw-Yne" id="87S-p3-C8m"/>
+                        <outlet property="messageListTable" destination="SNC-a6-tSS" id="Y8o-1q-N9f"/>
                         <outlet property="titleLabel" destination="95O-rc-GTv" id="xov-IX-RI4"/>
                     </connections>
                 </viewController>
@@ -552,65 +542,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rth-e6-tbK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3422" y="818"/>
-        </scene>
-        <!--Message Map List View Controller-->
-        <scene sceneID="QyW-li-8bg">
-            <objects>
-                <viewController id="jUP-fA-1LJ" customClass="MessageMapListViewController" customModule="LocationTalk" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="fOz-TT-hnW"/>
-                        <viewControllerLayoutGuide type="bottom" id="hdS-6L-ifP"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="vxa-1b-vWn">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="MAP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mFt-qB-KWp">
-                                <rect key="frame" x="166" y="267" width="36" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ae9-Sz-YFS">
-                                <rect key="frame" x="166" y="336" width="51" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </switch>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="GWv-dO-LFn" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="966" y="-1034"/>
-        </scene>
-        <!--Message Table List View Controller-->
-        <scene sceneID="KUR-RL-o0F">
-            <objects>
-                <viewController id="uvH-P7-um2" customClass="MessageTableListViewController" customModule="LocationTalk" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="zJY-VM-HmE"/>
-                        <viewControllerLayoutGuide type="bottom" id="ecS-W3-kGU"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Wyi-Cd-zjc">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="SNC-a6-tSS">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </tableView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <connections>
-                        <outlet property="messageListTable" destination="SNC-a6-tSS" id="wr3-sp-Nlx"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dTr-2H-nbg" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="965.60000000000002" y="-468.66566716641682"/>
         </scene>
     </scenes>
     <resources>
