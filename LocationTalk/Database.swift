@@ -11,33 +11,22 @@ import UIKit
 class Database: NSObject {
 
     
-    func auth() -> AuthProtocol! {
-        
-        switch Constants.database {
-        case "Firebase":
-            return FirebaseAuth.init()
-        default:
-            return nil
-        }
+    func auth() -> AuthObject! {
+        let className = "\(Constants.database)"+"Auth"
+        let authClass = NSClassFromString("LocationTalk."+"\(className)") as! AuthObject.Type
+        return authClass.init()
     }
     
-    func friendship() -> FriendshipProtocol! {
-        switch Constants.database {
-        case "Firebase":
-            return FirebaseFriend.init()
-        default:
-            return nil
-        }
+    func friendship() -> FriendshipObject! {
+        let className = "\(Constants.database)"+"Friendship"
+        let friendshipClass = NSClassFromString("LocationTalk."+"\(className)") as! FriendshipObject.Type
+        return friendshipClass.init()
     }
     
-    func message() -> MessageProtocol! {
-        switch Constants.database {
-        case "Firebase":
-            return MessageUtility.init()
-        default:
-            return nil
-        }
+    func message() -> MessageObject! {
+        let className = "\(Constants.database)"+"Message"
+        let messageClass = NSClassFromString("LocationTalk."+"\(className)") as! MessageObject.Type
+        return messageClass.init()
     }
-    
     
 }

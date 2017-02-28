@@ -16,7 +16,7 @@ class FriendListViewController: UIViewController, UITableViewDataSource, UITable
             friendListTable.delegate = self
         }
     }
-    var friendship: FriendshipProtocol! {
+    var friendship: FriendshipObject! {
         didSet {
             friendship.delegate = self
         }

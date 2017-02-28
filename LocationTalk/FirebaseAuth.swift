@@ -9,15 +9,19 @@
 import Foundation
 import Firebase
 
-class FirebaseAuth: MyFirebase, AccountProtocol, AuthProtocol {
+class FirebaseAuth: AuthObject, AccountProtocol {
     
-    weak var delagate: AuthDelegate?
+    var ref: FIRDatabaseReference!
+    
+    required init() {
+        self.ref = FIRDatabase.database().reference()
+    }
     
     deinit {
         print("Authentication deinit")
     }
     
-    func currentUser() -> MyUser? {
+    override func currentUser() -> MyUser? {
         if let user = FIRAuth.auth()?.currentUser {
             let myUser = MyUser.init(email: user.email!, username: user.displayName!)
             return myUser
@@ -25,14 +29,14 @@ class FirebaseAuth: MyFirebase, AccountProtocol, AuthProtocol {
         return nil
     }
     
-    func login(email: String, password: String) {
+    override func login(email: String, password: String) {
         FIRAuth.auth()?.signIn(withEmail: email, password: password, completion: { [weak self] (user, error) in
             guard let strongSelf = self else {return}
             strongSelf.delagate?.authDidLogin(error: error)
         })
     }
     
-    func signUp(email: String, password: String, username: String) {
+    override func signUp(email: String, password: String, username: String) {
         FIRAuth.auth()?.createUser(withEmail: email, password: password, completion: { [weak self] (user, error) in
             guard let strongSelf = self else {return}
             if error == nil {
@@ -65,7 +69,7 @@ class FirebaseAuth: MyFirebase, AccountProtocol, AuthProtocol {
         }
     }
     
-    func inputErrorAlert() {
+    override func inputErrorAlert() {
         // Called upon signup error to let the user know signup didn't work.        
         let alert = UIAlertController(title: Constants.ErrorAlert.alertTitle, message: Constants.ErrorAlert.loginMissingMessage, preferredStyle: UIAlertControllerStyle.alert)
         let action = UIAlertAction(title: "OK", style: .default, handler: nil)

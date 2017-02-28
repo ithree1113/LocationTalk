@@ -15,7 +15,7 @@ class SignUpViewController: UIViewController, AccountProtocol, AuthDelegate, Sig
             signUpView.delegate = self
         }
     }
-    var auth: AuthProtocol! {
+    var auth: AuthObject! {
         didSet {
            auth.delagate = self
         }

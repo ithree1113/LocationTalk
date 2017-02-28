@@ -18,7 +18,7 @@ class MessageTableListViewController: UIViewController, UITableViewDataSource, U
         }
     }
     
-    var messageUtility: MessageProtocol! {
+    var messageUtility: MessageObject! {
         didSet {
             messageUtility.delegate = self
         }

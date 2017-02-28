@@ -16,7 +16,7 @@ class LoginViewController: UIViewController, AccountProtocol, AuthDelegate, Logi
         }
     }
     
-    var auth: AuthProtocol! {
+    var auth: AuthObject! {
         didSet {
             auth.delagate = self
         }

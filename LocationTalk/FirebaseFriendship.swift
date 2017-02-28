@@ -10,12 +10,17 @@ import Foundation
 import Firebase
 
 
-class FirebaseFriend: MyFirebase, AccountProtocol, FriendshipProtocol {
+class FirebaseFriendship: FriendshipObject, AccountProtocol {
 
     fileprivate var _refHandle: FIRDatabaseHandle!
     fileprivate var _friendListHandle: FIRDatabaseHandle?
-    weak var delegate: FriendshipDelegate?
+//    weak var delegate: FriendshipDelegate?
     
+    var ref: FIRDatabaseReference!
+    
+    required init() {
+        self.ref = FIRDatabase.database().reference()
+    }
     
     deinit {
         print("FirebaseFriend deinit")
@@ -27,7 +32,7 @@ class FirebaseFriend: MyFirebase, AccountProtocol, FriendshipProtocol {
     
     
     // To get friend list
-    func getFriendListFrom(_ email: String) {
+    override func getFriendListFrom(_ email: String) {
         
         let node = self.emailToNode(email)
         
@@ -56,7 +61,7 @@ class FirebaseFriend: MyFirebase, AccountProtocol, FriendshipProtocol {
         })
     }
     
-    func search(_ email: String) {
+    override func search(_ email: String) {
         let friendNode = self.emailToNode(email)
         _refHandle = ref.child(friendNode).observe(.value, with: { [weak self] (snapshot) in
             guard let strongSelf = self else {return}
@@ -71,7 +76,7 @@ class FirebaseFriend: MyFirebase, AccountProtocol, FriendshipProtocol {
     }
     
     // Check my relationship to this email.
-    func checkRelationshipBy(email: String) {
+    override func checkRelationshipBy(email: String) {
         
         let myNode = self.emailToNode(MyProfile.shared.email)
         let friendNode = self.emailToNode(email)
@@ -95,7 +100,7 @@ class FirebaseFriend: MyFirebase, AccountProtocol, FriendshipProtocol {
         })
     }
     
-    func invite(email: String, username: String) {
+    override func invite(email: String, username: String) {
         let friendNode = self.emailToNode(email)
         let myNode = self.emailToNode(MyProfile.shared.email)
         
@@ -109,7 +114,7 @@ class FirebaseFriend: MyFirebase, AccountProtocol, FriendshipProtocol {
         
     }
     
-    func accept(_ info: FriendInfo) {
+    override func accept(_ info: FriendInfo) {
         let friendNode = self.emailToNode(info.email)
         let myNode = self.emailToNode(MyProfile.shared.email)
         
@@ -123,7 +128,7 @@ class FirebaseFriend: MyFirebase, AccountProtocol, FriendshipProtocol {
         ref.child("\(friendNode)/friend/\(myNode)").setValue(newMyInfo.generateDict())
     }
     
-    func decline(_ info: FriendInfo) {
+    override func decline(_ info: FriendInfo) {
         let friendNode = self.emailToNode(info.email)
         let myNode = self.emailToNode(MyProfile.shared.email)
         

@@ -10,12 +10,18 @@ import UIKit
 import Firebase
 
 
-class MessageUtility: MyFirebase, AccountProtocol, MessageProtocol {
+class FirebaseMessage: MessageObject, AccountProtocol {
 
     fileprivate var _refHandle: FIRDatabaseHandle!
-    weak var delegate: MessageDelegate?
+//    weak var delegate: MessageDelegate?
     
-    func send(message: Message) {
+    var ref: FIRDatabaseReference!
+    
+    required init() {
+        self.ref = FIRDatabase.database().reference()
+    }
+    
+    override func send(message: Message) {
         let friendNode = self.emailToNode(message.email)
         let myNode = self.emailToNode(MyProfile.shared.email)
         
@@ -29,7 +35,7 @@ class MessageUtility: MyFirebase, AccountProtocol, MessageProtocol {
         ref.child("\(friendNode)/receive").childByAutoId().setValue(receiveMessage.generateDict())
     }
     
-    func getMessageList() {
+    override func getMessageList() {
         let myNode = self.emailToNode(MyProfile.shared.email)
         
         _refHandle = ref.child("\(myNode)/receive").observe(.value, with: { [weak self](snapshot) in
@@ -50,7 +56,7 @@ class MessageUtility: MyFirebase, AccountProtocol, MessageProtocol {
         })
     }
     
-    func unlock(message: Message) {
+    override func unlock(message: Message) {
         let myNode = self.emailToNode(MyProfile.shared.email)
         var message = message
         message.isLock = false

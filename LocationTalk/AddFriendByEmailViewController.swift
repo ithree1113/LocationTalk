@@ -17,7 +17,7 @@ class AddFriendByEmailViewController: UIViewController, AccountProtocol, Friends
         }
     }
 
-    var friendship: FriendshipProtocol! {
+    var friendship: FriendshipObject! {
         didSet {
             friendship.delegate = self
         }
