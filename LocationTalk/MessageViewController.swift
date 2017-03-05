@@ -103,6 +103,6 @@ extension MessageViewController {
 extension MessageViewController {
     func didChangeLocation(newPlace: GMSPlace) {
         placeSelected = newPlace
-        self.headerView.locationLabel.text = newPlace.formattedAddress
+        self.headerView.locationLabel.text = "\(newPlace.name)(\(newPlace.formattedAddress!))"
     }
 }
