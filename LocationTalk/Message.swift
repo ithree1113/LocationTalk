@@ -23,7 +23,7 @@ struct Message {
     init(target: FriendInfo, place: GMSPlace, time: String, content: String) {
         self.email = target.email
         self.username = target.username
-        self.place = place.formattedAddress
+        self.place = "\(place.name)(\(place.formattedAddress))"
         self.latitude = place.coordinate.latitude
         self.longitude = place.coordinate.longitude
         self.time = time
