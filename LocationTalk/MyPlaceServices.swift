@@ -10,9 +10,9 @@ import Foundation
 import GooglePlaces
 
 protocol MyPlaceServicesDelegate: class {
-    func get(currentPlace: GMSPlace?, error: Error?)
-    func getAutoComplete(results: [GMSAutocompletePrediction]?, error: Error?)
-    func getPlaceByPlaceID(place: GMSPlace?, error: Error?)
+    func myPlaceServices(_ myPlaceServices: MyPlaceServices, didGet currentPlace: GMSPlace?, error: Error?)
+    func myPlaceServices(_ myPlaceServices: MyPlaceServices, didGetAutoComplete results: [GMSAutocompletePrediction]?, error: Error?)
+    func myPlaceServices(_ myPlaceServices: MyPlaceServices, didSearch place: GMSPlace?, error: Error?)
 }
 
 
@@ -24,22 +24,20 @@ class MyPlaceServices {
     
     weak var delegate: MyPlaceServicesDelegate?
     
-//    var autocompleteFilter: GMSPlacesAutocompleteTypeFilter = .noFilter
-    
     private init() {
         
     }
     
     func currentPlace() {
-        placeClient.currentPlace { (placeLikelihoodList, error) in
+        placeClient.currentPlace {(placeLikelihoodList, error) in
             if let error = error {
-                self.delegate?.get(currentPlace: nil, error: error)
+                self.delegate?.myPlaceServices(self, didGet: nil, error: error)
                 return
             }
             
             if let placeLikelihoodList = placeLikelihoodList {
-                let place = placeLikelihoodList.likelihoods.max(by: { $0.likelihood < $1.likelihood })?.place
-                self.delegate?.get(currentPlace: place, error: error)
+                let currentPlace = placeLikelihoodList.likelihoods.max(by: { $0.likelihood < $1.likelihood })?.place
+                self.delegate?.myPlaceServices(self, didGet: currentPlace, error: error)
             }
         }
     }
@@ -49,13 +47,13 @@ class MyPlaceServices {
         filter.type = filterType
         
         placeClient.autocompleteQuery(searchText, bounds: nil, filter: filter) { (results, error) in
-            self.delegate?.getAutoComplete(results: results, error: error)
+            self.delegate?.myPlaceServices(self, didGetAutoComplete: results, error: error)
         }
     }
     
-    func placeBy(placeID: String) {
+    func place(By placeID: String) {
         placeClient.lookUpPlaceID(placeID) { (place, error) in
-            self.delegate?.getPlaceByPlaceID(place: place, error: error)
+            self.delegate?.myPlaceServices(self, didSearch: place, error: error)
         }
     }
     
@@ -63,10 +61,10 @@ class MyPlaceServices {
 }
 
 extension MyPlaceServicesDelegate {
-    func get(currentPlace: GMSPlace?, error: Error?) {
+    func myPlaceServices(_ myPlaceServices: MyPlaceServices, didGet currentPlace: GMSPlace?, error: Error?) {
     }
-    func getAutoComplete(results: [GMSAutocompletePrediction]?, error: Error?) {
+    func myPlaceServices(_ myPlaceServices: MyPlaceServices, didGetAutoComplete results: [GMSAutocompletePrediction]?, error: Error?) {
     }
-    func getPlaceByPlaceID(place: GMSPlace?, error: Error?) {
+    func myPlaceServices(_ myPlaceServices: MyPlaceServices, didSearch place: GMSPlace?, error: Error?) {
     }
 }

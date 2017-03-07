@@ -68,13 +68,13 @@ extension LocationViewController {
     func locatonViewDidSelect(result: GMSAutocompletePrediction) {
         let myPlaceServices = MyPlaceServices.sharedInstance
         myPlaceServices.delegate = self
-        myPlaceServices.placeBy(placeID: result.placeID!)
+        myPlaceServices.place(By: result.placeID!)
     }
 }
 
 // MARK: - MyPlaceServicesDelegate
 extension LocationViewController {
-    func getAutoComplete(results: [GMSAutocompletePrediction]?, error: Error?) {
+    func myPlaceServices(_ myPlaceServices: MyPlaceServices, didGetAutoComplete results: [GMSAutocompletePrediction]?, error: Error?) {
         if let error = error {
             print("\(error.localizedDescription)")
             return
@@ -82,7 +82,7 @@ extension LocationViewController {
         self.locationView.searchResultArray = results!
     }
     
-    func getPlaceByPlaceID(place: GMSPlace?, error: Error?) {
+    func myPlaceServices(_ myPlaceServices: MyPlaceServices, didSearch place: GMSPlace?, error: Error?) {
         if let error = error {
             print("\(error.localizedDescription)")
             return

@@ -84,9 +84,9 @@ extension MessageViewController {
     }
 }
 
-// MARK: - MyPlaceServiceProtocol
+// MARK: - MyPlaceServicesDelegate
 extension MessageViewController {
-    func get(currentPlace: GMSPlace?, error: Error?) {
+    func myPlaceServices(_ myPlaceServices: MyPlaceServices, didGet currentPlace: GMSPlace?, error: Error?) {
         if let error = error {
             print("\(error.localizedDescription)")
             return
