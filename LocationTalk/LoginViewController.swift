@@ -24,14 +24,18 @@ class LoginViewController: UIViewController, AccountProtocol, AuthDelegate, Logi
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        auth = Database().auth()
-        if let user = auth.currentUser() {
-            MyProfile.shared.signedIn(email: user.email, username: user.username)
-            DispatchQueue.main.async {
-                self.performSegue(withIdentifier: Constants.Segue.loginToMain, sender: nil)
+
+        do {
+            try auth = Database().auth()
+            if let user = auth.currentUser() {
+                MyProfile.shared.signedIn(email: user.email, username: user.username)
+                DispatchQueue.main.async {
+                    self.performSegue(withIdentifier: Constants.Segue.loginToMain, sender: nil)
+                }
+                
             }
-            
+        } catch  {
+            fatalError("\(error)")
         }
     }
     

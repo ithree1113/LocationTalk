@@ -23,7 +23,11 @@ class SignUpViewController: UIViewController, AccountProtocol, AuthDelegate, Sig
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        auth = Database().auth()
+        do {
+            try auth = Database().auth()
+        } catch  {
+            fatalError("\(error)")
+        }
     }
     
     override func didReceiveMemoryWarning() {

@@ -50,10 +50,14 @@ class MessageViewController: UIViewController, SendMessageHeaderViewDataSource, 
                                    place: placeSelected,
                                    time: headerView.timeLabel.text!,
                                    content: contentTextView.text)
-        let messageUtility = Database().message()
-        messageUtility?.send(message: message)
         
-        dismiss(animated: true, completion: nil)
+        do {
+            let messageUtility = try Database().message()
+            messageUtility.send(message: message)
+            dismiss(animated: true, completion: nil)
+        } catch  {
+            fatalError("\(error)")
+        }
     }
     
     @IBAction func backButtonPressed(_ sender: UIBarButtonItem) {

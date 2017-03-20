@@ -8,25 +8,40 @@
 
 import UIKit
 
+enum DatabaseError: Error {
+    case Database_Object_Cant_Be_Created
+}
+
 class Database: NSObject {
 
-    
-    func auth() -> AuthObject! {
+    func auth() throws -> AuthObject {
         let className = "\(Constants.database)"+"Auth"
-        let authClass = NSClassFromString("LocationTalk."+"\(className)") as! AuthObject.Type
-        return authClass.init()
+        let authClass = NSClassFromString("LocationTalk."+"\(className)") as? AuthObject.Type
+        if let authClass = authClass {
+            return authClass.init()
+        }
+        
+        throw DatabaseError.Database_Object_Cant_Be_Created
     }
     
-    func friendship() -> FriendshipObject! {
+    func friendship() throws -> FriendshipObject {
         let className = "\(Constants.database)"+"Friendship"
-        let friendshipClass = NSClassFromString("LocationTalk."+"\(className)") as! FriendshipObject.Type
-        return friendshipClass.init()
+        let friendshipClass = NSClassFromString("LocationTalk."+"\(className)") as? FriendshipObject.Type
+        if let friendshipClass = friendshipClass {
+            return friendshipClass.init()
+        }
+        
+        throw DatabaseError.Database_Object_Cant_Be_Created
     }
     
-    func message() -> MessageObject! {
+    func message() throws -> MessageObject {
         let className = "\(Constants.database)"+"Message"
-        let messageClass = NSClassFromString("LocationTalk."+"\(className)") as! MessageObject.Type
-        return messageClass.init()
+        let messageClass = NSClassFromString("LocationTalk."+"\(className)") as? MessageObject.Type
+        if let messageClass = messageClass {
+            return messageClass.init()
+        }
+        
+        throw DatabaseError.Database_Object_Cant_Be_Created
     }
     
 }

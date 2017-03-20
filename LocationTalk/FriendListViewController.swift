@@ -28,8 +28,12 @@ class FriendListViewController: UIViewController, UITableViewDataSource, UITable
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        friendship = Database().friendship()
-        friendship.getFriendListFrom(MyProfile.shared.email)
+        do {
+            try friendship = Database().friendship()
+            friendship.getFriendListFrom(MyProfile.shared.email)
+        } catch  {
+            fatalError("\(error)")
+        }
     }
     
     override func didReceiveMemoryWarning() {

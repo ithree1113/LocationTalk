@@ -26,8 +26,11 @@ class AddFriendByEmailViewController: UIViewController, AccountProtocol, Friends
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        friendship = Database().friendship()
-        
+        do {
+            try friendship = Database().friendship()
+        } catch  {
+            fatalError("\(error)")
+        }        
     }
     
     override func didReceiveMemoryWarning() {

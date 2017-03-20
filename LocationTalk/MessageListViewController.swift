@@ -27,7 +27,7 @@ class MessageListViewController: UIViewController, UITableViewDelegate, UITableV
         }
     }
     
-    let messageUtility: MessageObject! = Database().message()
+    var messageUtility: MessageObject!
     
     var showMessageView: ShowMessageView! {
         didSet {
@@ -53,7 +53,12 @@ class MessageListViewController: UIViewController, UITableViewDelegate, UITableV
         initialViewStatus()
         configDelegate()
         userPermission.location()
-        messageUtility.getMessageList()
+        do {
+            try messageUtility = Database().message()
+            messageUtility.getMessageList()
+        } catch  {
+            fatalError("\(error)")
+        }
     }
 
     override func didReceiveMemoryWarning() {

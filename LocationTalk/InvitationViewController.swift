@@ -61,16 +61,24 @@ extension InvitationViewController {
         
         let alert = UIAlertController.init(title: "", message: "Do you accept this invitation?", preferredStyle: .actionSheet)
         let accept = UIAlertAction.init(title: "Accept", style: .default) { (action) in
-            let friendship = Database().friendship()
-            friendship?.accept(self.beIvitedArray[indexPath.row])
-            self.beIvitedArray.remove(at: indexPath.row)
-            self.invitationTable.deleteRows(at: [indexPath], with: .automatic)
+            do {
+                let friendship = try Database().friendship()
+                friendship.accept(self.beIvitedArray[indexPath.row])
+                self.beIvitedArray.remove(at: indexPath.row)
+                self.invitationTable.deleteRows(at: [indexPath], with: .automatic)
+            } catch {
+                fatalError("\(error)")
+            }
         }
         let decline = UIAlertAction.init(title: "Decline", style: .destructive) { (action) in
-            let friendship = Database().friendship()
-            friendship?.decline(self.beIvitedArray[indexPath.row])
-            self.beIvitedArray.remove(at: indexPath.row)
-            self.invitationTable.deleteRows(at: [indexPath], with: .automatic)
+            do{
+                let friendship = try Database().friendship()
+                friendship.decline(self.beIvitedArray[indexPath.row])
+                self.beIvitedArray.remove(at: indexPath.row)
+                self.invitationTable.deleteRows(at: [indexPath], with: .automatic)
+            } catch {
+                fatalError("\(error)")
+            }
         }
         
         let decideLater = UIAlertAction.init(title: "Decide later", style: .default) { (action) in
