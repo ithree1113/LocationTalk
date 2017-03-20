@@ -8,8 +8,10 @@
 
 import UIKit
 import CoreLocation
+import GoogleMaps
+import GooglePlaces
 
-class MessageListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, ShowMessageViewDelegate, CLLocationManagerDelegate, MessageDelegate {
+class MessageListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, ShowMessageViewDelegate, CLLocationManagerDelegate, MessageDelegate, GMSMapViewDelegate, MyPlaceServicesDelegate {
 
     @IBOutlet weak var titleLabel: UILabel!
     
@@ -17,6 +19,11 @@ class MessageListViewController: UIViewController, UITableViewDelegate, UITableV
         didSet {
             messageListTable.dataSource = self
             messageListTable.delegate = self
+        }
+    }
+    @IBOutlet weak var messageListMap: GMSMapView! {
+        didSet {
+            messageListMap.delegate = self
         }
     }
     
@@ -59,11 +66,14 @@ class MessageListViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     @IBAction func modeSwitchChange(_ sender: UISwitch) {
+        locationManager.stopUpdatingLocation()
+        MyAnimation().disappear(view: showMessageView)
+        
         if sender.isOn { // Switch to MapMode
             self.titleLabel.text = Constants.SwitchMode.mapMode
-//            self.messageListByMapView.isHidden = false
+            self.messageListMap.isHidden = false
             UIView.animate(withDuration: 0.3, delay: 0, options: .curveLinear, animations: {
-//                self.messageListByMapView.alpha = 1
+                self.messageListMap.alpha = 1
                 self.messageListTable.alpha = 0
             }, completion: { (finish) in
                 self.messageListTable.isHidden = true
@@ -73,29 +83,33 @@ class MessageListViewController: UIViewController, UITableViewDelegate, UITableV
             self.messageListTable.isHidden = false
             UIView.animate(withDuration: 0.3, delay: 0, options: .curveLinear, animations: {
                 self.messageListTable.alpha = 1
-//                self.messageListByMapView.alpha = 0
+                self.messageListMap.alpha = 0
             }, completion: { (finish) in
-//                self.messageListByMapView.isHidden = true
+                self.messageListMap.isHidden = true
             })
+        }
+        
+        if !(messageListMap.isHidden) {
+            let myPlaceServices = MyPlaceServices.sharedInstance
+            myPlaceServices.delegate = self
+            myPlaceServices.currentPlace()
         }
     }
     
     func initialViewStatus() {
         self.titleLabel.text = Constants.SwitchMode.tableMode
         self.titleLabel.textColor = UIColor.white
-//        self.messageListByMapView.isHidden = true
-//        self.messageListByMapView.alpha = 0
+        self.messageListMap.isHidden = true
+        self.messageListMap.alpha = 0
         
         showMessageView = ShowMessageView.init(frame: CGRect.zero)
         self.view.addSubview(showMessageView)
-
     }
     
     func configDelegate() {
         messageUtility.delegate = self
         locationManager.delegate = self
     }
-
 }
 
 // MARK: - UITableViewDataSource
@@ -142,6 +156,9 @@ extension MessageListViewController {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if cellRect.size.height == 0 {
+            return 44
+        }
         return cellRect.size.height
     }
 }
@@ -173,10 +190,50 @@ extension MessageListViewController {
     }
 }
 
-// MARK: - MessageUtilityDelegate
+// MARK: - MessageDelegate
 extension MessageListViewController {
     func messageDidGetList(_ list: [Message]) {
         messageArray = list
         messageListTable.reloadData()
+        
+        for message in list {
+            let position = CLLocationCoordinate2D.init(latitude: message.latitude, longitude: message.longitude)
+            let marker = GMSMarker.init(position: position)
+            marker.title = message.username
+            marker.map = messageListMap
+        }
+    }
+}
+
+// MARK: - MyPlaceServicesDelegate
+extension MessageListViewController {
+    func myPlaceServices(_ myPlaceServices: MyPlaceServices, didGet currentPlace: GMSPlace?, error: Error?) {
+        if let error = error {
+            print("\(error.localizedDescription)")
+            return
+        }
+        let cameraUpdate = GMSCameraUpdate.setTarget(currentPlace!.coordinate, zoom: 14)
+        messageListMap.animate(with: cameraUpdate)
+    }
+}
+
+// MARK: - GMSMapViewDelegate
+extension MessageListViewController {
+    func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
+        
+        for message in messageArray {
+            let position = CLLocationCoordinate2D.init(latitude: message.latitude, longitude: message.longitude)
+            if (position.latitude == marker.position.latitude && position.longitude == marker.position.longitude) {
+                if !(message.isLock) {
+                    showMessageView.messageTextField.textColor = UIColor.white
+                    showMessageView.messageTextField.text = message.content
+                    MyAnimation().present(view: showMessageView, to: UIScreen.main.bounds.size.height/2)
+                } else {
+                    locationManager.startUpdatingLocation()
+                }
+            }
+        }
+        
+        return false
     }
 }

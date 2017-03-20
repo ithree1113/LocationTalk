@@ -398,6 +398,11 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ele-NX-zPW" customClass="GMSMapView">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="SNC-a6-tSS">
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -408,6 +413,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Message List" id="Ug0-0L-N5M"/>
                     <connections>
+                        <outlet property="messageListMap" destination="ele-NX-zPW" id="kMA-hO-5sG"/>
                         <outlet property="messageListTable" destination="SNC-a6-tSS" id="Y8o-1q-N9f"/>
                         <outlet property="titleLabel" destination="95O-rc-GTv" id="xov-IX-RI4"/>
                     </connections>
