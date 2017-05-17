@@ -18,7 +18,7 @@ protocol MyPlaceServicesDelegate: class {
 
 class MyPlaceServices {
     
-    static var sharedInstance = MyPlaceServices()
+    static let sharedInstance = MyPlaceServices()
     
     fileprivate let placeClient: GMSPlacesClient = GMSPlacesClient.shared()
     
